@@ -1,0 +1,711 @@
+<!doctype html><html><head><meta name="robots" content="noindex,nofollow"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sylvera London CRM Build Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a working ledger. Slim masthead, tab bar, then dense filterable tables; summary before detail. */
+:root{
+  --bg:#f3f4f6; --surface:#ffffff; --sunk:#eceef2; --line:#d9dce3; --fg:#1b1d24; --muted:#5d6272;
+  --accent:#7d1d3a; --accent-soft:#f4e6eb; --gold:#9a7a3c;
+  --ok:#1f7a4d; --ok-bg:#e3f3ea; --warn:#9a6200; --warn-bg:#fbf0d9; --bad:#b3261e; --bad-bg:#fbe5e3; --info:#2a5d9f; --info-bg:#e4edf8; --idle:#6b7080; --idle-bg:#eceef2;
+  --f-display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:6px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#13151a; --surface:#1b1e25; --sunk:#22262f; --line:#323745; --fg:#e8e9ee; --muted:#a0a5b4;
+  --accent:#e0839f; --accent-soft:#3a1f29; --gold:#d2b277;
+  --ok:#6fd09c; --ok-bg:#183326; --warn:#f0bd5c; --warn-bg:#3a2d12; --bad:#f2958d; --bad-bg:#3d1c1a; --info:#8fb6ec; --info-bg:#1b2a40; --idle:#a0a5b4; --idle-bg:#262a33;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13151a; --surface:#1b1e25; --sunk:#22262f; --line:#323745; --fg:#e8e9ee; --muted:#a0a5b4;
+  --accent:#e0839f; --accent-soft:#3a1f29; --gold:#d2b277;
+  --ok:#6fd09c; --ok-bg:#183326; --warn:#f0bd5c; --warn-bg:#3a2d12; --bad:#f2958d; --bad-bg:#3d1c1a; --info:#8fb6ec; --info-bg:#1b2a40; --idle:#a0a5b4; --idle-bg:#262a33;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:14px;line-height:1.45}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:20px;padding-block:20px 48px}
+@media (max-width:560px){.wrap{padding-inline:16px}}
+.mono{font-family:var(--f-mono);font-size:12px;font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+/* masthead */
+.mast{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:flex-end;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,4vw,40px);line-height:1.05;margin:4px 0 6px;text-wrap:balance}
+.facts{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:13px}
+.facts b{color:var(--fg);font-weight:600}
+.mode{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{font:inherit;font-weight:600;font-size:13px;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:7px 12px;border-radius:var(--r);cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.sm{padding:4px 8px;font-size:12px}
+.btn:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,.tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.badge{font-size:12px;padding:3px 9px;border-radius:99px;background:var(--sunk);color:var(--muted);font-weight:600}
+.badge.dirty{background:var(--warn-bg);color:var(--warn)}
+/* tabs */
+.tabs{display:flex;gap:2px;overflow-x:auto;margin:16px 0 18px;border-bottom:1px solid var(--line)}
+.tab{font:inherit;font-weight:600;background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:9px 14px;cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.tab .n{font-family:var(--f-mono);font-size:11px;color:var(--muted);margin-left:4px}
+/* overview */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.kpi .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.kpi .v{font-family:var(--f-display);font-size:34px;line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:12px;color:var(--muted)}
+.bar{height:6px;background:var(--sunk);border-radius:99px;overflow:hidden;margin-top:8px}
+.bar>i{display:block;height:100%;background:var(--accent)}
+.grid2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+@media (max-width:900px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;min-width:0}
+.panel h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;color:var(--muted)}
+.gantt{overflow-x:auto}
+.gantt-inner{min-width:560px;position:relative}
+.g-row{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:10px;min-height:38px}
+.g-lab{font-size:13px;font-weight:600}
+.g-lab small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.g-track{position:relative;height:22px;background:var(--sunk);border-radius:4px}
+.g-seg{position:absolute;top:0;bottom:0;border-radius:4px;background:var(--accent-soft);border:1px solid var(--accent);overflow:hidden}
+.g-seg>i{display:block;height:100%;background:var(--accent);opacity:.85}
+.g-axis{display:grid;grid-template-columns:150px 1fr;gap:10px;margin-bottom:4px}
+.g-ticks{position:relative;height:16px}
+.g-ticks span{position:absolute;transform:translateX(-50%);font-family:var(--f-mono);font-size:10px;color:var(--muted);white-space:nowrap}
+.g-today{position:absolute;top:0;bottom:0;width:0;border-left:2px dashed var(--gold);pointer-events:none}
+.g-today em{position:absolute;top:-2px;left:4px;font-style:normal;font-size:10px;color:var(--gold);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.attn{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.attn li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:baseline;font-size:13px}
+.empty{color:var(--muted);font-size:13px}
+.wk h3{font-size:15px;margin:0 0 8px}
+.wk dl{margin:0;display:grid;gap:8px}
+.wk dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.wk dd{margin:0;white-space:pre-wrap}
+/* filters + tables */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.filters select,.filters input{font:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--fg)}
+.filters input{min-width:0;flex:1 1 200px;max-width:320px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chip{font:inherit;font-size:12px;padding:4px 10px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.chip .mono{color:var(--muted);font-size:11px}
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{position:sticky;top:0;background:var(--sunk);text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr.grp td{background:var(--bg);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding-top:12px}
+td.item{min-width:260px}
+td.notes{min-width:200px;color:var(--muted)}
+td.wide{min-width:220px}
+tbody td:first-child{white-space:nowrap}
+td input,td select,td textarea{font:inherit;font-size:13px;width:100%;min-width:90px;padding:4px 6px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--fg)}
+td textarea{min-height:52px;resize:vertical;min-width:200px}
+td input[type=date]{min-width:130px}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.s-done,.s-live,.s-received,.s-green{background:var(--ok-bg);color:var(--ok)}
+.s-progress,.s-build,.s-qa{background:var(--info-bg);color:var(--info)}
+.s-review,.s-amber{background:var(--warn-bg);color:var(--warn)}
+.s-blocked,.s-overdue,.s-red{background:var(--bad-bg);color:var(--bad)}
+.s-idle{background:var(--idle-bg);color:var(--idle)}
+.late{color:var(--bad);font-weight:600}
+a.lnk{color:var(--accent)}
+.del{border:0;background:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px}
+.del.arm{color:var(--bad);font-weight:700}
+.rowadd{margin-top:10px}
+.legend{font-size:12px;color:var(--muted);margin-top:10px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:9px 16px;border-radius:var(--r);font-weight:600;font-size:13px;z-index:10}
+.wform{display:grid;gap:10px;margin-bottom:16px}
+.wform label{display:grid;gap:4px;font-size:12px;font-weight:600;color:var(--muted)}
+.wform textarea,.wform input,.wform select{font:inherit;font-size:13px;padding:7px 8px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--fg)}
+.wform textarea{min-height:64px;resize:vertical}
+.wlist{display:grid;gap:12px}
+.whead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:8px}
+/* archive */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl>li{display:grid;grid-template-columns:96px 18px minmax(0,1fr);gap:0 12px}
+.tl .when{text-align:right;padding-top:14px}
+.tl .when b{display:block;font-family:var(--f-display);font-weight:400;font-size:24px;line-height:1}
+.tl .when span{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.tl .rail{position:relative}
+.tl .rail:before{content:"";position:absolute;left:8px;top:0;bottom:0;border-left:1px solid var(--line)}
+.tl .dot{position:absolute;left:3px;top:20px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.tl .dot.t-Approval{background:var(--accent)}
+.tl .card{margin:8px 0;min-width:0}
+.tl .card h3{margin:0;font-size:16px}
+.tl .meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:12px;color:var(--muted);margin:4px 0 10px}
+.tl .links{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:4px}
+.tl .links li{font-size:13px;overflow-wrap:anywhere}
+.tl .links li:before{content:"↗";color:var(--accent);margin-right:6px;font-size:12px}
+.tl .links li.txt:before{content:"·"}
+.tl .who{font-size:13px}
+@media (max-width:560px){.tl>li{grid-template-columns:62px 14px minmax(0,1fr);gap:0 8px}.tl .when b{font-size:20px}}
+.hist{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.hist li{display:grid;grid-template-columns:80px minmax(0,1fr);gap:10px;font-size:13px}
+.hist ul{margin:0;padding-left:16px;display:grid;gap:2px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.xp{margin-top:14px;display:grid;gap:12px}
+.xp-row{display:flex;flex-wrap:wrap;gap:12px 28px}
+.xp fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.xp legend{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0;margin-bottom:6px;width:100%}
+.xp label{font-size:13px;display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+@media (prefers-reduced-motion:no-preference){.btn,.chip,.tab{transition:border-color .15s,background .15s}}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <div class="eyebrow">Digital Nexa · CRM Implementation</div>
+      <h1>Sylvera · HubSpot Project Tracker</h1>
+      <div class="facts">
+        <span>Build start <b>8 Oct 2026</b></span>
+        <span>Go-live <b>20 Nov 2026</b></span>
+        <span id="f-days"></span>
+        <span>Last saved <b id="f-saved">–</b></span>
+      </div>
+    </div>
+    <div class="mode">
+      <span class="badge" id="m-badge">Loading…</span>
+      <button class="btn" id="m-export" hidden aria-expanded="false" aria-controls="xp">Export</button>
+      <button class="btn" id="m-edit" hidden>Edit tracker</button>
+      <button class="btn primary" id="m-save" hidden disabled>Save changes</button>
+    </div>
+  </header>
+
+  <section class="panel xp" id="xp" hidden aria-label="Export the tracker">
+    <div class="xp-row">
+      <fieldset><legend>Format</legend>
+        <label><input type="radio" name="xf" value="pdf" id="xf-pdf" checked> PDF</label>
+        <label><input type="radio" name="xf" value="docx" id="xf-docx"> Word (.docx)</label>
+        <label><input type="radio" name="xf" value="html" id="xf-html"> HTML</label>
+      </fieldset>
+      <fieldset><legend>Include</legend>
+        <label><input type="checkbox" value="overview" id="xs-overview" checked> Summary</label>
+        <label><input type="checkbox" value="build" id="xs-build" checked> Build sheet</label>
+        <label><input type="checkbox" value="assets" id="xs-assets" checked> Assets tracker</label>
+        <label><input type="checkbox" value="actions" id="xs-actions" checked> Client actions</label>
+        <label><input type="checkbox" value="weekly" id="xs-weekly" checked> Weekly updates</label>
+        <label><input type="checkbox" value="register" id="xs-register" checked> Changes &amp; risks</label>
+        <label><input type="checkbox" value="archive" id="xs-archive" checked> Archive</label>
+      </fieldset>
+    </div>
+    <div class="xp-row" style="align-items:center">
+      <button class="btn primary" id="xp-go">Download</button>
+      <button class="btn" id="xp-close">Close</button>
+      <span class="muted" id="xp-msg" style="font-size:12px">Exports the saved tracker as of today.</span>
+    </div>
+  </section>
+
+  <nav class="tabs" role="tablist" id="tabs">
+    <button class="tab" role="tab" data-tab="overview" id="t-overview">Overview</button>
+    <button class="tab" role="tab" data-tab="build" id="t-build">Build sheet <span class="n" id="n-build"></span></button>
+    <button class="tab" role="tab" data-tab="assets" id="t-assets">Assets tracker <span class="n" id="n-assets"></span></button>
+    <button class="tab" role="tab" data-tab="actions" id="t-actions">Client actions <span class="n" id="n-actions"></span></button>
+    <button class="tab" role="tab" data-tab="weekly" id="t-weekly">Weekly updates <span class="n" id="n-weekly"></span></button>
+    <button class="tab" role="tab" data-tab="register" id="t-register">Changes &amp; risks <span class="n" id="n-register"></span></button>
+    <button class="tab" role="tab" data-tab="archive" id="t-archive">Archive <span class="n" id="n-archive"></span></button>
+  </nav>
+
+  <main id="view"><p class="empty">Loading the tracker…</p></main>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+const BUILD_ST=["Not started","In progress","In review","Blocked","Done"];
+const ASSET_ST=["Not started","In build","QA","Client review","Live"];
+const ACT_ST=["Open","Received","Not needed"];
+const RAG=["Green","Amber","Red"];
+const OWNERS=["NEXA CRM Specialist","NEXA Shopify Team","NEXA Project Director","Sylvera London"];
+const PHASES={1:"Foundations",2:"Pipelines, scoring, core automation",3:"Commerce, migration, channels, consent",4:"Reporting, training, UAT, go-live"};
+const PH_DATES={1:["2026-10-08","2026-10-21"],2:["2026-10-15","2026-11-04"],3:["2026-10-22","2026-11-11"],4:["2026-11-05","2026-11-20"]};
+const START="2026-10-08", GOLIVE="2026-11-20";
+
+let S=null, editing=false, canWrite=false, artifactNs=null, dirty=0, saving=false;
+let tab="overview";
+const F={build:{phase:"",status:"",owner:"",q:""},assets:{cat:"",status:"",phase:"",q:""}};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const todayISO=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fmt=iso=>{if(!iso)return"–";const [y,m,d]=iso.split("-").map(Number);return d+" "+MON[m-1]};
+const dnum=iso=>Date.UTC(...iso.split("-").map((v,i)=>i==1?v-1:+v))/864e5;
+const weekNo=iso=>Math.floor((dnum(iso)-dnum(START))/7)+1;
+const weekStart=n=>{const t=(dnum(START)+(n-1)*7)*864e5;const d=new Date(t);return d.toISOString().slice(0,10)};
+
+function stClass(s){return({"Done":"s-done","Completed":"s-done","Approved":"s-done","Scheduled":"s-progress","Pending approval":"s-review","Live":"s-live","Received":"s-received","Green":"s-green","In progress":"s-progress","In build":"s-build","QA":"s-qa","In review":"s-review","Client review":"s-review","Amber":"s-amber","Blocked":"s-blocked","Overdue":"s-overdue","Red":"s-red"})[s]||"s-idle"}
+const pill=s=>`<span class="pill ${stClass(s)}">${esc(s)}</span>`;
+const isLate=r=>r.due && r.status!=="Done" && r.due<todayISO();
+const actStatus=a=>a.status==="Open" && a.due<todayISO()?"Overdue":a.status;
+
+function toast(msg){const t=$("toast");t.textContent=msg;t.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>t.hidden=true,2600)}
+function markDirty(row){if(row)row.updated=todayISO();dirty++;updateMode()}
+function updateMode(){
+  const b=$("m-badge"),e=$("m-edit"),s=$("m-save");
+  if(!S){b.textContent="Loading…";return}
+  if(!canWrite){b.textContent="View only";b.className="badge";e.hidden=true;s.hidden=true;return}
+  e.hidden=false;e.textContent=editing?"Done editing":"Edit tracker";
+  s.hidden=!editing&&!dirty;s.disabled=!dirty||saving;s.textContent=saving?"Saving…":"Save changes";
+  if(dirty){b.textContent=dirty+" unsaved change"+(dirty>1?"s":"");b.className="badge dirty"}
+  else{b.textContent=editing?"Editing":"Up to date";b.className="badge"}
+}
+function header(){
+  const t=todayISO(),left=Math.round(dnum(GOLIVE)-dnum(t));
+  $("f-days").innerHTML=left>0?`<b>${left}</b> days to go-live · Week <b>${Math.max(1,weekNo(t))}</b>`:left===0?"<b>Go-live today</b>":"<b>Live</b> · post go-live support";
+  $("f-saved").textContent=fmt(S.meta.lastSaved);
+  $("n-build").textContent=S.build.length;$("n-assets").textContent=S.assets.length;
+  const open=S.actions.filter(a=>a.status==="Open").length;$("n-actions").textContent=open+" open";$("n-weekly").textContent=S.weekly.length;$("n-archive").textContent=(S.archive||[]).length;$("n-register").textContent=S.register.filter(x=>!["Closed","Rejected","Mitigated","Implemented"].includes(x.status)).length+" open";
+}
+
+/* ---------- Overview ---------- */
+function overview(){
+  const t=todayISO();
+  const done=S.build.filter(r=>r.status==="Done").length, bp=Math.round(done/S.build.length*100);
+  const live=S.assets.filter(a=>a.status==="Live").length, ap=Math.round(live/S.assets.length*100);
+  const openA=S.actions.filter(a=>a.status==="Open"), overA=openA.filter(a=>a.due<t);
+  const blocked=S.build.filter(r=>r.status==="Blocked"), late=S.build.filter(isLate);
+  const hiRisk=(S.register||[]).filter(x=>!regClosed(x)&&rating(x)==="High");
+  const latest=[...S.weekly].sort((a,b)=>b.week.localeCompare(a.week))[0];
+  const g0=dnum(START),g1=dnum("2026-11-21"),span=g1-g0,pct=iso=>Math.min(100,Math.max(0,(dnum(iso)-g0)/span*100));
+  let ticks="";for(let i=0;i<7;i++){const w=weekStart(i+1);ticks+=`<span style="left:${pct(w)}%">W${i+1} · ${fmt(w)}</span>`}
+  const tp=pct(t),showToday=dnum(t)>=g0&&dnum(t)<=g1;
+  const rows=[1,2,3,4].map(p=>{const items=S.build.filter(r=>+r.phase===p),d=items.filter(r=>r.status==="Done").length,pr=items.length?Math.round(d/items.length*100):0;const [a,b]=PH_DATES[p];
+    return `<div class="g-row"><div class="g-lab">Phase ${p}<small>${esc(PHASES[p])}</small></div><div class="g-track"><div class="g-seg" style="left:${pct(a)}%;width:${pct(b)-pct(a)+100/span}%" title="${fmt(a)} – ${fmt(b)} · ${d}/${items.length} done"><i style="width:${pr}%"></i></div></div></div>`}).join("");
+  const att=[...overA.map(a=>`<li>${pill("Overdue")}<span><span class="mono">${a.id}</span> ${esc(a.item)} <span class="muted">· client, due ${fmt(a.due)}</span></span></li>`),
+    ...blocked.map(r=>`<li>${pill("Blocked")}<span><span class="mono">${r.id}</span> ${esc(r.item)}${r.dep?` <span class="muted">· waiting on ${esc(r.dep)}</span>`:""}</span></li>`),
+    ...hiRisk.map(x=>`<li>${ratePill("High")}<span><span class="mono">${x.id}</span> ${esc(x.title)} <span class="muted">· ${esc(x.type.toLowerCase())}</span></span></li>`),
+    ...late.filter(r=>r.status!=="Blocked").map(r=>`<li>${pill("Overdue")}<span><span class="mono">${r.id}</span> ${esc(r.item)} <span class="muted">· due ${fmt(r.due)}</span></span></li>`)];
+  const nextDue=S.build.filter(r=>r.status!=="Done"&&r.due>=t).sort((a,b)=>a.due.localeCompare(b.due)).slice(0,6);
+  return `<section class="kpis">
+    <div class="kpi"><div class="l">Build items done</div><div class="v">${bp}%</div><div class="s">${done} of ${S.build.length} items</div><div class="bar"><i style="width:${bp}%"></i></div></div>
+    <div class="kpi"><div class="l">Assets live</div><div class="v">${live}<span class="muted" style="font-size:20px"> / ${S.assets.length}</span></div><div class="s">properties, pipelines, workflows, reports…</div><div class="bar"><i style="width:${ap}%"></i></div></div>
+    <div class="kpi"><div class="l">Client actions open</div><div class="v">${openA.length}</div><div class="s ${overA.length?"late":""}">${overA.length?overA.length+" past due date":"none past due"}</div></div>
+    <div class="kpi"><div class="l">Status this week</div><div class="v">${latest?pill(latest.rag):"–"}</div><div class="s">${latest?"Week of "+fmt(latest.week):"No update yet"}</div></div>
+  </section>
+  <div class="grid2">
+    <div style="display:grid;gap:16px;min-width:0">
+      <div class="panel"><h2>Phase timeline</h2><div class="gantt"><div class="gantt-inner">
+        <div class="g-axis"><div></div><div class="g-ticks">${ticks}</div></div>
+        <div style="position:relative">${rows}${showToday?`<div style="position:absolute;inset:0 0 0 160px;pointer-events:none"><div class="g-today" style="left:${tp}%"><em>Today</em></div></div>`:""}</div>
+      </div></div><p class="legend">Filled share of each bar = items done in that phase. Go-live 20 Nov 2026.</p></div>
+      <div class="panel"><h2>Due next</h2>${nextDue.length?`<ul class="attn">${nextDue.map(r=>`<li><span class="mono">${fmt(r.due)}</span><span>${esc(r.item)} <span class="muted">· ${esc(r.owner)}</span></span></li>`).join("")}</ul>`:`<p class="empty">Nothing outstanding.</p>`}</div>
+    </div>
+    <div style="display:grid;gap:16px;align-content:start;min-width:0">
+      <div class="panel"><h2>Needs attention</h2>${att.length?`<ul class="attn">${att.join("")}</ul>`:`<p class="empty">No blocked or overdue items.</p>`}</div>
+      <div class="panel wk"><h2>Latest weekly update</h2>${latest?weekCard(latest,false):`<p class="empty">No weekly update posted yet.</p>`}</div>
+    </div>
+  </div>`;
+}
+
+/* ---------- Build sheet ---------- */
+function sel(opts,val,attrs){return `<select ${attrs}>${opts.map(o=>`<option${o===val?" selected":""}>${esc(o)}</option>`).join("")}</select>`}
+function buildView(){
+  const f=F.build,q=f.q.toLowerCase();
+  const rows=S.build.filter(r=>(!f.phase||+r.phase===+f.phase)&&(!f.status||r.status===f.status)&&(!f.owner||r.owner===f.owner)&&(!q||(r.id+r.item+r.area+r.notes+r.dep).toLowerCase().includes(q)));
+  const counts=BUILD_ST.map(s=>[s,S.build.filter(r=>r.status===s).length]);
+  let body="",cur=null;
+  rows.forEach(r=>{
+    if(+r.phase!==cur){cur=+r.phase;const [a,b]=PH_DATES[cur]||["",""];body+=`<tr class="grp"><td colspan="${editing?12:11}">Phase ${cur} · ${esc(PHASES[cur]||"")} <span class="mono" style="text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400">${fmt(a)} – ${fmt(b)}</span></td></tr>`}
+    const k=`data-k="build" data-id="${esc(r.id)}"`;
+    if(editing){
+      body+=`<tr><td class="mono">${esc(r.id)}</td>
+      <td>${sel(["1","2","3","4"],String(r.phase),`${k} data-f="phase" aria-label="Phase"`)}</td>
+      <td><input ${k} data-f="area" value="${esc(r.area)}" aria-label="Area"></td>
+      <td class="item"><textarea ${k} data-f="item" aria-label="Build item">${esc(r.item)}</textarea></td>
+      <td><input ${k} data-f="spec" value="${esc(r.spec)}" aria-label="SDS section" style="min-width:70px"></td>
+      <td>${sel(OWNERS.includes(r.owner)?OWNERS:[r.owner,...OWNERS],r.owner,`${k} data-f="owner" aria-label="Owner"`)}</td>
+      <td><input type="date" ${k} data-f="start" value="${esc(r.start)}" aria-label="Start"></td>
+      <td><input type="date" ${k} data-f="due" value="${esc(r.due)}" aria-label="Due"></td>
+      <td>${sel(BUILD_ST,r.status,`${k} data-f="status" aria-label="Status"`)}</td>
+      <td><input ${k} data-f="dep" value="${esc(r.dep)}" aria-label="Depends on"></td>
+      <td class="notes"><textarea ${k} data-f="notes" aria-label="Notes">${esc(r.notes)}</textarea></td>
+      <td><button class="del" data-del="build" data-id="${esc(r.id)}" aria-label="Delete ${esc(r.id)}">Delete</button></td></tr>`;
+    }else{
+      body+=`<tr><td class="mono">${esc(r.id)}</td><td class="mono">P${esc(r.phase)}</td><td>${esc(r.area)}</td><td class="item">${esc(r.item)}</td><td class="mono">${esc(r.spec)}</td><td>${esc(r.owner)}</td>
+      <td class="mono">${fmt(r.start)}</td><td class="mono ${isLate(r)?"late":""}">${fmt(r.due)}${isLate(r)?" · late":""}</td><td>${pill(r.status)}</td><td class="mono">${esc(r.dep)||"–"}</td><td class="notes">${esc(r.notes)}</td><td class="mono muted">${fmt(r.updated)}</td></tr>`;
+    }
+  });
+  const head=editing?["ID","Phase","Area","Build item","SDS §","Owner","Start","Due","Status","Depends on","Notes",""]:["ID","Phase","Area","Build item","SDS §","Owner","Start","Due","Status","Depends on","Notes","Updated"];
+  return `<div class="chips">${counts.map(([s,n])=>`<button class="chip" data-chip="build-status" data-v="${esc(s)}" aria-pressed="${f.status===s}">${esc(s)} <span class="mono">${n}</span></button>`).join("")}</div>
+  <div class="filters">
+    <input id="fb-q" type="search" placeholder="Search items, notes, dependencies" value="${esc(f.q)}" aria-label="Search build items">
+    ${sel(["All phases","1","2","3","4"],f.phase||"All phases",`id="fb-phase" aria-label="Filter by phase"`)}
+    ${sel(["All statuses",...BUILD_ST],f.status||"All statuses",`id="fb-status" aria-label="Filter by status"`)}
+    ${sel(["All owners",...OWNERS],f.owner||"All owners",`id="fb-owner" aria-label="Filter by owner"`)}
+    <span class="muted" style="font-size:12px">${rows.length} of ${S.build.length}</span>
+  </div>
+  <div class="tbl"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${body||`<tr><td colspan="12" class="empty">No items match these filters.</td></tr>`}</tbody></table></div>
+  ${canWrite?`<button class="btn rowadd" id="add-build">+ Add build item</button>`:""}
+  <p class="legend">Dependencies starting CD- refer to the Client actions tab. SDS § refers to the signed CRM Strategy and Solution Design v1.1.</p>`;
+}
+
+/* ---------- Assets ---------- */
+const ASEC=[
+ {k:"Properties",p:"PROP",cols:[["object","Object"],["internal","Internal name",1],["type","Field type"],["options","Options / format",2],["required","Required"],["group","Group"],["populated","Populated by"]]},
+ {k:"Lifecycle stages",p:"LC",cols:[["position","Pos"],["definition","Definition",2],["entry","Entry trigger",2],["exit","Exit / next stage",2],["automation","Automation on entry",2]]},
+ {k:"Lead statuses",p:"LS",cols:[["position","Pos"],["definition","Definition",2],["set_by","Set by"],["next","Required next action",2]]},
+ {k:"Pipelines",p:"PL",cols:[["pipeline","Pipeline"],["stage","Stage"],["position","Pos"],["entry","Entry criteria",2],["owner_role","Stage owner"]]},
+ {k:"Scoring",p:"SC",cols:[["axis","Axis"],["rule","Points / rule",2],["source","Data source"]]},
+ {k:"Workflows",p:"WF",cols:[["trigger","Trigger",2],["purpose","What it does",2]]},
+ {k:"Lists",p:"LIST",cols:[["type","Type"],["criteria","Membership criteria",2],["purpose","Purpose",2]]},
+ {k:"Forms & templates",p:"FT",cols:[["kind","Kind"],["content","Fields / content",2],["purpose","Purpose / notes",2]]},
+ {k:"Dashboards",p:"DB",cols:[["audience","Audience"],["question","Question it answers",2]]},
+ {k:"Integrations & channels",p:"INT",cols:[["kind","Kind"],["method","Method"],["direction","Direction"],["detail","Detail",2]]},
+ {k:"Response standards",p:"SLA",cols:[["target","Target"],["why","Why it protects revenue",2],["breach","On breach",2]]},
+ {k:"Permissions",p:"PERM",cols:[["person","Person"],["seat","Seat"],["access","Access",2]]},
+ {k:"Data & consent",p:"MIG",cols:[["source","Source"],["volume","Volume"],["treatment","Treatment",2]]},
+ {k:"Website & enablement",p:"WEB",cols:[["kind","Kind"],["content","Content",2]]}];
+const QA_ST=["Not tested","Passed","Failed","Re-test"];
+const secOf=k=>ASEC.find(x=>x.k===k)||{k,p:"AS",cols:[]};
+function assetSections(){const ks=[...ASEC.map(x=>x.k)];S.assets.forEach(a=>{if(!ks.includes(a.cat))ks.push(a.cat)});return ks}
+function assetsView(){
+  const f=F.assets,q=f.q.toLowerCase();
+  const secs=assetSections();if(!f.cat||!secs.includes(f.cat))f.cat=secs[0];
+  const sec=secOf(f.cat);
+  const rows=S.assets.filter(a=>a.cat===f.cat&&(!f.status||a.status===f.status)&&(!f.phase||+a.phase===+f.phase)&&(!q||(a.id+a.name+Object.values(a.f||{}).join(" ")+(a.notes||"")).toLowerCase().includes(q)));
+  const chips=secs.map(c=>{const all=S.assets.filter(a=>a.cat===c),l=all.filter(a=>a.status==="Live").length;return `<button class="chip" data-chip="asset-cat" data-v="${esc(c)}" aria-pressed="${f.cat===c}">${esc(c)} <span class="mono">${l}/${all.length}</span></button>`}).join("");
+  const cell=(a,c)=>{const v=(a.f||{})[c[0]]||"";return `<td class="${c[2]===1?"mono":c[2]===2?"wide":""}">${esc(v)||"–"}</td>`};
+  const body=rows.map(a=>{const k=`data-k="assets" data-id="${esc(a.id)}"`;
+    if(editing)return `<tr><td class="mono">${esc(a.id)}</td><td class="item"><input ${k} data-f="name" value="${esc(a.name)}" aria-label="Asset name"></td>
+      ${sec.cols.map(c=>`<td>${c[2]===2?`<textarea ${k} data-f="f.${c[0]}" aria-label="${esc(c[1])}">${esc((a.f||{})[c[0]]||"")}</textarea>`:`<input ${k} data-f="f.${c[0]}" value="${esc((a.f||{})[c[0]]||"")}" aria-label="${esc(c[1])}">`}</td>`).join("")}
+      <td>${sel(["1","2","3","4"],String(a.phase),`${k} data-f="phase" aria-label="Phase"`)}</td>
+      <td>${sel(OWNERS.includes(a.owner)?OWNERS:[a.owner||"",...OWNERS],a.owner||"",`${k} data-f="owner" aria-label="Owner"`)}</td>
+      <td>${sel(ASSET_ST,a.status,`${k} data-f="status" aria-label="Status"`)}</td><td>${sel(QA_ST,a.qa||"Not tested",`${k} data-f="qa" aria-label="QA status"`)}</td>
+      <td><input ${k} data-f="link" value="${esc(a.link)}" placeholder="https://app-eu1.hubspot.com/…" aria-label="HubSpot link"></td>
+      <td class="notes"><textarea ${k} data-f="notes" aria-label="Notes">${esc(a.notes)}</textarea></td><td><button class="del" data-del="assets" data-id="${esc(a.id)}" aria-label="Delete ${esc(a.id)}">Delete</button></td></tr>`;
+    const link=/^https:\/\//.test(a.link)?`<a class="lnk" href="${esc(a.link)}" target="_blank" rel="noopener">Open</a>`:"–";
+    const qa=a.qa||"Not tested";
+    return `<tr><td class="mono">${esc(a.id)}</td><td class="item"><b style="font-weight:600">${esc(a.name)}</b></td>${sec.cols.map(c=>cell(a,c)).join("")}<td class="mono">P${esc(a.phase)}</td><td>${esc(a.owner)||"–"}</td><td>${pill(a.status)}</td><td><span class="pill ${qa==="Passed"?"s-green":qa==="Failed"?"s-red":qa==="Re-test"?"s-amber":"s-idle"}">${esc(qa)}</span></td><td>${link}</td><td class="notes">${esc(a.notes)}</td><td class="mono muted">${fmt(a.updated)}</td></tr>`}).join("");
+  const head=["ID","Name",...sec.cols.map(c=>c[1]),"Phase","Owner","Status","QA",editing?"HubSpot link":"Link","Notes",editing?"":"Updated"];
+  return `<div class="chips">${chips}</div>
+  <div class="filters">
+    <input id="fa-q" type="search" placeholder="Search ${esc(f.cat.toLowerCase())}" value="${esc(f.q)}" aria-label="Search assets">
+    ${sel(["All statuses",...ASSET_ST],f.status||"All statuses",`id="fa-status" aria-label="Filter by status"`)}
+    ${sel(["All phases","1","2","3","4"],f.phase||"All phases",`id="fa-phase" aria-label="Filter by phase"`)}
+    <span class="muted" style="font-size:12px">${rows.length} of ${S.assets.filter(a=>a.cat===f.cat).length} in ${esc(f.cat)} · ${S.assets.length} assets in total</span>
+  </div>
+  <div class="tbl"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${body||`<tr><td colspan="${head.length}" class="empty">No assets match these filters.</td></tr>`}</tbody></table></div>
+  ${canWrite?`<button class="btn rowadd" id="add-asset">+ Add to ${esc(f.cat)}</button>`:""}
+  <p class="legend">Chip counts show live / total per section. All detail follows the signed CRM Strategy and Solution Design v1.1; custom properties use the <span class="mono">sylv_</span> prefix (SDS §8.2).</p>`;
+}
+
+/* ---------- Client actions ---------- */
+function actionsView(){
+  const body=S.actions.map(a=>{const k=`data-k="actions" data-id="${esc(a.id)}"`,st=actStatus(a);
+    if(editing)return `<tr><td class="mono">${esc(a.id)}</td><td class="item"><textarea ${k} data-f="item" aria-label="What we need">${esc(a.item)}</textarea></td><td><input ${k} data-f="who" value="${esc(a.who)}" aria-label="Who"></td><td>${sel(["0","1","2","3","4"],String(a.phase),`${k} data-f="phase" aria-label="Needed for phase"`)}</td>
+      <td><input type="date" ${k} data-f="due" value="${esc(a.due)}" aria-label="Due"></td><td>${sel(ACT_ST,a.status,`${k} data-f="status" aria-label="Status"`)}</td>
+      <td><input type="date" ${k} data-f="received" value="${esc(a.received)}" aria-label="Date received"></td><td class="notes"><textarea ${k} data-f="notes" aria-label="Notes">${esc(a.notes)}</textarea></td><td><button class="del" data-del="actions" data-id="${esc(a.id)}" aria-label="Delete ${esc(a.id)}">Delete</button></td></tr>`;
+    return `<tr><td class="mono">${esc(a.id)}</td><td class="item">${esc(a.item)}</td><td>${esc(a.who)||"–"}</td><td class="mono">${a.phase?"Phase "+a.phase:"Before build"}</td><td class="mono ${st==="Overdue"?"late":""}">${fmt(a.due)}</td><td>${pill(st)}</td><td class="mono">${fmt(a.received)}</td><td class="notes">${esc(a.notes)}</td></tr>`}).join("");
+  const open=S.actions.filter(a=>a.status==="Open").length;
+  return `<p style="margin:0 0 12px;max-width:70ch">Inputs and decisions we need from Sylvera London to keep the 20 November go-live on track (SDS §29.2). Each is due before the phase that depends on it starts. <b>${open}</b> still open.</p>
+  <div class="tbl"><table><thead><tr>${["ID","What we need","Who",editing?"Phase (0 = before build)":"Needed for","Due","Status","Received","Notes",...(editing?[""]:[])].map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${body}</tbody></table></div>
+  ${canWrite?`<button class="btn rowadd" id="add-action">+ Add client action</button>`:""}`;
+}
+
+/* ---------- Weekly ---------- */
+function weekCard(w,withEdit){
+  return `<div class="whead"><h3>Week ${weekNo(w.week)} · w/c ${fmt(w.week)}</h3><span>${pill(w.rag)}${withEdit?` <button class="del" data-del="weekly" data-id="${esc(w.id)}">Delete</button>`:""}</span></div>
+  <dl><dt>Completed</dt><dd>${esc(w.done)||"–"}</dd><dt>Planned next week</dt><dd>${esc(w.next)||"–"}</dd><dt>Risks and blockers</dt><dd>${esc(w.risks)||"–"}</dd>${w.decisions?`<dt>Decisions needed from client</dt><dd>${esc(w.decisions)}</dd>`:""}</dl>`;
+}
+function weeklyView(){
+  const list=[...S.weekly].sort((a,b)=>b.week.localeCompare(a.week));
+  let form="";
+  if(editing){
+    form=list.map(w=>{const k=`data-k="weekly" data-id="${esc(w.id)}"`;return `<div class="panel wform"><div class="whead"><h3 style="margin:0">Week ${weekNo(w.week)} · w/c ${fmt(w.week)}</h3><button class="del" data-del="weekly" data-id="${esc(w.id)}">Delete</button></div>
+      <label>Week commencing<input type="date" ${k} data-f="week" value="${esc(w.week)}"></label>
+      <label>Overall status${sel(RAG,w.rag,`${k} data-f="rag"`)}</label>
+      <label>Completed this week<textarea ${k} data-f="done">${esc(w.done)}</textarea></label>
+      <label>Planned next week<textarea ${k} data-f="next">${esc(w.next)}</textarea></label>
+      <label>Risks and blockers<textarea ${k} data-f="risks">${esc(w.risks)}</textarea></label>
+      <label>Decisions needed from client<textarea ${k} data-f="decisions">${esc(w.decisions)}</textarea></label></div>`}).join("");
+    return `<button class="btn" id="add-week" style="margin-bottom:14px">Add this week's update</button><div class="wlist">${form}</div>`;
+  }
+  return (canWrite?`<button class="btn" id="add-week" style="margin-bottom:14px">+ Add this week's update</button>`:"")+(list.length?`<div class="wlist">${list.map(w=>`<div class="panel wk">${weekCard(w,false)}</div>`).join("")}</div>`:`<p class="empty">No weekly updates yet. The CRM Specialist posts one each week.</p>`);
+}
+
+
+/* ---------- Changes & risks ---------- */
+const REG_TYPES=["Risk","Issue","Change request"];
+const REG_ST=["Open","Under review","Approved","Rejected","Implemented","Mitigated","Closed"];
+const LMH=["Low","Medium","High"];
+const REG_AREA=["Scope","Timeline","Cost","Quality","Compliance","Access / data"];
+const regClosed=x=>["Closed","Rejected","Mitigated","Implemented"].includes(x.status);
+const rating=x=>{if(x.type==="Change request")return x.impact||"";const v=(LMH.indexOf(x.likelihood)+1)*(LMH.indexOf(x.impact)+1);return v>=6?"High":v>=3?"Medium":"Low"};
+const ratePill=v=>v?`<span class="pill ${v==="High"?"s-red":v==="Medium"?"s-amber":"s-green"}">${esc(v)}</span>`:"–";
+const regStClass=s=>({"Open":"Open","Under review":"In review","Approved":"Done","Implemented":"Done","Mitigated":"Done","Closed":"Done","Rejected":"Not started"})[s];
+let regF="";
+function registerView(){
+  const rows=S.register.filter(x=>!regF||x.type===regF);
+  const counts=REG_TYPES.map(t=>[t,S.register.filter(x=>x.type===t&&!regClosed(x)).length]);
+  const body=rows.map(x=>{const k=`data-k="register" data-id="${esc(x.id)}"`,cr=x.type==="Change request";
+    if(editing)return `<tr><td class="mono">${esc(x.id)}</td><td>${sel(REG_TYPES,x.type,`${k} data-f="type" aria-label="Type"`)}</td>
+      <td class="item"><input ${k} data-f="title" value="${esc(x.title)}" aria-label="Title"><textarea ${k} data-f="detail" aria-label="Description" style="margin-top:4px">${esc(x.detail)}</textarea></td>
+      <td>${sel(REG_AREA,x.area,`${k} data-f="area" aria-label="Area"`)}</td>
+      <td>${cr?"–":sel(LMH,x.likelihood,`${k} data-f="likelihood" aria-label="Likelihood"`)}</td>
+      <td>${sel(LMH,x.impact,`${k} data-f="impact" aria-label="Impact"`)}</td>
+      <td class="notes"><textarea ${k} data-f="response" aria-label="Mitigation or decision">${esc(x.response)}</textarea></td>
+      <td><input ${k} data-f="owner" value="${esc(x.owner)}" aria-label="Owner"><input ${k} data-f="raisedBy" value="${esc(x.raisedBy)}" placeholder="Raised by" aria-label="Raised by" style="margin-top:4px"></td>
+      <td><input type="date" ${k} data-f="raised" value="${esc(x.raised)}" aria-label="Date raised"></td>
+      <td>${sel(REG_ST,x.status,`${k} data-f="status" aria-label="Status"`)}<input type="date" ${k} data-f="decided" value="${esc(x.decided)}" aria-label="Decision or close date" style="margin-top:4px"></td>
+      <td><input ${k} data-f="ref" value="${esc(x.ref)}" aria-label="Reference"></td>
+      <td><button class="del" data-del="register" data-id="${esc(x.id)}" aria-label="Delete ${esc(x.id)}">Delete</button></td></tr>`;
+    return `<tr><td class="mono">${esc(x.id)}</td><td>${esc(x.type)}</td><td class="item"><b style="font-weight:600">${esc(x.title)}</b>${x.detail?`<div class="muted" style="margin-top:2px">${esc(x.detail)}</div>`:""}</td><td>${esc(x.area)}</td>
+      <td>${x.type==="Change request"?"–":esc(x.likelihood)}</td><td>${esc(x.impact)}</td><td>${ratePill(rating(x))}</td><td class="notes">${esc(x.response)||"–"}</td><td>${esc(x.owner)||"–"}${x.raisedBy?`<div class="muted" style="font-size:12px">Raised by ${esc(x.raisedBy)}</div>`:""}</td>
+      <td class="mono">${fmt(x.raised)}</td><td>${pill(x.status).replace(/class="pill [^"]+"/,`class="pill ${stClass(regStClass(x.status)||"")}"`)}${x.decided?`<div class="mono muted">${fmt(x.decided)}</div>`:""}</td><td class="mono">${esc(x.ref)||"–"}</td></tr>`}).join("");
+  const head=editing?["ID","Type","Title / description","Area","Likelihood","Impact","Mitigation / decision","Owner / raised by","Raised","Status / decided","Ref",""]:["ID","Type","Title / description","Area","Likelihood","Impact","Rating","Mitigation / decision","Owner","Raised","Status","Ref"];
+  const crs=S.register.filter(x=>x.type==="Change request").length;
+  return `<p style="margin:0 0 12px;max-width:75ch">Risks, issues and change requests in one register. Changes to the signed scope (SDS v1.1, 6 Oct 2026) are raised here as change requests and only proceed once approved in writing (SDS §28). ${crs?"":"<b>No change requests raised since sign-off.</b>"}</p>
+  <div class="chips"><button class="chip" data-chip="reg-type" data-v="" aria-pressed="${!regF}">All <span class="mono">${S.register.length}</span></button>${counts.map(([t,n])=>`<button class="chip" data-chip="reg-type" data-v="${esc(t)}" aria-pressed="${regF===t}">${esc(t)} <span class="mono">${n} open</span></button>`).join("")}</div>
+  <div class="tbl"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${body||`<tr><td colspan="12" class="empty">Nothing logged in this view yet.</td></tr>`}</tbody></table></div>
+  ${canWrite?`<div style="display:flex;flex-wrap:wrap;gap:8px" class="rowadd"><button class="btn" id="add-risk">+ Add risk</button><button class="btn" id="add-issue">+ Add issue</button><button class="btn" id="add-cr">+ Add change request</button></div>`:""}
+  <p class="legend">Risk rating = likelihood × impact. Change requests are rated by impact. Closed, rejected, mitigated and implemented items drop out of the open counts.</p>`;
+}
+/* ---------- Archive ---------- */
+const ARC_TYPES=["Meeting","Approval","Document","Milestone","Change order"];
+const ARC_ST=["Completed","Approved","Scheduled","Pending approval","Cancelled"];
+const linksToText=ls=>(ls||[]).map(l=>l.url?`${l.label} - ${l.url}`:l.label).join("\n");
+function textToLinks(t){return t.split("\n").map(s=>s.trim()).filter(Boolean).map(s=>{const m=s.match(/^(.*?)\s*[-–:]?\s*(https?:\/\/\S+)\s*$/);return m?{label:(m[1]||"Link").replace(/[-–:]\s*$/,"").trim()||"Link",url:m[2]}:{label:s,url:""}})}
+function archiveView(){
+  const list=[...(S.archive||[])].sort((a,b)=>b.date.localeCompare(a.date));
+  const hist=[...(S.history||[])].reverse();
+  const histHtml=`<div class="panel" style="margin-top:20px"><h2>Tracker change log</h2>${hist.length?`<ul class="hist">${hist.map(h=>`<li><span class="mono">${fmt(h.date)}</span><ul>${h.summary.map(s=>`<li>${esc(s)}</li>`).join("")}</ul></li>`).join("")}</ul>`:`<p class="empty">No saved changes yet.</p>`}<p class="legend">Every save adds an entry here automatically, so status changes can be traced back week by week.</p></div>`;
+  if(editing){
+    return `<button class="btn" id="add-arc" style="margin-bottom:14px">Add archive entry</button><div class="wlist">${list.map(m=>{const k=`data-k="archive" data-id="${esc(m.id)}"`;return `<div class="panel wform">
+      <div class="whead"><h3 style="margin:0">${esc(m.stage||"New entry")} · ${fmt(m.date)}</h3><button class="del" data-del="archive" data-id="${esc(m.id)}">Delete</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px">
+        <label>Date<input type="date" ${k} data-f="date" value="${esc(m.date)}"></label>
+        <label>Time<input ${k} data-f="time" value="${esc(m.time)}" placeholder="10:00 am"></label>
+        <label>Stage<input ${k} data-f="stage" value="${esc(m.stage)}"></label>
+        <label>Type${sel(ARC_TYPES,m.type,`${k} data-f="type"`)}</label>
+        <label>Status${sel(ARC_ST,m.status,`${k} data-f="status"`)}</label>
+      </div>
+      <label>Purpose / agenda<textarea ${k} data-f="purpose">${esc(m.purpose)}</textarea></label>
+      <label>Links and documents (one per line: Label - URL)<textarea ${k} data-f="links" style="min-height:96px">${esc(linksToText(m.links))}</textarea></label>
+      <label>Attendees / approver<input ${k} data-f="attendees" value="${esc(m.attendees)}"></label>
+      <label>Decisions and notes<textarea ${k} data-f="notes">${esc(m.notes)}</textarea></label></div>`}).join("")}</div>${histHtml}`;
+  }
+  const items=list.map(m=>{const [y,mo,d]=m.date.split("-").map(Number);
+    const links=(m.links||[]).map(l=>/^https:\/\//.test(l.url)?`<li><a class="lnk" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a></li>`:`<li class="txt">${esc(l.label)}</li>`).join("");
+    return `<li><div class="when"><b>${d}</b><span>${MON[mo-1]} ${y}</span></div><div class="rail"><span class="dot t-${esc(m.type)}"></span></div>
+      <div class="panel card"><div class="tag">${esc(m.type)}</div><h3>${esc(m.stage)}</h3>
+      <div class="meta">${pill(m.status)}${m.time?`<span class="mono">${esc(m.time)}</span>`:""}<span>${esc(m.purpose)}</span></div>
+      ${links?`<ul class="links">${links}</ul>`:""}
+      ${m.attendees?`<div class="who"><span class="muted">Attendees:</span> ${esc(m.attendees)}</div>`:""}
+      ${m.notes?`<div class="who" style="margin-top:4px"><span class="muted">Notes:</span> ${esc(m.notes)}</div>`:""}</div></li>`}).join("");
+  return (canWrite?`<button class="btn" id="add-arc" style="margin-bottom:14px">+ Add archive entry</button>`:"")+`<p style="margin:0 0 14px;max-width:70ch">Record of meetings, recordings, approvals and key documents for the Sylvera London engagement, newest first.</p>
+  ${items?`<ul class="tl">${items}</ul>`:`<p class="empty">No archive entries yet.</p>`}${histHtml}`;
+}
+
+/* ---------- change log ---------- */
+let baseline=null;
+const snap=()=>{baseline=JSON.parse(JSON.stringify(S))};
+function diffSummary(){
+  const out=[],B=baseline||{};
+  const cfg=[["build","Build item","item",["status","due","owner"]],["assets","Asset","name",["status","qa","link"]],["actions","Client action","item",["status","received","due"]],["register","Register item","title",["status"]]];
+  cfg.forEach(([k,label,nameF,fields])=>{
+    const before=new Map((B[k]||[]).map(r=>[r.id,r]));const now=new Map((S[k]||[]).map(r=>[r.id,r]));
+    let other=0;
+    (S[k]||[]).forEach(r=>{const o=before.get(r.id);if(!o){out.push(`${label} ${r.id} added: ${r[nameF]}`);return}
+      let hit=false;fields.forEach(f=>{if((o[f]||"")!==(r[f]||"")){hit=true;
+        if(f==="status")out.push(`${r.id} ${r[nameF]}: ${o.status} → ${r.status}`);
+        else if(f==="due")out.push(`${r.id} due date moved ${fmt(o.due)} → ${fmt(r.due)}`);
+        else if(f==="owner")out.push(`${r.id} owner changed to ${r.owner}`);
+        else if(f==="received"&&r.received)out.push(`${r.id} received ${fmt(r.received)}`);
+        else if(f==="link"&&r.link)out.push(`${r.id} ${r[nameF]}: HubSpot link added`);
+        else if(f==="qa")out.push(`${r.id} ${r[nameF]}: QA ${r.qa}`);}});
+      if(!hit&&JSON.stringify(o)!==JSON.stringify(r))other++;});
+    before.forEach((o,id)=>{if(!now.has(id))out.push(`${label} ${id} removed: ${o[nameF]}`)});
+    if(other)out.push(`${other} other ${label.toLowerCase()} edit${other>1?"s":""} (text or notes)`);
+  });
+  const wb=new Set((B.weekly||[]).map(w=>w.id));S.weekly.forEach(w=>{if(!wb.has(w.id))out.push(`Weekly update added for w/c ${fmt(w.week)}`)});
+  if(JSON.stringify(B.weekly)!==JSON.stringify(S.weekly)&&!out.some(s=>s.startsWith("Weekly")))out.push("Weekly update edited");
+  const ab=new Map((B.archive||[]).map(a=>[a.id,a]));(S.archive||[]).forEach(a=>{const o=ab.get(a.id);if(!o)out.push(`Archive entry added: ${a.stage||a.type} (${fmt(a.date)})`);else if(JSON.stringify(o)!==JSON.stringify(a))out.push(`Archive entry updated: ${a.stage||a.type}`)});
+  ab.forEach((o,id)=>{if(!(S.archive||[]).some(a=>a.id===id))out.push(`Archive entry removed: ${o.stage||o.type}`)});
+  return out.slice(0,25).concat(out.length>25?[`…and ${out.length-25} more changes`]:[]);
+}
+
+/* ---------- render + events ---------- */
+function render(){
+  if(!S)return;
+  header();updateMode();
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.tab===tab));
+  const v=$("view"),y=window.scrollY;
+  v.innerHTML=({overview,build:buildView,assets:assetsView,actions:actionsView,weekly:weeklyView,register:registerView,archive:archiveView})[tab]();
+  window.scrollTo(0,y);
+}
+$("tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;tab=b.dataset.tab;try{history.replaceState(null,"","#"+tab)}catch(_){}render()});
+const findRow=(k,id)=>S[k].find(r=>r.id===id);
+$("view").addEventListener("change",e=>{
+  const el=e.target;
+  if(el.dataset.k){const r=findRow(el.dataset.k,el.dataset.id);if(!r)return;let v=el.value;if(el.dataset.f==="phase")v=+v;if(el.dataset.f==="links")v=textToLinks(v);if(el.dataset.f.startsWith("f.")){r.f=r.f||{};r.f[el.dataset.f.slice(2)]=v}else r[el.dataset.f]=v;
+    if(el.dataset.k==="actions"&&el.dataset.f==="status"&&v==="Received"&&!r.received){r.received=todayISO();}
+    markDirty(["weekly","actions","archive","register"].includes(el.dataset.k)?null:r);
+    if(el.tagName==="SELECT"||el.type==="date")render();return}
+  const map={"fb-phase":["build","phase"],"fb-status":["build","status"],"fb-owner":["build","owner"],"fa-cat":["assets","cat"],"fa-status":["assets","status"],"fa-phase":["assets","phase"]}[el.id];
+  if(map){F[map[0]][map[1]]=el.value.startsWith("All ")?"":el.value;render()}
+});
+$("view").addEventListener("input",e=>{
+  const el=e.target;
+  if(el.id==="fb-q"||el.id==="fa-q"){F[el.id==="fb-q"?"build":"assets"].q=el.value;const pos=el.selectionStart;render();const n=$(el.id);if(n){n.focus();try{n.setSelectionRange(pos,pos)}catch(_){}}}
+});
+$("view").addEventListener("click",e=>{
+  const c=e.target.closest(".chip");
+  if(c){if(c.dataset.chip==="reg-type"){regF=c.dataset.v;render();return}if(c.dataset.chip==="asset-cat"){F.assets.cat=c.dataset.v;F.assets.q="";render();return}const [k,f]=["build","status"];F[k][f]=F[k][f]===c.dataset.v?"":c.dataset.v;render();return}
+  const d=e.target.closest(".del");
+  if(d){if(!d.classList.contains("arm")){d.classList.add("arm");d.textContent="Confirm delete";setTimeout(()=>{if(d.isConnected){d.classList.remove("arm");d.textContent="Delete"}},3000);return}
+    const k=d.dataset.del;S[k]=S[k].filter(r=>r.id!==d.dataset.id);markDirty(null);render();toast("Deleted "+d.dataset.id);return}
+  const nextId=(k,p,w=3,list)=>{const n=Math.max(0,...(list||S[k]).map(r=>+String(r.id).replace(/\D/g,"")||0))+1;return p+String(n).padStart(w,"0")};
+  if(/^add-/.test(e.target.id||"")&&!editing)editing=true;
+  if(e.target.id==="add-action"){S.actions.push({id:nextId("actions","CD-",2),item:"New client action",who:"",phase:1,due:todayISO(),status:"Open",received:"",notes:""});markDirty(null);render();toast("Added client action")}
+  const addReg=(type,p)=>{S.register.push({id:nextId("register",p,3,S.register.filter(x=>x.id.startsWith(p))),type,title:"New "+type.toLowerCase(),detail:"",area:type==="Change request"?"Scope":"Timeline",likelihood:type==="Change request"?"":"Medium",impact:"Medium",response:"",owner:"",raisedBy:"",raised:todayISO(),status:type==="Change request"?"Under review":"Open",decided:"",ref:""});markDirty(null);render();toast("Added "+type.toLowerCase())};
+  if(e.target.id==="add-risk")addReg("Risk","R-");
+  if(e.target.id==="add-issue")addReg("Issue","IS-");
+  if(e.target.id==="add-cr")addReg("Change request","CR-");
+  if(e.target.id==="add-build"){const ph=+(F.build.phase||1);S.build.push({id:nextId("build","B-"),phase:ph,area:"",item:"New build item",spec:"",owner:OWNERS[0],start:todayISO(),due:PH_DATES[ph][1],status:"Not started",dep:"",notes:"",updated:todayISO()});markDirty(null);render();toast("Added build item")}
+  if(e.target.id==="add-asset"){const sec=secOf(F.assets.cat||ASEC[0].k);const f={};sec.cols.forEach(c=>f[c[0]]="");S.assets.push({id:nextId("assets",sec.p+"-",3,S.assets.filter(a=>a.id.startsWith(sec.p+"-"))),cat:sec.k,name:"New item",f,phase:+(F.assets.phase||1),spec:"",owner:OWNERS[0],status:"Not started",qa:"Not tested",link:"",notes:"",updated:todayISO()});markDirty(null);render();toast("Added to "+sec.k)}
+  if(e.target.id==="add-arc"){S.archive=S.archive||[];S.archive.push({id:nextId("archive","M-"),date:todayISO(),time:"",stage:"",type:"Meeting",purpose:"",links:[],attendees:"",status:"Completed",notes:""});markDirty(null);render();toast("Added archive entry")}
+  if(e.target.id==="add-week"){const t=todayISO(),n=Math.max(1,weekNo(t)),ws=weekStart(n);
+    if(S.weekly.some(w=>w.week===ws)){toast("Week "+n+" already has an update");return}
+    S.weekly.push({id:"W"+n+"-"+Date.now().toString(36),week:ws,rag:"Green",done:"",next:"",risks:"",decisions:""});markDirty(null);render()}
+});
+$("m-edit").addEventListener("click",()=>{editing=!editing;render()});
+$("m-save").addEventListener("click",save);
+async function save(){
+  if(!dirty||saving||!artifactNs)return;
+  saving=true;S.meta.lastSaved=todayISO();updateMode();
+  const summary=diffSummary();S.history=S.history||[];const prevHist=S.history.length;
+  if(summary.length)S.history.push({date:todayISO(),summary});
+  try{
+    await artifactNs.publish({"data/tracker.json":{content:JSON.stringify(S,null,1),contentType:"application/json"}});
+    dirty=0;saving=false;snap();toast("Saved. The client view now shows these changes.");render();
+  }catch(err){
+    saving=false;S.history.length=prevHist;const code=err&&err.code;
+    if(code==="conflict"){toast("Someone saved a newer version. Reloading it.")}
+    else if(["not_writer","not_granted","capability_disabled"].includes(code)){canWrite=false;editing=false;toast("This view is read-only, so changes can't be saved here.");render()}
+    else{toast("Save failed. Try again in a moment.");updateMode()}
+  }
+}
+
+/* ---------- export ---------- */
+let dlNs=null;
+const today=()=>{const t=todayISO();return fmt(t)+" "+t.slice(0,4)};
+function exportModel(sel){
+  const t=todayISO(),secs=[];
+  const done=S.build.filter(r=>r.status==="Done").length, live=S.assets.filter(a=>a.status==="Live").length;
+  const openA=S.actions.filter(a=>a.status==="Open"), overA=openA.filter(a=>a.due<t);
+  const latest=[...S.weekly].sort((a,b)=>b.week.localeCompare(a.week))[0];
+  if(sel.includes("overview")){
+    const kv=[["Build start","8 Oct 2026"],["Go-live","20 Nov 2026"],["Build items done",`${done} of ${S.build.length} (${Math.round(done/S.build.length*100)}%)`],["Assets live",`${live} of ${S.assets.length}`],["Client actions open",`${openA.length}${overA.length?` (${overA.length} past due)`:""}`],["Status this week",latest?`${latest.rag} (w/c ${fmt(latest.week)})`:"No update yet"]];
+    [1,2,3,4].forEach(p=>{const it=S.build.filter(r=>+r.phase===p),d=it.filter(r=>r.status==="Done").length;kv.push([`Phase ${p}: ${PHASES[p]}`,`${fmt(PH_DATES[p][0])} – ${fmt(PH_DATES[p][1])} · ${d}/${it.length} done`])});
+    secs.push({title:"Summary",cols:["Item","Detail"],rows:kv,widths:[30,70]});
+  }
+  if(sel.includes("build"))secs.push({title:"Build sheet",cols:["ID","Phase","Area","Build item","Owner","Start","Due","Status","Depends on","Notes"],widths:[6,5,9,26,11,6,6,8,8,15],
+    rows:S.build.map(r=>[r.id,"P"+r.phase,r.area,r.item,r.owner,fmt(r.start),fmt(r.due)+(isLate(r)?" (late)":""),r.status,r.dep||"",r.notes||""])});
+  if(sel.includes("assets"))assetSections().forEach(k=>{const sec=secOf(k),list=S.assets.filter(a=>a.cat===k);if(!list.length)return;const n=sec.cols.length;const share=Math.max(6,Math.floor(56/Math.max(1,n)));
+    secs.push({title:"Assets · "+k,cols:["ID","Name",...sec.cols.map(c=>c[1]),"Phase","Status","QA","Notes"],widths:[6,12,...sec.cols.map(()=>share),4,7,6,9].map((w,_,arr)=>w*100/arr.reduce((x,y)=>x+y,0)),
+      rows:list.map(a=>[a.id,a.name,...sec.cols.map(c=>(a.f||{})[c[0]]||""),"P"+a.phase,a.status,a.qa||"Not tested",a.notes||""])})});
+  if(sel.includes("actions"))secs.push({title:"Client actions",cols:["ID","What we need","Who","Needed for","Due","Status","Received","Notes"],widths:[6,34,11,9,7,8,8,17],
+    rows:S.actions.map(a=>[a.id,a.item,a.who||"",a.phase?"Phase "+a.phase:"Before build",fmt(a.due),actStatus(a),a.received?fmt(a.received):"",a.notes||""])});
+  if(sel.includes("weekly"))secs.push({title:"Weekly updates",cols:["Week","Status","Completed","Planned next week","Risks and blockers","Decisions needed"],widths:[10,7,22,22,22,17],
+    rows:[...S.weekly].sort((a,b)=>b.week.localeCompare(a.week)).map(w=>[`Week ${weekNo(w.week)} · w/c ${fmt(w.week)}`,w.rag,w.done||"",w.next||"",w.risks||"",w.decisions||""])});
+  if(sel.includes("register"))secs.push({title:"Changes and risks",cols:["ID","Type","Title","Description","Area","Likelihood","Impact","Rating","Mitigation / decision","Owner","Raised","Status"],widths:[5,7,12,15,6,6,5,5,17,8,6,8],
+    rows:S.register.map(x=>[x.id,x.type,x.title,x.detail||"",x.area||"",x.type==="Change request"?"":x.likelihood||"",x.impact||"",rating(x),x.response||"",x.owner||"",fmt(x.raised),x.status+(x.decided?" ("+fmt(x.decided)+")":"")])});
+  if(sel.includes("archive")){
+    secs.push({title:"Archive",cols:["Date","Stage","Type","Purpose","Links and documents","Attendees","Status","Notes"],widths:[7,10,7,17,24,12,7,16],
+      rows:[...(S.archive||[])].sort((a,b)=>b.date.localeCompare(a.date)).map(m=>[fmt(m.date)+" "+m.date.slice(0,4)+(m.time?" "+m.time:""),m.stage,m.type,m.purpose,(m.links||[]).map(l=>l.url?`${l.label}: ${l.url}`:l.label).join("\n"),m.attendees||"",m.status,m.notes||""])});
+    if((S.history||[]).length)secs.push({title:"Tracker change log",cols:["Date","Changes"],widths:[12,88],rows:[...S.history].reverse().map(h=>[fmt(h.date),h.summary.join("\n")])});
+  }
+  return {title:"Sylvera · HubSpot Project Tracker",sub:`Digital Nexa · CRM Implementation · Exported ${today()}`,secs};
+}
+function exportHTML(m){
+  const td=v=>esc(v).replace(/\n/g,"<br>").replace(/(https:\/\/[^\s<]+)/g,'<a href="$1">$1</a>');
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(m.title)}</title><style>
+body{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;color:#1b1d24;background:#fff;margin:0;padding:32px 24px;font-size:13px;line-height:1.45}
+h1{font-family:Georgia,serif;font-weight:400;font-size:30px;margin:0 0 4px}.sub{color:#5d6272;margin-bottom:24px}
+h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#7d1d3a;margin:28px 0 8px}
+.wrap{overflow-x:auto}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #d9dce3;padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#eceef2;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#5d6272}a{color:#7d1d3a;word-break:break-all}
+</style></head><body><h1>${esc(m.title)}</h1><div class="sub">${esc(m.sub)}</div>${m.secs.map(s=>`<h2>${esc(s.title)}</h2><div class="wrap"><table><thead><tr>${s.cols.map(c=>`<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${s.rows.map(r=>`<tr>${r.map(v=>`<td>${td(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`).join("")}</body></html>`;
+}
+const loaded={};
+function loadScript(src){return loaded[src]||(loaded[src]=new Promise((res,rej)=>{const e=document.createElement("script");e.src=src;e.onload=res;e.onerror=()=>{delete loaded[src];rej(new Error("load"))};document.head.appendChild(e)}))}
+const pdfSafe=v=>String(v??"").replace(/≥/g,">=").replace(/≤/g,"<=").replace(/→/g,"->").replace(/[^\x00-\xFF–—‘’“”•…€]/g,"");
+async function exportPDF(m){
+  await loadScript("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js");
+  await loadScript("https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js");
+  const {jsPDF}=window.jspdf, doc=new jsPDF({orientation:"landscape",unit:"pt",format:"a4"});
+  const W=doc.internal.pageSize.getWidth()-64;
+  doc.setFont("helvetica","normal");doc.setFontSize(20);doc.text(pdfSafe(m.title),32,44);
+  doc.setFontSize(10);doc.setTextColor(93,98,114);doc.text(pdfSafe(m.sub),32,62);
+  let y=84;
+  m.secs.forEach((s,i)=>{
+    if(i&&y>doc.internal.pageSize.getHeight()-120){doc.addPage();y=44}
+    doc.setFontSize(12);doc.setTextColor(125,29,58);doc.text(pdfSafe(s.title.toUpperCase()),32,y);
+    const cs={};s.widths.forEach((w,k)=>cs[k]={cellWidth:W*w/100});
+    doc.autoTable({startY:y+8,head:[s.cols.map(pdfSafe)],body:s.rows.map(r=>r.map(pdfSafe)),margin:{left:32,right:32},columnStyles:cs,
+      styles:{font:"helvetica",fontSize:7.5,cellPadding:3,textColor:[27,29,36],lineColor:[217,220,227],lineWidth:.5,overflow:"linebreak"},
+      headStyles:{fillColor:[236,238,242],textColor:[93,98,114],fontStyle:"bold"}});
+    y=doc.lastAutoTable.finalY+28;
+  });
+  const n=doc.getNumberOfPages();for(let i=1;i<=n;i++){doc.setPage(i);doc.setFontSize(8);doc.setTextColor(93,98,114);doc.text(`Page ${i} of ${n}`,doc.internal.pageSize.getWidth()-32,doc.internal.pageSize.getHeight()-16,{align:"right"})}
+  return doc.output("blob");
+}
+async function exportDOCX(m){
+  await loadScript("https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js");
+  const D=window.docx;
+  const para=(t,o={})=>new D.Paragraph({children:String(t??"").split("\n").map((ln,i)=>new D.TextRun({text:ln,break:i?1:0,size:o.size||16,bold:o.bold,color:o.color,font:"Calibri"})),spacing:o.spacing});
+  const border={style:D.BorderStyle.SINGLE,size:4,color:"D9DCE3"};
+  const kids=[para(m.title,{size:40,spacing:{after:80}}),para(m.sub,{size:18,color:"5D6272",spacing:{after:240}})];
+  m.secs.forEach(s=>{
+    kids.push(para(s.title.toUpperCase(),{size:22,bold:true,color:"7D1D3A",spacing:{before:240,after:120}}));
+    const row=(cells,head)=>new D.TableRow({tableHeader:!!head,children:cells.map((c,k)=>new D.TableCell({width:{size:s.widths[k]*50,type:D.WidthType.PERCENTAGE},shading:head?{fill:"ECEEF2",type:D.ShadingType.CLEAR,color:"auto"}:undefined,
+      borders:{top:border,bottom:border,left:border,right:border},margins:{top:40,bottom:40,left:60,right:60},children:[para(c,{bold:head,size:head?15:16,color:head?"5D6272":"1B1D24"})]}))});
+    kids.push(new D.Table({width:{size:5000,type:D.WidthType.PERCENTAGE},rows:[row(s.cols,true),...s.rows.map(r=>row(r,false))]}));
+  });
+  const doc=new D.Document({creator:"Digital Nexa",title:m.title,sections:[{properties:{page:{size:{orientation:D.PageOrientation.LANDSCAPE},margin:{top:720,bottom:720,left:720,right:720}}},children:kids}]});
+  return D.Packer.toBlob(doc);
+}
+async function runExport(){
+  const fmtSel=document.querySelector('input[name="xf"]:checked').value;
+  const sel=[...document.querySelectorAll('#xp input[type=checkbox]:checked')].map(c=>c.value);
+  const msg=$("xp-msg"),go=$("xp-go");
+  if(!sel.length){msg.textContent="Pick at least one section to export.";return}
+  if(dirty){msg.textContent="Save your changes first, so the export matches what the client sees.";return}
+  go.disabled=true;msg.textContent="Preparing the file…";
+  try{
+    const m=exportModel(sel),base=`Sylvera-HubSpot-Project-Tracker-${todayISO()}`;
+    let data,ext;
+    if(fmtSel==="html"){data=exportHTML(m);ext="html"}
+    else if(fmtSel==="pdf"){data=await exportPDF(m);ext="pdf"}
+    else{data=await exportDOCX(m);ext="docx"}
+    if(dlNs)await dlNs.save({filename:`${base}.${ext}`,data});
+    else{const blob=data instanceof Blob?data:new Blob([data],{type:"text/html"});const u=URL.createObjectURL(blob);const a=document.createElement("a");a.href=u;a.download=`${base}.${ext}`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
+    msg.textContent="Saved.";
+  }catch(err){
+    const c=err&&err.code;
+    msg.textContent=c==="declined"?"Download cancelled.":c==="rate_limited"?"A download prompt is already open. Try again in a moment.":c==="extension_not_enabled"?"That format isn't available in this view. Try HTML.":err&&err.message==="load"?"The export library couldn't load. Check your connection and try again.":"The export didn't complete. Try again.";
+  }finally{go.disabled=false}
+}
+$("m-export").addEventListener("click",()=>{const p=$("xp");p.hidden=!p.hidden;$("m-export").setAttribute("aria-expanded",String(!p.hidden));$("xp-msg").textContent="Exports the saved tracker as of today."});
+$("xp-close").addEventListener("click",()=>{$("xp").hidden=true;$("m-export").setAttribute("aria-expanded","false")});
+$("xp-go").addEventListener("click",runExport);
+window.addEventListener("beforeunload",e=>{if(dirty){e.preventDefault();e.returnValue=""}});
+
+(async function init(){
+  const h=(location.hash||"").slice(1);if(["overview","build","assets","actions","weekly","register","archive"].includes(h))tab=h;
+  try{const r=await fetch("data/tracker.json",{cache:"no-store"});if(!r.ok)throw 0;S=await r.json();S.archive=S.archive||[];S.history=S.history||[];S.register=S.register||[];snap()}
+  catch(_){ $("view").innerHTML=`<p class="empty">The tracker data could not be loaded. Refresh the page to try again.</p>`;$("m-badge").textContent="Offline";return}
+  render();
+  try{
+    if(window.claude&&window.claude.use){
+      const [u,a,dl]=await Promise.all([window.claude.use("user"),window.claude.use("artifact"),window.claude.use("downloads")]);
+      dlNs=dl;$("m-export").hidden=!dl;
+      artifactNs=a;const ce=u?await u.canEdit():false;canWrite=!!(a&&ce);render();
+    }else{$("m-export").hidden=false;updateMode()}
+  }catch(_){$("m-export").hidden=false;updateMode()}
+})();
+})();
+</script>
+
+</body></html>
