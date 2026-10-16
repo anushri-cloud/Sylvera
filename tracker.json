@@ -1,0 +1,5804 @@
+{
+ "meta": {
+  "client": "Sylvera London",
+  "project": "HubSpot CRM Build",
+  "start": "2026-10-08",
+  "golive": "2026-11-20",
+  "lastSaved": "2026-10-16"
+ },
+ "build": [
+  {
+   "id": "B-001",
+   "phase": 1,
+   "area": "Governance",
+   "item": "SDS v1.1 signed by client (scope baseline)",
+   "spec": "§30",
+   "owner": "NEXA Project Director",
+   "start": "2026-10-06",
+   "due": "2026-10-06",
+   "status": "Done",
+   "dep": "",
+   "notes": "Signed by Jennifer Ashby, MD, 06/10/26",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-002",
+   "phase": 1,
+   "area": "Governance",
+   "item": "Build kick-off and weekly cadence set (this tracker)",
+   "spec": "§28",
+   "owner": "NEXA Project Director",
+   "start": "2026-10-08",
+   "due": "2026-10-09",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-003",
+   "phase": 1,
+   "area": "Portal setup",
+   "item": "Portal settings: USD company currency, Dubai time zone, EU data hosting confirmed",
+   "spec": "§4.1, §20",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-10",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-004",
+   "phase": 1,
+   "area": "Portal setup",
+   "item": "Business hours configured (start timing for response standards)",
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-21",
+   "status": "Not started",
+   "dep": "CD-08",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-005",
+   "phase": 1,
+   "area": "Data model",
+   "item": "Contact properties: 7 groups, sylv_ prefix (core, clienteling, relationship, purchase history, attribution, scoring, product interest)",
+   "spec": "§8.2–8.3",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-16",
+   "status": "In review",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "B-006",
+   "phase": 1,
+   "area": "Data model",
+   "item": "Company properties, trade side (nature of business, trading vs brand, raw vs set, licence and free zone, product interest)",
+   "spec": "§8.4",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-16",
+   "status": "In review",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "B-007",
+   "phase": 1,
+   "area": "Data model",
+   "item": "Deal properties (19), incl. Design Reference, SKU, Quote Value, Payment Stage, Collection Location, Fulfilment Status",
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-18",
+   "status": "In review",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "B-008",
+   "phase": 1,
+   "area": "Lifecycle",
+   "item": "Lifecycle stages: 8-stage ladder plus Other, Customer renamed to Client",
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-14",
+   "status": "Done",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "B-009",
+   "phase": 1,
+   "area": "Lifecycle",
+   "item": "Lead statuses: New, Attempting Contact, Connected, Qualified, Nurture, Unqualified",
+   "spec": "§9.2",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-14",
+   "status": "Done",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "B-010",
+   "phase": 1,
+   "area": "Users",
+   "item": "Role-based permission sets for 7 roles (2 Super Admins, sales, CEO view, pending hires)",
+   "spec": "§18",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-21",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-011",
+   "phase": 1,
+   "area": "Channels",
+   "item": "Social and ad account consolidation: locate, reclaim, single Sylvera-owned admin",
+   "spec": "§16",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-21",
+   "status": "Not started",
+   "dep": "CD-03, CD-04",
+   "notes": "Starts immediately; no dependency on other build work",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-012",
+   "phase": 1,
+   "area": "Channels",
+   "item": "Third-party connection risk disclosure confirmed in writing",
+   "spec": "§13.1",
+   "owner": "NEXA Project Director",
+   "start": "2026-10-08",
+   "due": "2026-10-14",
+   "status": "Not started",
+   "dep": "CD-05",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-013",
+   "phase": 1,
+   "area": "Analytics",
+   "item": "Google Analytics, Business Profile and Search Console set up fresh for Sylvera",
+   "spec": "§13",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-21",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-014",
+   "phase": 1,
+   "area": "Compliance",
+   "item": "Cookie consent banner live on storefront",
+   "spec": "§19.1",
+   "owner": "NEXA Shopify Team",
+   "start": "2026-10-08",
+   "due": "2026-10-17",
+   "status": "Not started",
+   "dep": "",
+   "notes": "Foundation for behavioural scoring data",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-063",
+   "phase": 1,
+   "area": "Portal setup",
+   "item": "Connect the shared enquiry inbox to HubSpot (not hardwired until address confirmed)",
+   "spec": "§12, R&D §1",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-21",
+   "status": "Not started",
+   "dep": "CD-02",
+   "notes": "Enquiry form destination inbox may change (Jen)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-064",
+   "phase": 1,
+   "area": "Commerce",
+   "item": "Verify current Shopify plan supports Shopify Markets (multi-market selling)",
+   "spec": "§29 A-01",
+   "owner": "NEXA Shopify Team",
+   "start": "2026-10-08",
+   "due": "2026-10-16",
+   "status": "Not started",
+   "dep": "",
+   "notes": "Checked directly in Shopify admin; required before multi-currency configuration",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-066",
+   "phase": 1,
+   "area": "Commerce",
+   "item": "Pull 90 days of abandoned checkout data to confirm availability",
+   "spec": "§29 A-02",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-08",
+   "due": "2026-10-21",
+   "status": "Not started",
+   "dep": "CD-12",
+   "notes": "Opportunity stage and abandoned checkout workflow depend on it",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-067",
+   "phase": 1,
+   "area": "Governance",
+   "item": "Monday.com sync quoted (10-hour minimum) and agreed in writing",
+   "spec": "§6.2, §13",
+   "owner": "NEXA Project Director",
+   "start": "2026-10-08",
+   "due": "2026-10-21",
+   "status": "Not started",
+   "dep": "",
+   "notes": "Costed separately from the Phase 1 total per signed proposal",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-015",
+   "phase": 1,
+   "area": "Governance",
+   "item": "Phase 1 review call with client",
+   "spec": "§26, §28",
+   "owner": "NEXA Project Director",
+   "start": "2026-10-21",
+   "due": "2026-10-21",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-016",
+   "phase": 2,
+   "area": "Pipelines",
+   "item": "B2C New Business pipeline, 9 stages",
+   "spec": "§10.1",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-10-24",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-017",
+   "phase": 2,
+   "area": "Pipelines",
+   "item": "Client Relationship pipeline (post-purchase), 5 stages",
+   "spec": "§10.2",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-10-24",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-018",
+   "phase": 2,
+   "area": "Pipelines",
+   "item": "LondonDE Trade pipeline, 5 stages, interim owner",
+   "spec": "§10.3",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-10-24",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-019",
+   "phase": 2,
+   "area": "Pipelines",
+   "item": "Shopify Orders operational pipeline, single stage",
+   "spec": "§10.4",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-10-24",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-020",
+   "phase": 2,
+   "area": "Pipelines",
+   "item": "Retire default Sales Pipeline",
+   "spec": "§4.1",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-10-24",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-021",
+   "phase": 2,
+   "area": "Scoring",
+   "item": "Fit score workflow (out of 65): advocacy 35, two+ residences 30",
+   "spec": "§11",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-10-29",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-022",
+   "phase": 2,
+   "area": "Scoring",
+   "item": "Engagement score workflow (out of 100) with decay on recency and page views",
+   "spec": "§11",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-10-29",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-023",
+   "phase": 2,
+   "area": "Scoring",
+   "item": "Tier assignment (VIP, Tier 2, Tier 3, No tier) with adjustable thresholds: Fit ≥50, Engagement ≥60",
+   "spec": "§11.1",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-10-31",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-024",
+   "phase": 2,
+   "area": "Scoring",
+   "item": "Scoring tested on test records",
+   "spec": "§26",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-11-04",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-025",
+   "phase": 2,
+   "area": "Automation",
+   "item": "Core workflows: enquiry routing (private and trade), form routing, scoring recalculation, stalled deal alert",
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-11-04",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-026",
+   "phase": 2,
+   "area": "Automation",
+   "item": "Response standard monitoring workflow",
+   "spec": "§12, §22",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-15",
+   "due": "2026-11-04",
+   "status": "Not started",
+   "dep": "CD-08",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-027",
+   "phase": 2,
+   "area": "Licensing",
+   "item": "Marketing Hub Professional confirmed and purchased",
+   "spec": "§5.2",
+   "owner": "Sylvera London",
+   "start": "2026-10-15",
+   "due": "2026-10-21",
+   "status": "Not started",
+   "dep": "CD-06",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-028",
+   "phase": 2,
+   "area": "Governance",
+   "item": "Phase 2 review call with client",
+   "spec": "§26",
+   "owner": "NEXA Project Director",
+   "start": "2026-11-04",
+   "due": "2026-11-04",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-029",
+   "phase": 3,
+   "area": "Commerce",
+   "item": "Shopify native data sync connected (contacts, orders, purchase history)",
+   "spec": "§13",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-10-28",
+   "status": "Not started",
+   "dep": "CD-12",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-030",
+   "phase": 3,
+   "area": "Commerce",
+   "item": "Deal-creation mechanism from Shopify orders (workflow-built)",
+   "spec": "§5.1, §13",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-04",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-031",
+   "phase": 3,
+   "area": "Commerce",
+   "item": "Stripe gateway incl. in-person payments, Dubai settlement",
+   "spec": "§6.2",
+   "owner": "NEXA Shopify Team",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-07",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-032",
+   "phase": 3,
+   "area": "Commerce",
+   "item": "Shopify Markets, multi-currency checkout (USD, GBP, EUR, AED), buy-and-collect in Dubai",
+   "spec": "§6.2, §20",
+   "owner": "NEXA Shopify Team",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-07",
+   "notes": "Assumption A-01: plan supports multi-market",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-033",
+   "phase": 3,
+   "area": "Commerce",
+   "item": "VAT logic by collection or delivery market",
+   "spec": "§20",
+   "owner": "NEXA Shopify Team",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-034",
+   "phase": 3,
+   "area": "Commerce",
+   "item": "HubSpot transaction currencies configured (USD reporting)",
+   "spec": "§20",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-04",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-035",
+   "phase": 3,
+   "area": "Fulfilment",
+   "item": "Monday.com bi-directional sync (custom app on Data Hub Starter)",
+   "spec": "§13",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "",
+   "notes": "Costed separately per signed proposal",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-036",
+   "phase": 3,
+   "area": "Channels",
+   "item": "WhatsApp Business on dedicated new number",
+   "spec": "§13",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-13",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-037",
+   "phase": 3,
+   "area": "Channels",
+   "item": "Connect 6 social channels (Instagram, Facebook, TikTok, LinkedIn, YouTube, Pinterest)",
+   "spec": "§16",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-03",
+   "notes": "A-06: Pinterest may stay native",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-038",
+   "phase": 3,
+   "area": "Channels",
+   "item": "Connect 4 ad platforms (Google, Meta, LinkedIn, TikTok)",
+   "spec": "§16",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-04",
+   "notes": "Account holder must be available for OTP",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-039",
+   "phase": 3,
+   "area": "Data migration",
+   "item": "Shopify contact export, assess, cleanse, dedupe",
+   "spec": "§21",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-10-31",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-040",
+   "phase": 3,
+   "area": "Data migration",
+   "item": "Clean import of Shopify contacts (approx. 1,000–2,500)",
+   "spec": "§21",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-06",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-041",
+   "phase": 3,
+   "area": "Data migration",
+   "item": "Trade contact list cleanse and import",
+   "spec": "§21",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-09",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-042",
+   "phase": 3,
+   "area": "Data migration",
+   "item": "Fundraising list (approx. 400) imported quarantined",
+   "spec": "§21",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-10",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-043",
+   "phase": 3,
+   "area": "Data migration",
+   "item": "Historical event and guest lists cleanse and import",
+   "spec": "§21",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-11",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-044",
+   "phase": 3,
+   "area": "Consent",
+   "item": "Segments and lists (11), incl. re-permission and quarantine lists",
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-045",
+   "phase": 3,
+   "area": "Consent",
+   "item": "Consent re-permission campaign, commercial database (staggered sends)",
+   "spec": "§19.1",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-046",
+   "phase": 3,
+   "area": "Marketing",
+   "item": "HubSpot forms replace 2 Shopify forms; newsletter, advertising and RSVP forms",
+   "spec": "§15.1",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-14",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-047",
+   "phase": 3,
+   "area": "Marketing",
+   "item": "Six email templates: copy and logic",
+   "spec": "§15.3",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "",
+   "notes": "Visual design held for brand refresh (CD-15)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-048",
+   "phase": 3,
+   "area": "Automation",
+   "item": "Remaining workflows (sales, marketing, service recovery, hygiene) to reach 23",
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-068",
+   "phase": 3,
+   "area": "Data migration",
+   "item": "Post-import QA spot-check (10+ records) and dedup verification",
+   "spec": "§21, §27",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-10",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-070",
+   "phase": 3,
+   "area": "Marketing",
+   "item": "Apply new brand identity to email templates, forms and holding page",
+   "spec": "§15.3, A-08",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "CD-15",
+   "notes": "Template copy and logic proceed now; visual design waits for brand assets",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-049",
+   "phase": 3,
+   "area": "Governance",
+   "item": "Phase 3 review call with client",
+   "spec": "§26",
+   "owner": "NEXA Project Director",
+   "start": "2026-11-11",
+   "due": "2026-11-11",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-054",
+   "phase": 4,
+   "area": "Enablement",
+   "item": "Training session 1: Sales",
+   "spec": "§27",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-28",
+   "due": "2026-10-28",
+   "status": "Not started",
+   "dep": "CD-17",
+   "notes": "Training begins mid-October per SDS",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-050",
+   "phase": 4,
+   "area": "Reporting",
+   "item": "20 dashboards and reports",
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-05",
+   "due": "2026-11-16",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-051",
+   "phase": 4,
+   "area": "Reporting",
+   "item": "Executive email summary to CEO",
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-05",
+   "due": "2026-11-16",
+   "status": "Not started",
+   "dep": "CD-01",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-052",
+   "phase": 4,
+   "area": "Website",
+   "item": "Holding page with lead capture and source tracking",
+   "spec": "§6.2",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-05",
+   "due": "2026-11-14",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-053",
+   "phase": 4,
+   "area": "Users",
+   "item": "Named users added per seat",
+   "spec": "§18",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-05",
+   "due": "2026-11-12",
+   "status": "Not started",
+   "dep": "CD-16",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-056",
+   "phase": 4,
+   "area": "Enablement",
+   "item": "Reference guide (one-pager) for all users",
+   "spec": "§27",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-05",
+   "due": "2026-11-14",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-073",
+   "phase": 4,
+   "area": "Support",
+   "item": "Support package start date and helpdesk arrangement confirmed in writing",
+   "spec": "§28",
+   "owner": "NEXA Project Director",
+   "start": "2026-11-05",
+   "due": "2026-11-12",
+   "status": "Not started",
+   "dep": "",
+   "notes": "Helpdesk 08:30–17:30 Mon–Fri; out-of-hours on prior confirmation",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-055",
+   "phase": 4,
+   "area": "Enablement",
+   "item": "Training session 2: Marketing (live test send)",
+   "spec": "§27",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-12",
+   "due": "2026-11-12",
+   "status": "Not started",
+   "dep": "CD-17",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-071",
+   "phase": 4,
+   "area": "UAT",
+   "item": "End-to-end walkthrough: enquiry to purchase to fulfilment to dashboard, B2C and B2B",
+   "spec": "§26",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-12",
+   "due": "2026-11-13",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-057",
+   "phase": 4,
+   "area": "UAT",
+   "item": "User acceptance testing on real deals",
+   "spec": "§27",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-13",
+   "due": "2026-11-18",
+   "status": "Not started",
+   "dep": "CD-17",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-072",
+   "phase": 4,
+   "area": "Go-live",
+   "item": "Go-live readiness checklist (incl. note that social and ad connections disconnect annually and on password change)",
+   "spec": "§13.1, §26",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-14",
+   "due": "2026-11-19",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-058",
+   "phase": 4,
+   "area": "UAT",
+   "item": "UAT sign-off",
+   "spec": "§26",
+   "owner": "Sylvera London",
+   "start": "2026-11-19",
+   "due": "2026-11-19",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-059",
+   "phase": 4,
+   "area": "Go-live",
+   "item": "Go-live",
+   "spec": "§26",
+   "owner": "NEXA Project Director",
+   "start": "2026-11-20",
+   "due": "2026-11-20",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-060",
+   "phase": 4,
+   "area": "Go-live",
+   "item": "Fundraising database re-permission invitation (post go-live)",
+   "spec": "§12, §19",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-21",
+   "due": "2026-11-30",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "B-061",
+   "phase": 4,
+   "area": "Support",
+   "item": "Post go-live stabilisation support",
+   "spec": "§28",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-11-21",
+   "due": "2026-12-18",
+   "status": "Not started",
+   "dep": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  }
+ ],
+ "assets": [
+  {
+   "id": "PROP-001",
+   "cat": "Properties",
+   "name": "Preferred Contact Method",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_preferred_contact_method",
+    "type": "Dropdown",
+    "options": "WhatsApp; Email; Phone; Face-to-face appointment",
+    "required": "Yes",
+    "group": "Core operational",
+    "populated": "Manual / form"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-002",
+   "cat": "Properties",
+   "name": "Contact Type",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_contact_type",
+    "type": "Dropdown",
+    "options": "Client; Supplier; Internal",
+    "required": "Yes",
+    "group": "Core operational",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-003",
+   "cat": "Properties",
+   "name": "Ring Size",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_ring_size",
+    "type": "Single-line text",
+    "options": "Regional size format",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-004",
+   "cat": "Properties",
+   "name": "Style / Product Preferences",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_style_preferences",
+    "type": "Multi-checkbox",
+    "options": "Client-defined tag list",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Client review",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Client input required: list of style and product tags. Placeholder option only.",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-005",
+   "cat": "Properties",
+   "name": "Birthday",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_birthday",
+    "type": "Date",
+    "options": "Single date",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-006",
+   "cat": "Properties",
+   "name": "Anniversary",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_anniversary",
+    "type": "Date",
+    "options": "Single date",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-007",
+   "cat": "Properties",
+   "name": "Observed Occasions",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_observed_occasions",
+    "type": "Multi-checkbox",
+    "options": "Client-defined occasion list",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Client review",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Client input required: list of occasions to track. Placeholder option only.",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-008",
+   "cat": "Properties",
+   "name": "Residences",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_residences",
+    "type": "Multi-line text",
+    "options": "Free text",
+    "required": "No",
+    "group": "Relationship context",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Converted to number - Because to be used in Lead Scoring !\n",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "PROP-009",
+   "cat": "Properties",
+   "name": "Travel Patterns",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_travel_patterns",
+    "type": "Multi-line text",
+    "options": "Free text (not scored yet)",
+    "required": "No",
+    "group": "Relationship context",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-010",
+   "cat": "Properties",
+   "name": "Event Attendance",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_event_attendance",
+    "type": "Multi-checkbox",
+    "options": "Event name / date list",
+    "required": "No",
+    "group": "Relationship context",
+    "populated": "RSVP workflow / manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Client review",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Client input required: event names and dates (ties to CD-11, historical event lists). Placeholder option only.",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-011",
+   "cat": "Properties",
+   "name": "Last Purchase Date",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_last_purchase_date",
+    "type": "Date",
+    "options": "Synced from Shopify, read-only",
+    "required": "No",
+    "group": "Purchase history",
+    "populated": "Shopify sync"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-012",
+   "cat": "Properties",
+   "name": "Lifetime Value",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_lifetime_value",
+    "type": "Number (currency)",
+    "options": "USD, synced from Shopify, read-only",
+    "required": "No",
+    "group": "Purchase history",
+    "populated": "Shopify sync"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-013",
+   "cat": "Properties",
+   "name": "Dormant Flag",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_dormant_flag",
+    "type": "Yes / No",
+    "options": "Set at 2 years without purchase",
+    "required": "No",
+    "group": "Purchase history",
+    "populated": "Workflow"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-014",
+   "cat": "Properties",
+   "name": "Staff Purchase",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_staff_purchase",
+    "type": "Yes / No",
+    "options": "Staff purchases settle by bank transfer",
+    "required": "No",
+    "group": "Purchase history",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-015",
+   "cat": "Properties",
+   "name": "Advocacy",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_advocacy",
+    "type": "Yes / No",
+    "options": "Existing client personally introduced this contact",
+    "required": "No",
+    "group": "Attribution",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-016",
+   "cat": "Properties",
+   "name": "Referral Source",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_referral_source",
+    "type": "Dropdown",
+    "options": "Client-defined source list",
+    "required": "No",
+    "group": "Attribution",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Client review",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Client input required: list of referral sources. Placeholder option only.",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-017",
+   "cat": "Properties",
+   "name": "Referred By",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_referred_by",
+    "type": "Single-line text",
+    "options": "Referring client name / reference",
+    "required": "No",
+    "group": "Attribution",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-018",
+   "cat": "Properties",
+   "name": "Staff Referral",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_staff_referral",
+    "type": "Single-line text",
+    "options": "Referring staff member, on the referred client's record",
+    "required": "No",
+    "group": "Attribution",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-019",
+   "cat": "Properties",
+   "name": "Internal Lead Source",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_lead_source_internal",
+    "type": "Dropdown",
+    "options": "Social media (default); Referral; Event; Press; Search; Other",
+    "required": "No",
+    "group": "Attribution",
+    "populated": "Staff, after first conversation"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-020",
+   "cat": "Properties",
+   "name": "Fit Score",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_fit_score",
+    "type": "Number",
+    "options": "0–65, calculated",
+    "required": "No",
+    "group": "Scoring",
+    "populated": "Workflow (calculated)"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-021",
+   "cat": "Properties",
+   "name": "Engagement Score",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_engagement_score",
+    "type": "Number",
+    "options": "0–100, calculated, decaying inputs",
+    "required": "No",
+    "group": "Scoring",
+    "populated": "Workflow (calculated)"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-022",
+   "cat": "Properties",
+   "name": "Client Tier",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_tier",
+    "type": "Dropdown",
+    "options": "VIP; Tier 2; Tier 3; No tier",
+    "required": "No",
+    "group": "Scoring",
+    "populated": "Workflow (calculated)"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-023",
+   "cat": "Properties",
+   "name": "Gold Bullion Interest",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_gold_bullion_interest",
+    "type": "Yes / No",
+    "options": "Captured ahead of product launch",
+    "required": "No",
+    "group": "Product interest",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-024",
+   "cat": "Properties",
+   "name": "Nature of Business",
+   "f": {
+    "object": "Company",
+    "internal": "sylv_business_nature",
+    "type": "Dropdown",
+    "options": "Trading; Retail; Distribution; Other",
+    "required": "Yes",
+    "group": "Trade",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.4",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-025",
+   "cat": "Properties",
+   "name": "Region",
+   "f": {
+    "object": "Company",
+    "internal": "sylv_region",
+    "type": "Dropdown",
+    "options": "GCC; Europe; Asia; Americas; Other",
+    "required": "No",
+    "group": "Trade",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.4",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-026",
+   "cat": "Properties",
+   "name": "Number of Offices",
+   "f": {
+    "object": "Company",
+    "internal": "sylv_office_count",
+    "type": "Number",
+    "options": "Integer",
+    "required": "No",
+    "group": "Trade",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.4",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-027",
+   "cat": "Properties",
+   "name": "Primary Contact Role",
+   "f": {
+    "object": "Company",
+    "internal": "sylv_contact_role",
+    "type": "Single-line text",
+    "options": "Free text",
+    "required": "No",
+    "group": "Trade",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.4",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-028",
+   "cat": "Properties",
+   "name": "Trading vs Brand",
+   "f": {
+    "object": "Company",
+    "internal": "sylv_account_type",
+    "type": "Dropdown",
+    "options": "Trading house (raw material); Brand account (finished pieces)",
+    "required": "Yes",
+    "group": "Trade",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.4",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-029",
+   "cat": "Properties",
+   "name": "Raw vs Set",
+   "f": {
+    "object": "Company",
+    "internal": "sylv_raw_or_set",
+    "type": "Dropdown",
+    "options": "Raw; Set; Both",
+    "required": "No",
+    "group": "Trade",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.4",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-030",
+   "cat": "Properties",
+   "name": "Licence / Free Zone Status",
+   "f": {
+    "object": "Company",
+    "internal": "sylv_licence_type",
+    "type": "Multi-checkbox",
+    "options": "DMCC; Gold-purchasing licence; Other free zone",
+    "required": "No",
+    "group": "Trade",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.4",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-031",
+   "cat": "Properties",
+   "name": "Product Interest",
+   "f": {
+    "object": "Company",
+    "internal": "sylv_product_interest",
+    "type": "Multi-checkbox",
+    "options": "Jewellery; Gold bullion; Other",
+    "required": "No",
+    "group": "Trade",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.4",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-032",
+   "cat": "Properties",
+   "name": "Design Reference",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_design_reference",
+    "type": "Single-line text",
+    "options": "Pre-production reference",
+    "required": "Yes",
+    "group": "Order identification",
+    "populated": "Manual (sales)"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-033",
+   "cat": "Properties",
+   "name": "SKU",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_sku",
+    "type": "Single-line text",
+    "options": "Per Shopify convention, once in production",
+    "required": "No",
+    "group": "Order identification",
+    "populated": "Manual / Shopify"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-034",
+   "cat": "Properties",
+   "name": "Quote Value",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_quote_value",
+    "type": "Number (currency)",
+    "options": "In the transaction currency (replaces native quotes)",
+    "required": "Yes",
+    "group": "Commercial",
+    "populated": "Manual (sales)"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-035",
+   "cat": "Properties",
+   "name": "Closed Lost Reason",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_lost_reason",
+    "type": "Dropdown",
+    "options": "Price or budget; Lost to another jeweller; Bespoke timeline did not fit the occasion; Changed mind or no longer proceeding; Preferred ready-made over bespoke or the reverse; Requested stone, design or piece unavailable; Went cold; Deferred to a future occasion or budget; Duplicate or test enquiry",
+    "required": "Yes (on Closed Lost)",
+    "group": "Commercial",
+    "populated": "Manual (sales)"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PROP-036",
+   "cat": "Properties",
+   "name": "Lost To",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_lost_to",
+    "type": "Single-line text",
+    "options": "Competitor name",
+    "required": "No",
+    "group": "Commercial",
+    "populated": "Manual (sales)"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-037",
+   "cat": "Properties",
+   "name": "Cancellation Status",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_cancellation_status",
+    "type": "Dropdown",
+    "options": "Not cancelled; Cancellation requested; Cancelled pre-dispatch; Cancelled post-dispatch",
+    "required": "No",
+    "group": "Order management",
+    "populated": "Manual"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-038",
+   "cat": "Properties",
+   "name": "Refund or Overcharge Status",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_refund_status",
+    "type": "Dropdown",
+    "options": "None; Product return; Shipping overcharge; Tax overcharge; Duty overcharge; Partial refund; Full refund",
+    "required": "No",
+    "group": "Order management",
+    "populated": "Manual"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-039",
+   "cat": "Properties",
+   "name": "Stripe Transaction ID",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_stripe_txn_id",
+    "type": "Single-line text",
+    "options": "Transaction reference",
+    "required": "No",
+    "group": "Payments",
+    "populated": "Stripe / Shopify sync"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-040",
+   "cat": "Properties",
+   "name": "New vs Existing Client",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_new_or_existing_client",
+    "type": "Dropdown",
+    "options": "New client; Existing client",
+    "required": "Yes",
+    "group": "Commercial",
+    "populated": "Workflow"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-041",
+   "cat": "Properties",
+   "name": "Payment Method",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_payment_method",
+    "type": "Dropdown",
+    "options": "Stripe checkout; Shopify payment link; Bank transfer; In person",
+    "required": "Yes",
+    "group": "Payments",
+    "populated": "Manual / Shopify"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-042",
+   "cat": "Properties",
+   "name": "Payment Stage",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_payment_stage",
+    "type": "Dropdown",
+    "options": "Consultation fee paid; 50% deposit received; Paid in full; Balance outstanding",
+    "required": "Yes",
+    "group": "Payments",
+    "populated": "Manual (payments owner)"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-043",
+   "cat": "Properties",
+   "name": "Transaction Currency",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_transaction_currency",
+    "type": "Dropdown",
+    "options": "USD; GBP; EUR; AED",
+    "required": "Yes",
+    "group": "Payments",
+    "populated": "Manual / Shopify"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-044",
+   "cat": "Properties",
+   "name": "Item Size",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_item_size",
+    "type": "Single-line text",
+    "options": "Regional sizing convention",
+    "required": "No",
+    "group": "Bespoke specification",
+    "populated": "Manual (sales)"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-045",
+   "cat": "Properties",
+   "name": "Chain Length",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_chain_length",
+    "type": "Single-line text",
+    "options": "With unit",
+    "required": "No",
+    "group": "Bespoke specification",
+    "populated": "Manual (sales)"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-046",
+   "cat": "Properties",
+   "name": "Full Shipping Address",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_shipping_address",
+    "type": "Multi-line text",
+    "options": "Including country",
+    "required": "Yes",
+    "group": "Fulfilment",
+    "populated": "Manual / Shopify"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-047",
+   "cat": "Properties",
+   "name": "Billing Country",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_billing_country",
+    "type": "Dropdown",
+    "options": "Country list (country only)",
+    "required": "Yes",
+    "group": "Payments",
+    "populated": "Manual / Shopify"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "Client review",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Client input required: country list to offer. Placeholder option only.",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-048",
+   "cat": "Properties",
+   "name": "Collection Location",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_collection_location",
+    "type": "Dropdown",
+    "options": "Collected in Dubai; Shipped to client",
+    "required": "Yes",
+    "group": "Payments / VAT",
+    "populated": "Manual / Shopify"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-049",
+   "cat": "Properties",
+   "name": "Shopify Tags",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_shopify_tags",
+    "type": "Multi-line text",
+    "options": "Synced tag values",
+    "required": "No",
+    "group": "Attribution",
+    "populated": "Shopify sync"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "PROP-050",
+   "cat": "Properties",
+   "name": "Fulfilment Status",
+   "f": {
+    "object": "Deal",
+    "internal": "sylv_fulfilment_status",
+    "type": "Dropdown",
+    "options": "Not started; In quality control; Ready to ship; Shipped; Delivered",
+    "required": "No",
+    "group": "Fulfilment",
+    "populated": "Monday.com sync"
+   },
+   "phase": 2,
+   "spec": "§8.5",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-14"
+  },
+  {
+   "id": "LC-001",
+   "cat": "Lifecycle stages",
+   "name": "Subscriber",
+   "f": {
+    "position": "1",
+    "definition": "Someone has asked to hear from you. No relationship yet.",
+    "entry": "Newsletter or form submission",
+    "exit": "Engagement and product views → Qualified (private client); trade capture → Lead",
+    "automation": "Form routing sets stage and consent"
+   },
+   "phase": 1,
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "LC-002",
+   "cat": "Lifecycle stages",
+   "name": "Lead",
+   "f": {
+    "position": "2",
+    "definition": "Trade only. A private client is never called a lead.",
+    "entry": "Trade contact created, not yet assessed",
+    "exit": "Confirmed as a genuine counterparty → Qualified",
+    "automation": "Enquiry routing, trade (creates trade deal)"
+   },
+   "phase": 1,
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "LC-003",
+   "cat": "Lifecycle stages",
+   "name": "Qualified",
+   "f": {
+    "position": "3",
+    "definition": "Private client engaging with content and viewing product; trade counterparty confirmed.",
+    "entry": "Email engagement plus 5+ product page views, or trade confirmation",
+    "exit": "Named piece in discussion → Opportunity",
+    "automation": "None"
+   },
+   "phase": 1,
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "LC-004",
+   "cat": "Lifecycle stages",
+   "name": "Opportunity",
+   "f": {
+    "position": "4",
+    "definition": "A specific piece is in discussion.",
+    "entry": "Named piece in discussion, or abandoned checkout",
+    "exit": "First completed purchase → Client",
+    "automation": "Abandoned checkout email where relevant"
+   },
+   "phase": 1,
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "LC-005",
+   "cat": "Lifecycle stages",
+   "name": "Client",
+   "f": {
+    "position": "5",
+    "definition": "One completed purchase. Renamed from Customer.",
+    "entry": "First closed-won deal",
+    "exit": "Second purchase → Repeat Client",
+    "automation": "Post-purchase sequence"
+   },
+   "phase": 1,
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "LC-006",
+   "cat": "Lifecycle stages",
+   "name": "Repeat Client",
+   "f": {
+    "position": "6",
+    "definition": "Two purchases, counted by order.",
+    "entry": "Second closed-won deal",
+    "exit": "VIP tier → Private Client; 2 years without purchase → Dormant",
+    "automation": "Scoring recalculation"
+   },
+   "phase": 1,
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "LC-007",
+   "cat": "Lifecycle stages",
+   "name": "Private Client",
+   "f": {
+    "position": "7",
+    "definition": "Known to the house, introduces others, advocates for the brand.",
+    "entry": "Applied automatically on reaching VIP tier",
+    "exit": "2 years without purchase → Dormant",
+    "automation": "VIP invitation list build"
+   },
+   "phase": 1,
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "LC-008",
+   "cat": "Lifecycle stages",
+   "name": "Dormant",
+   "f": {
+    "position": "8",
+    "definition": "No purchase in two years.",
+    "entry": "Applied by workflow",
+    "exit": "Re-engagement response",
+    "automation": "Dormancy flagging and re-engagement"
+   },
+   "phase": 1,
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Build note: re-engagement response must clear the lifecycle stage first, then reset it (HubSpot will not move a contact backwards). Add this branch to WF-009.",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "LC-009",
+   "cat": "Lifecycle stages",
+   "name": "Other",
+   "f": {
+    "position": "–",
+    "definition": "Staff, press, family, friends and suppliers. Excluded from client marketing and scoring.",
+    "entry": "Manual",
+    "exit": "N/A",
+    "automation": "Suppressed from client marketing; staff purchases still tracked"
+   },
+   "phase": 1,
+   "spec": "§9.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "LS-001",
+   "cat": "Lead statuses",
+   "name": "New",
+   "f": {
+    "position": "1",
+    "definition": "Just created, not yet actioned",
+    "set_by": "Workflow (enquiry routing)",
+    "next": "Make first contact"
+   },
+   "phase": 1,
+   "spec": "§9.2",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "WF-001 (enquiry routing) must set this status on contact creation.",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "LS-002",
+   "cat": "Lead statuses",
+   "name": "Attempting Contact",
+   "f": {
+    "position": "2",
+    "definition": "First outreach in progress",
+    "set_by": "Manual (sales)",
+    "next": "Log outreach attempts"
+   },
+   "phase": 1,
+   "spec": "§9.2",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "LS-003",
+   "cat": "Lead statuses",
+   "name": "Connected",
+   "f": {
+    "position": "3",
+    "definition": "Engaged, gathering requirements",
+    "set_by": "Manual (sales)",
+    "next": "Qualify or disqualify"
+   },
+   "phase": 1,
+   "spec": "§9.2",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "LS-004",
+   "cat": "Lead statuses",
+   "name": "Qualified",
+   "f": {
+    "position": "4",
+    "definition": "Ready to progress to a deal",
+    "set_by": "Manual (sales)",
+    "next": "Create deal in the right pipeline"
+   },
+   "phase": 1,
+   "spec": "§9.2",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "LS-005",
+   "cat": "Lead statuses",
+   "name": "Nurture",
+   "f": {
+    "position": "5",
+    "definition": "Not ready now, keep warm",
+    "set_by": "Manual (sales)",
+    "next": "Keep in touch at the agreed cadence"
+   },
+   "phase": 1,
+   "spec": "§9.2",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "LS-006",
+   "cat": "Lead statuses",
+   "name": "Unqualified",
+   "f": {
+    "position": "6",
+    "definition": "Not a fit, or opted out",
+    "set_by": "Manual (sales)",
+    "next": "None; suppressed from active follow-up"
+   },
+   "phase": 1,
+   "spec": "§9.2",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "PL-001",
+   "cat": "Pipelines",
+   "name": "B2C New Business · First Conversation",
+   "f": {
+    "pipeline": "B2C New Business",
+    "stage": "First Conversation",
+    "position": "1",
+    "entry": "Enquiry received through any channel",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-002",
+   "cat": "Pipelines",
+   "name": "B2C New Business · Piece Identified",
+   "f": {
+    "pipeline": "B2C New Business",
+    "stage": "Piece Identified",
+    "position": "2",
+    "entry": "Bespoke commission or ready-made piece identified",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-003",
+   "cat": "Pipelines",
+   "name": "B2C New Business · Rough Quote Sent",
+   "f": {
+    "pipeline": "B2C New Business",
+    "stage": "Rough Quote Sent",
+    "position": "3",
+    "entry": "Indicative quote issued",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-004",
+   "cat": "Pipelines",
+   "name": "B2C New Business · Design Consultation Fee Paid",
+   "f": {
+    "pipeline": "B2C New Business",
+    "stage": "Design Consultation Fee Paid",
+    "position": "4",
+    "entry": "Refundable consultation fee received, before design work begins",
+    "owner_role": "Payments owner"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-005",
+   "cat": "Pipelines",
+   "name": "B2C New Business · Design Review",
+   "f": {
+    "pipeline": "B2C New Business",
+    "stage": "Design Review",
+    "position": "5",
+    "entry": "Design presented and refined with the client",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-006",
+   "cat": "Pipelines",
+   "name": "B2C New Business · Deposit or Payment Received",
+   "f": {
+    "pipeline": "B2C New Business",
+    "stage": "Deposit or Payment Received",
+    "position": "6",
+    "entry": "50% deposit for bespoke; paid in full for ready-made",
+    "owner_role": "Payments owner"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-007",
+   "cat": "Pipelines",
+   "name": "B2C New Business · In Production",
+   "f": {
+    "pipeline": "B2C New Business",
+    "stage": "In Production",
+    "position": "7",
+    "entry": "Production authorised; SKU assigned",
+    "owner_role": "Client experience lead and logistics"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-008",
+   "cat": "Pipelines",
+   "name": "B2C New Business · Delivered",
+   "f": {
+    "pipeline": "B2C New Business",
+    "stage": "Delivered",
+    "position": "8",
+    "entry": "Delivery confirmed",
+    "owner_role": "Client experience lead and logistics"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-009",
+   "cat": "Pipelines",
+   "name": "B2C New Business · Closed Won / Closed Lost",
+   "f": {
+    "pipeline": "B2C New Business",
+    "stage": "Closed Won / Closed Lost",
+    "position": "9",
+    "entry": "Sale confirmed, or lost with reason captured",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-010",
+   "cat": "Pipelines",
+   "name": "Client Relationship · Recent Purchase",
+   "f": {
+    "pipeline": "Client Relationship",
+    "stage": "Recent Purchase",
+    "position": "1",
+    "entry": "Deal closed won; client enters aftercare",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-011",
+   "cat": "Pipelines",
+   "name": "Client Relationship · Aftercare Follow-Up",
+   "f": {
+    "pipeline": "Client Relationship",
+    "stage": "Aftercare Follow-Up",
+    "position": "2",
+    "entry": "Post-delivery care and check-in",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-012",
+   "cat": "Pipelines",
+   "name": "Client Relationship · Occasion-Based Outreach",
+   "f": {
+    "pipeline": "Client Relationship",
+    "stage": "Occasion-Based Outreach",
+    "position": "3",
+    "entry": "An observed occasion or important date approaches",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-013",
+   "cat": "Pipelines",
+   "name": "Client Relationship · Repeat Purchase Opportunity",
+   "f": {
+    "pipeline": "Client Relationship",
+    "stage": "Repeat Purchase Opportunity",
+    "position": "4",
+    "entry": "Renewed intent; creates a new B2C New Business deal",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-014",
+   "cat": "Pipelines",
+   "name": "Client Relationship · VIP Review",
+   "f": {
+    "pipeline": "Client Relationship",
+    "stage": "VIP Review",
+    "position": "5",
+    "entry": "Client reaches or is reviewed for VIP tier",
+    "owner_role": "Client experience lead"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-015",
+   "cat": "Pipelines",
+   "name": "LondonDE Trade · Enquiry",
+   "f": {
+    "pipeline": "LondonDE Trade",
+    "stage": "Enquiry",
+    "position": "1",
+    "entry": "Office line, email, referral or outreach",
+    "owner_role": "Interim owner (Jen) until trade hire"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-016",
+   "cat": "Pipelines",
+   "name": "LondonDE Trade · Qualifying",
+   "f": {
+    "pipeline": "LondonDE Trade",
+    "stage": "Qualifying",
+    "position": "2",
+    "entry": "Confirmed as a genuine counterparty",
+    "owner_role": "Interim owner (Jen)"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-017",
+   "cat": "Pipelines",
+   "name": "LondonDE Trade · Quote Sent",
+   "f": {
+    "pipeline": "LondonDE Trade",
+    "stage": "Quote Sent",
+    "position": "3",
+    "entry": "Stage move plus Quote Value; pricing worked up in Monday.com",
+    "owner_role": "Interim owner (Jen)"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-018",
+   "cat": "Pipelines",
+   "name": "LondonDE Trade · Order Confirmed",
+   "f": {
+    "pipeline": "LondonDE Trade",
+    "stage": "Order Confirmed",
+    "position": "4",
+    "entry": "Counterparty confirms the order",
+    "owner_role": "Interim owner (Jen)"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-019",
+   "cat": "Pipelines",
+   "name": "LondonDE Trade · Fulfilled or Closed",
+   "f": {
+    "pipeline": "LondonDE Trade",
+    "stage": "Fulfilled or Closed",
+    "position": "5",
+    "entry": "Order fulfilled and closed, or lost",
+    "owner_role": "Interim owner (Jen)"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PL-020",
+   "cat": "Pipelines",
+   "name": "Shopify Orders · Order Synced",
+   "f": {
+    "pipeline": "Shopify Orders",
+    "stage": "Order Synced",
+    "position": "1",
+    "entry": "Ready-made order recorded for revenue reporting (built deal-creation mechanism)",
+    "owner_role": "System, no sales owner"
+   },
+   "phase": 2,
+   "spec": "§10",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-001",
+   "cat": "Scoring",
+   "name": "Advocacy: personally referred by an existing client",
+   "f": {
+    "axis": "Fit",
+    "rule": "35 points",
+    "source": "sylv_advocacy"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-002",
+   "cat": "Scoring",
+   "name": "Two or more residences",
+   "f": {
+    "axis": "Fit",
+    "rule": "30 points",
+    "source": "sylv_residences"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-003",
+   "cat": "Scoring",
+   "name": "Travel patterns",
+   "f": {
+    "axis": "Fit",
+    "rule": "Held as free text, unscored until a threshold is set",
+    "source": "sylv_travel_patterns"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Client review",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Provide Input",
+   "updated": "2026-10-16"
+  },
+  {
+   "id": "SC-004",
+   "cat": "Scoring",
+   "name": "Lifetime value above USD 25,000",
+   "f": {
+    "axis": "Engagement",
+    "rule": "25 points",
+    "source": "sylv_lifetime_value"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-005",
+   "cat": "Scoring",
+   "name": "Average order value above USD 10,000",
+   "f": {
+    "axis": "Engagement",
+    "rule": "20 points",
+    "source": "Shopify order history"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-006",
+   "cat": "Scoring",
+   "name": "Order frequency of one or more per year",
+   "f": {
+    "axis": "Engagement",
+    "rule": "15 points",
+    "source": "Shopify order history"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-007",
+   "cat": "Scoring",
+   "name": "Recency of last order under one year",
+   "f": {
+    "axis": "Engagement",
+    "rule": "15 points, decays past one year",
+    "source": "sylv_last_purchase_date"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-008",
+   "cat": "Scoring",
+   "name": "Attendance at one or more events",
+   "f": {
+    "axis": "Engagement",
+    "rule": "15 points",
+    "source": "sylv_event_attendance"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-009",
+   "cat": "Scoring",
+   "name": "5+ page views in a rolling 12 months",
+   "f": {
+    "axis": "Engagement",
+    "rule": "5 points, decays",
+    "source": "Website tracking"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-010",
+   "cat": "Scoring",
+   "name": "Email clicked",
+   "f": {
+    "axis": "Engagement",
+    "rule": "3 points",
+    "source": "Email engagement"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-011",
+   "cat": "Scoring",
+   "name": "Email opened",
+   "f": {
+    "axis": "Engagement",
+    "rule": "2 points",
+    "source": "Email engagement"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-012",
+   "cat": "Scoring",
+   "name": "VIP",
+   "f": {
+    "axis": "Tier",
+    "rule": "Fit ≥ 50 and Engagement ≥ 60; promotes to Private Client",
+    "source": "Fit + Engagement"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Private clients only (trade tiering out of scope)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-013",
+   "cat": "Scoring",
+   "name": "Tier 2",
+   "f": {
+    "axis": "Tier",
+    "rule": "Fit ≥ 50, Engagement < 60; triggers proactive re-engagement",
+    "source": "Fit + Engagement"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Private clients only (trade tiering out of scope)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-014",
+   "cat": "Scoring",
+   "name": "Tier 3",
+   "f": {
+    "axis": "Tier",
+    "rule": "Fit < 50, Engagement ≥ 60; worked upward",
+    "source": "Fit + Engagement"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Private clients only (trade tiering out of scope)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-015",
+   "cat": "Scoring",
+   "name": "No tier",
+   "f": {
+    "axis": "Tier",
+    "rule": "Low on both; outside the structure",
+    "source": "Fit + Engagement"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Private clients only (trade tiering out of scope)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SC-016",
+   "cat": "Scoring",
+   "name": "Adjustable threshold settings",
+   "f": {
+    "axis": "Thresholds",
+    "rule": "Fit 50 / Engagement 60, workflow-driven not hardcoded",
+    "source": "Scoring recalculation workflow"
+   },
+   "phase": 2,
+   "spec": "§11, §11.1",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-001",
+   "cat": "Workflows",
+   "name": "Enquiry routing, private client",
+   "f": {
+    "trigger": "New contact created through any source",
+    "purpose": "Creates the deal, assigns an owner, escalates if untouched"
+   },
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-002",
+   "cat": "Workflows",
+   "name": "Enquiry routing, trade",
+   "f": {
+    "trigger": "New trade contact or company",
+    "purpose": "Creates the trade deal at Enquiry, assigned to the interim owner"
+   },
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-003",
+   "cat": "Workflows",
+   "name": "RSVP auto-save",
+   "f": {
+    "trigger": "RSVP form submitted",
+    "purpose": "Saves respondent detail to the record and associates it with the event"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-004",
+   "cat": "Workflows",
+   "name": "Event reminder sequence",
+   "f": {
+    "trigger": "Invitation sent",
+    "purpose": "One invitation and exactly one reminder; capped at two touches per event"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-005",
+   "cat": "Workflows",
+   "name": "Post-purchase sequence",
+   "f": {
+    "trigger": "Order paid or deal closed won",
+    "purpose": "Confirmation, tier check and timed follow-up touchpoints"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Sets Client and Repeat Client lifecycle stages. Review HubSpot's automatic lifecycle settings (deal created / closed-won) first so they do not clash with this workflow.",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "WF-006",
+   "cat": "Workflows",
+   "name": "Post-delivery care guidance",
+   "f": {
+    "trigger": "Deal reaches Delivered",
+    "purpose": "Branded care note replacing the generic shipping email"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-007",
+   "cat": "Workflows",
+   "name": "Abandoned checkout",
+   "f": {
+    "trigger": "Checkout abandoned with contact detail captured",
+    "purpose": "One email after two days"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-008",
+   "cat": "Workflows",
+   "name": "Scoring recalculation",
+   "f": {
+    "trigger": "Any scoring input changes",
+    "purpose": "Keeps Fit, Engagement and tier current"
+   },
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-009",
+   "cat": "Workflows",
+   "name": "Dormancy flagging and re-engagement",
+   "f": {
+    "trigger": "Two years with no purchase",
+    "purpose": "Moves the contact to Dormant and enrols re-engagement"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Add a second branch: when a Dormant contact responds, clear the lifecycle stage, then set Client or Repeat Client by purchase count (HubSpot will not move a stage backwards).",
+   "updated": "2026-10-15"
+  },
+  {
+   "id": "WF-010",
+   "cat": "Workflows",
+   "name": "Occasion notifications",
+   "f": {
+    "trigger": "Observed occasion or important date approaching",
+    "purpose": "Notifies the team four to five weeks ahead for personal outreach"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-011",
+   "cat": "Workflows",
+   "name": "Purchase-history segmentation",
+   "f": {
+    "trigger": "Purchase history or tier changes",
+    "purpose": "Routes high-value clients to service-led, not discount-led, follow-up"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-012",
+   "cat": "Workflows",
+   "name": "Cancellation outreach",
+   "f": {
+    "trigger": "Cancellation status set to requested",
+    "purpose": "Flags before dispatch so someone can call"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-013",
+   "cat": "Workflows",
+   "name": "Monday.com fulfilment sync",
+   "f": {
+    "trigger": "Card updated in Monday.com",
+    "purpose": "Writes status to the deal and notifies the owner when ready"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-014",
+   "cat": "Workflows",
+   "name": "Stalled deal alert",
+   "f": {
+    "trigger": "Four weeks with no activity",
+    "purpose": "Notifies the owner; optional close at six to eight weeks"
+   },
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-015",
+   "cat": "Workflows",
+   "name": "Cross-sell and upsell",
+   "f": {
+    "trigger": "Tier promotion or purchase anniversary",
+    "purpose": "Curated recommendation, service-led track only"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-016",
+   "cat": "Workflows",
+   "name": "Referral tracking",
+   "f": {
+    "trigger": "Referred client's first purchase confirms",
+    "purpose": "Logs the referral; triggers incentive if a policy is adopted"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-017",
+   "cat": "Workflows",
+   "name": "Sentiment-led service recovery",
+   "f": {
+    "trigger": "Post-purchase",
+    "purpose": "Routes a negative signal to service recovery; sends nothing to the client"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-018",
+   "cat": "Workflows",
+   "name": "Response standard monitoring",
+   "f": {
+    "trigger": "Continuous",
+    "purpose": "One workflow watching every response standard and logging breaches"
+   },
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-019",
+   "cat": "Workflows",
+   "name": "WhatsApp conversation capture",
+   "f": {
+    "trigger": "Business line connected",
+    "purpose": "Logs conversations; excludes internal and supplier threads by contact type"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-020",
+   "cat": "Workflows",
+   "name": "Form routing",
+   "f": {
+    "trigger": "Form submission",
+    "purpose": "Sets consent status and initial lifecycle stage"
+   },
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-021",
+   "cat": "Workflows",
+   "name": "Consent re-permission, commercial database",
+   "f": {
+    "trigger": "Manual send",
+    "purpose": "Compliant opt-in for existing clients and subscribers, staggered sends"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-022",
+   "cat": "Workflows",
+   "name": "Consent re-permission, fundraising database",
+   "f": {
+    "trigger": "Manual send, post go-live",
+    "purpose": "Separate standalone invitation, never merged"
+   },
+   "phase": 4,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-023",
+   "cat": "Workflows",
+   "name": "VIP invitation list build",
+   "f": {
+    "trigger": "Tier change",
+    "purpose": "Maintains the private event invitation list"
+   },
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-001",
+   "cat": "Lists",
+   "name": "Active clients",
+   "f": {
+    "type": "Dynamic",
+    "criteria": "Client / Repeat / Private Client with a purchase inside the dormancy window",
+    "purpose": "Primary active segment"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-002",
+   "cat": "Lists",
+   "name": "Dormant clients",
+   "f": {
+    "type": "Dynamic",
+    "criteria": "Dormant flag = Yes; excludes Other",
+    "purpose": "Feeds re-engagement"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-003",
+   "cat": "Lists",
+   "name": "VIP and Tier 2",
+   "f": {
+    "type": "Dynamic",
+    "criteria": "Client Tier = VIP or Tier 2",
+    "purpose": "Private event and viewing invitations"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-004",
+   "cat": "Lists",
+   "name": "Trade: trading houses",
+   "f": {
+    "type": "Dynamic",
+    "criteria": "Trading vs Brand = Trading house",
+    "purpose": "Differentiated trade treatment"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-005",
+   "cat": "Lists",
+   "name": "Trade: brand accounts",
+   "f": {
+    "type": "Dynamic",
+    "criteria": "Trading vs Brand = Brand account",
+    "purpose": "Differentiated trade treatment"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-006",
+   "cat": "Lists",
+   "name": "Pending re-permission, subscribers",
+   "f": {
+    "type": "Static",
+    "criteria": "Imported from the cleansed subscriber database",
+    "purpose": "Consent campaign track one"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-007",
+   "cat": "Lists",
+   "name": "Pending re-permission, verified clients",
+   "f": {
+    "type": "Static",
+    "criteria": "Imported from the cleansed client database",
+    "purpose": "Consent campaign track two"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-008",
+   "cat": "Lists",
+   "name": "Other: staff, family",
+   "f": {
+    "type": "Dynamic",
+    "criteria": "Lifecycle stage = Other (staff, family, friends, suppliers)",
+    "purpose": "Suppressed from marketing"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-009",
+   "cat": "Lists",
+   "name": "Press",
+   "f": {
+    "type": "Dynamic",
+    "criteria": "Lifecycle stage = Other, press",
+    "purpose": "Excluded by default; messaged separately when chosen"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-010",
+   "cat": "Lists",
+   "name": "Fundraising database, quarantined",
+   "f": {
+    "type": "Static",
+    "criteria": "Imported from the Pipedrive fundraising list; no overlap with commercial lists",
+    "purpose": "Suppressed from every send until individually opted in"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "LIST-011",
+   "cat": "Lists",
+   "name": "Fundraising database, opted in",
+   "f": {
+    "type": "Dynamic",
+    "criteria": "Fundraising source AND marketing consent = Yes",
+    "purpose": "Membership permits a send"
+   },
+   "phase": 3,
+   "spec": "§14",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-001",
+   "cat": "Forms & templates",
+   "name": "General and bespoke enquiry form",
+   "f": {
+    "kind": "Form",
+    "content": "Name, email, phone, enquiry detail, preferred contact method",
+    "purpose": "Replaces the Shopify contact form; bespoke uses the same form"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-002",
+   "cat": "Forms & templates",
+   "name": "Newsletter form",
+   "f": {
+    "kind": "Form",
+    "content": "First name, email, consent",
+    "purpose": "Replaces the Shopify newsletter form"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-003",
+   "cat": "Forms & templates",
+   "name": "Advertising forms",
+   "f": {
+    "kind": "Form",
+    "content": "Standard fields plus one distinctive qualifying question",
+    "purpose": "Stops autofill low-intent leads; wording from Sylvera"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-004",
+   "cat": "Forms & templates",
+   "name": "Event RSVP form",
+   "f": {
+    "kind": "Form",
+    "content": "Respondent details and event",
+    "purpose": "Feeds RSVP auto-save"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-005",
+   "cat": "Forms & templates",
+   "name": "Enquiry acknowledgement",
+   "f": {
+    "kind": "Email template",
+    "content": "Sent on enquiry",
+    "purpose": "Copy and logic now; design after brand refresh"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-006",
+   "cat": "Forms & templates",
+   "name": "Event invitation",
+   "f": {
+    "kind": "Email template",
+    "content": "Invitation plus one reminder",
+    "purpose": "Copy and logic now; design after brand refresh"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-007",
+   "cat": "Forms & templates",
+   "name": "Engagement and proposal planning",
+   "f": {
+    "kind": "Email template",
+    "content": "Campaign",
+    "purpose": "Copy and logic now; design after brand refresh"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-008",
+   "cat": "Forms & templates",
+   "name": "New collection launch",
+   "f": {
+    "kind": "Email template",
+    "content": "Campaign",
+    "purpose": "Copy and logic now; design after brand refresh"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-009",
+   "cat": "Forms & templates",
+   "name": "Exclusive private events",
+   "f": {
+    "kind": "Email template",
+    "content": "VIP and Tier 2 only",
+    "purpose": "Copy and logic now; design after brand refresh"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "FT-010",
+   "cat": "Forms & templates",
+   "name": "Post-purchase care guidance",
+   "f": {
+    "kind": "Email template",
+    "content": "On delivery; replaces the generic invoice email",
+    "purpose": "Copy and logic now; design after brand refresh"
+   },
+   "phase": 3,
+   "spec": "§15.1, §15.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-001",
+   "cat": "Dashboards",
+   "name": "Executive revenue",
+   "f": {
+    "audience": "Leadership",
+    "question": "Revenue by pipeline, currency-normalised, over time"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-002",
+   "cat": "Dashboards",
+   "name": "Revenue by collection location",
+   "f": {
+    "audience": "Payments owner and leadership",
+    "question": "Revenue by collection location, month and currency, for VAT reconciliation"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-003",
+   "cat": "Dashboards",
+   "name": "Executive email summary",
+   "f": {
+    "audience": "CEO",
+    "question": "The same picture, by email without a login"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-004",
+   "cat": "Dashboards",
+   "name": "Pipeline and lead funnel",
+   "f": {
+    "audience": "Sales",
+    "question": "Conversion by stage across the pipelines"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-005",
+   "cat": "Dashboards",
+   "name": "Lifecycle funnel",
+   "f": {
+    "audience": "Sales and marketing",
+    "question": "Volume and conversion at each lifecycle stage"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-006",
+   "cat": "Dashboards",
+   "name": "Tier distribution",
+   "f": {
+    "audience": "Sales and marketing",
+    "question": "Fit against engagement, and tier counts over time"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-007",
+   "cat": "Dashboards",
+   "name": "Tier migration and retention",
+   "f": {
+    "audience": "Leadership",
+    "question": "Are clients moving up the tiers; how many slip to dormant"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-008",
+   "cat": "Dashboards",
+   "name": "Lead source and attribution",
+   "f": {
+    "audience": "Marketing",
+    "question": "Which channels produce qualified enquiries"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-009",
+   "cat": "Dashboards",
+   "name": "Closed lost analysis",
+   "f": {
+    "audience": "Sales and leadership",
+    "question": "Why sales are lost, and to whom"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-010",
+   "cat": "Dashboards",
+   "name": "Sales velocity",
+   "f": {
+    "audience": "Sales and leadership",
+    "question": "How long a commission takes, and where it stalls"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-011",
+   "cat": "Dashboards",
+   "name": "Average order value and upsell",
+   "f": {
+    "audience": "Sales and marketing",
+    "question": "Whether relationship work is increasing spend"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-012",
+   "cat": "Dashboards",
+   "name": "Campaign and channel return",
+   "f": {
+    "audience": "Marketing and leadership",
+    "question": "Aggregated advertising, social and email performance for a period"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-013",
+   "cat": "Dashboards",
+   "name": "Monthly staff referral report",
+   "f": {
+    "audience": "Client experience and leadership",
+    "question": "Referrals by staff member and what they converted to"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-014",
+   "cat": "Dashboards",
+   "name": "Bespoke pipeline",
+   "f": {
+    "audience": "Sales",
+    "question": "Commission-specific pipeline health"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-015",
+   "cat": "Dashboards",
+   "name": "Event and RSVP",
+   "f": {
+    "audience": "Marketing",
+    "question": "Attendance, and what it converted to"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-016",
+   "cat": "Dashboards",
+   "name": "Consent and list health",
+   "f": {
+    "audience": "Compliance owner",
+    "question": "Consent status across every list"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-017",
+   "cat": "Dashboards",
+   "name": "Response standard compliance",
+   "f": {
+    "audience": "Sales operations and leadership",
+    "question": "Whether response time is costing deals, and where"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-018",
+   "cat": "Dashboards",
+   "name": "Forecast and pipeline coverage",
+   "f": {
+    "audience": "Leadership",
+    "question": "Whether the pipeline covers the period ahead"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-019",
+   "cat": "Dashboards",
+   "name": "Data quality",
+   "f": {
+    "audience": "Operations",
+    "question": "Duplicate rate, incomplete records, dormancy counts"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "DB-020",
+   "cat": "Dashboards",
+   "name": "Native commerce reporting",
+   "f": {
+    "audience": "Sales and marketing",
+    "question": "Available at no build cost once the storefront is connected"
+   },
+   "phase": 4,
+   "spec": "§17",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-001",
+   "cat": "Integrations & channels",
+   "name": "Shopify",
+   "f": {
+    "kind": "Integration",
+    "method": "Native data sync",
+    "direction": "Bi-directional: contacts, orders, purchase history",
+    "detail": "Deal creation built as a workflow; Shopify stays the record of what was bought"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-002",
+   "cat": "Integrations & channels",
+   "name": "Payments and multi-currency",
+   "f": {
+    "kind": "Integration",
+    "method": "Stripe gateway plus multi-market storefront",
+    "direction": "Payment events inbound",
+    "detail": "Dubai settlement; USD, GBP, EUR (AED in HubSpot); requires multi-market plan"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA Shopify Team",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-003",
+   "cat": "Integrations & channels",
+   "name": "Monday.com",
+   "f": {
+    "kind": "Integration",
+    "method": "Custom app on Data Hub Starter",
+    "direction": "Bi-directional",
+    "detail": "Logistics marks a card complete; status writes to the deal; costed separately"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-004",
+   "cat": "Integrations & channels",
+   "name": "WhatsApp Business",
+   "f": {
+    "kind": "Integration",
+    "method": "Native HubSpot channel",
+    "direction": "Bi-directional",
+    "detail": "Dedicated new business number"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-005",
+   "cat": "Integrations & channels",
+   "name": "Instagram",
+   "f": {
+    "kind": "Social",
+    "method": "Native",
+    "direction": "Bi-directional",
+    "detail": "Connect after ownership established"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-006",
+   "cat": "Integrations & channels",
+   "name": "Facebook",
+   "f": {
+    "kind": "Social",
+    "method": "Native",
+    "direction": "Bi-directional",
+    "detail": "Connect after ownership established"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-007",
+   "cat": "Integrations & channels",
+   "name": "TikTok",
+   "f": {
+    "kind": "Social",
+    "method": "Native",
+    "direction": "Bi-directional",
+    "detail": "Connect after ownership established"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-008",
+   "cat": "Integrations & channels",
+   "name": "LinkedIn",
+   "f": {
+    "kind": "Social",
+    "method": "Native",
+    "direction": "Bi-directional",
+    "detail": "Connect after ownership established"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-009",
+   "cat": "Integrations & channels",
+   "name": "YouTube",
+   "f": {
+    "kind": "Social",
+    "method": "Native",
+    "direction": "Bi-directional",
+    "detail": "Connect after ownership established"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-010",
+   "cat": "Integrations & channels",
+   "name": "Pinterest",
+   "f": {
+    "kind": "Social",
+    "method": "Native, or managed natively in Pinterest",
+    "direction": "Bi-directional",
+    "detail": "HubSpot scheduling unconfirmed (A-06)"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-011",
+   "cat": "Integrations & channels",
+   "name": "Google Ads",
+   "f": {
+    "kind": "Advertising",
+    "method": "Native",
+    "direction": "Inbound",
+    "detail": "Clean, Sylvera-owned account"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-012",
+   "cat": "Integrations & channels",
+   "name": "Meta Ads",
+   "f": {
+    "kind": "Advertising",
+    "method": "Native",
+    "direction": "Inbound",
+    "detail": "Clean account; one-time passcode to account holder's phone"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-013",
+   "cat": "Integrations & channels",
+   "name": "LinkedIn Ads",
+   "f": {
+    "kind": "Advertising",
+    "method": "Native",
+    "direction": "Inbound",
+    "detail": "Clean account; one-time passcode to account holder's phone"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-014",
+   "cat": "Integrations & channels",
+   "name": "TikTok Ads",
+   "f": {
+    "kind": "Advertising",
+    "method": "Native",
+    "direction": "Inbound",
+    "detail": "Clean, Sylvera-owned account"
+   },
+   "phase": 3,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-015",
+   "cat": "Integrations & channels",
+   "name": "Google Analytics",
+   "f": {
+    "kind": "Analytics",
+    "method": "Fresh setup",
+    "direction": "Inbound",
+    "detail": "Set up from scratch for Sylvera"
+   },
+   "phase": 1,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-016",
+   "cat": "Integrations & channels",
+   "name": "Google Business Profile",
+   "f": {
+    "kind": "Analytics",
+    "method": "Fresh setup",
+    "direction": "Inbound",
+    "detail": "Set up from scratch for Sylvera"
+   },
+   "phase": 1,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "INT-017",
+   "cat": "Integrations & channels",
+   "name": "Google Search Console",
+   "f": {
+    "kind": "Analytics",
+    "method": "Fresh setup",
+    "direction": "Inbound",
+    "detail": "Set up from scratch for Sylvera"
+   },
+   "phase": 1,
+   "spec": "§13, §16",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SLA-001",
+   "cat": "Response standards",
+   "name": "First contact, new enquiry",
+   "f": {
+    "target": "15 min in business hours, 2 hrs outside",
+    "why": "The direct replacement for the current relay",
+    "breach": "Alert owner; escalate if unresolved"
+   },
+   "phase": 2,
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Timing starts once business hours are confirmed (CD-08)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SLA-002",
+   "cat": "Response standards",
+   "name": "VIP client, any channel",
+   "f": {
+    "target": "1 hour",
+    "why": "Highest-value relationships get the tightest standard",
+    "breach": "Immediate alert to senior sales"
+   },
+   "phase": 2,
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Timing starts once business hours are confirmed (CD-08)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SLA-003",
+   "cat": "Response standards",
+   "name": "WhatsApp reply",
+   "f": {
+    "target": "30 min in business hours",
+    "why": "A preferred channel, so delay is felt personally",
+    "breach": "Alert owner"
+   },
+   "phase": 2,
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Timing starts once business hours are confirmed (CD-08)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SLA-004",
+   "cat": "Response standards",
+   "name": "Private client quote turnaround",
+   "f": {
+    "target": "48 hours from consultation to quote",
+    "why": "A slow quote sends a client elsewhere",
+    "breach": "Alert sales owner"
+   },
+   "phase": 2,
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Timing starts once business hours are confirmed (CD-08)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SLA-005",
+   "cat": "Response standards",
+   "name": "Trade quote turnaround",
+   "f": {
+    "target": "3 business days",
+    "why": "Trade buyers compare suppliers",
+    "breach": "Alert trade owner"
+   },
+   "phase": 2,
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Timing starts once business hours are confirmed (CD-08)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SLA-006",
+   "cat": "Response standards",
+   "name": "Order confirmation",
+   "f": {
+    "target": "1 hour from order",
+    "why": "Silence after payment undermines trust",
+    "breach": "Alert operations"
+   },
+   "phase": 2,
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Timing starts once business hours are confirmed (CD-08)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SLA-007",
+   "cat": "Response standards",
+   "name": "Dormancy re-engagement first touch",
+   "f": {
+    "target": "2 days from flag",
+    "why": "The win-back window matters",
+    "breach": "Alert marketing owner"
+   },
+   "phase": 2,
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Timing starts once business hours are confirmed (CD-08)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SLA-008",
+   "cat": "Response standards",
+   "name": "Stalled deal",
+   "f": {
+    "target": "Notify at 4 weeks; optional close at 6–8 weeks",
+    "why": "Catches pipeline going quiet while it can be saved",
+    "breach": "Task to deal owner; optional close as Went cold"
+   },
+   "phase": 2,
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Timing starts once business hours are confirmed (CD-08)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "SLA-009",
+   "cat": "Response standards",
+   "name": "Consent response window",
+   "f": {
+    "target": "30 days from send",
+    "why": "Defines when non-response means no consent",
+    "breach": "Auto-suppress from marketing"
+   },
+   "phase": 2,
+   "spec": "§22",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Timing starts once business hours are confirmed (CD-08)",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PERM-001",
+   "cat": "Permissions",
+   "name": "Operations and trade lead",
+   "f": {
+    "person": "Jen",
+    "seat": "Super Admin",
+    "access": "Full access"
+   },
+   "phase": 1,
+   "spec": "§18",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PERM-002",
+   "cat": "Permissions",
+   "name": "Payments owner",
+   "f": {
+    "person": "Monica",
+    "seat": "Super Admin",
+    "access": "Full access, second administrator"
+   },
+   "phase": 1,
+   "spec": "§18",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PERM-003",
+   "cat": "Permissions",
+   "name": "Client experience lead",
+   "f": {
+    "person": "Georgia",
+    "seat": "Sales Hub Professional",
+    "access": "Standard sales manager set"
+   },
+   "phase": 1,
+   "spec": "§18",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PERM-004",
+   "cat": "Permissions",
+   "name": "CEO",
+   "f": {
+    "person": "Phil",
+    "seat": "View only, no login required",
+    "access": "Receives the scheduled email summary"
+   },
+   "phase": 1,
+   "spec": "§18",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PERM-005",
+   "cat": "Permissions",
+   "name": "Trade sales manager",
+   "f": {
+    "person": "Pending hire",
+    "seat": "Sales Hub Professional",
+    "access": "Trade pipeline and company records"
+   },
+   "phase": 1,
+   "spec": "§18",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PERM-006",
+   "cat": "Permissions",
+   "name": "Marketing executive",
+   "f": {
+    "person": "Pending hire",
+    "seat": "Marketing Hub",
+    "access": "Content, campaigns, forms, social, tier reporting"
+   },
+   "phase": 1,
+   "spec": "§18",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "PERM-007",
+   "cat": "Permissions",
+   "name": "Logistics and inventory manager",
+   "f": {
+    "person": "TBC",
+    "seat": "None",
+    "access": "Works in Shopify and Monday.com"
+   },
+   "phase": 1,
+   "spec": "§18",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "MIG-001",
+   "cat": "Data & consent",
+   "name": "Shopify contact database",
+   "f": {
+    "source": "Shopify export",
+    "volume": "Approx. 1,000–2,500 (to confirm)",
+    "treatment": "Export, assess, cleanse, deduplicate, then import"
+   },
+   "phase": 3,
+   "spec": "§19, §21",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "MIG-002",
+   "cat": "Data & consent",
+   "name": "Trade contact list",
+   "f": {
+    "source": "Client spreadsheet",
+    "volume": "Unknown until received",
+    "treatment": "Cleanse, format, import"
+   },
+   "phase": 3,
+   "spec": "§19, §21",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "MIG-003",
+   "cat": "Data & consent",
+   "name": "Fundraising list",
+   "f": {
+    "source": "Pipedrive (UK team)",
+    "volume": "Approx. 400",
+    "treatment": "Quarantined import, suppressed, individually invited post go-live"
+   },
+   "phase": 3,
+   "spec": "§19, §21",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "MIG-004",
+   "cat": "Data & consent",
+   "name": "Historical event and guest lists",
+   "f": {
+    "source": "Client records",
+    "volume": "Unknown until received",
+    "treatment": "Cleanse and import; consent assessed per contact"
+   },
+   "phase": 3,
+   "spec": "§19, §21",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "MIG-005",
+   "cat": "Data & consent",
+   "name": "Cookie and tracking consent",
+   "f": {
+    "source": "Shopify storefront",
+    "volume": "n/a",
+    "treatment": "Consent banner live first; foundation for behavioural data"
+   },
+   "phase": 1,
+   "spec": "§19, §21",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "MIG-006",
+   "cat": "Data & consent",
+   "name": "Re-permission: existing clients and subscribers",
+   "f": {
+    "source": "Cleansed database",
+    "volume": "Post-cleansing total",
+    "treatment": "Own opt-in campaign, staggered sends"
+   },
+   "phase": 3,
+   "spec": "§19, §21",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "MIG-007",
+   "cat": "Data & consent",
+   "name": "Fundraising consent track",
+   "f": {
+    "source": "Quarantined list",
+    "volume": "Approx. 400",
+    "treatment": "Separate invitation; never merged with the commercial database"
+   },
+   "phase": 3,
+   "spec": "§19, §21",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WEB-001",
+   "cat": "Website & enablement",
+   "name": "Holding page",
+   "f": {
+    "kind": "Website",
+    "content": "Brand placeholder with lead capture and source tracking"
+   },
+   "phase": 4,
+   "spec": "§6.2, §27",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WEB-002",
+   "cat": "Website & enablement",
+   "name": "Sales training session",
+   "f": {
+    "kind": "Training",
+    "content": "Pipelines, lead statuses, deal properties, scoring and tiering, WhatsApp; admin topics for the two Super Admins"
+   },
+   "phase": 4,
+   "spec": "§6.2, §27",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WEB-003",
+   "cat": "Website & enablement",
+   "name": "Marketing training session",
+   "f": {
+    "kind": "Training",
+    "content": "Templates, automations, forms, reporting, social scheduling, live test send"
+   },
+   "phase": 4,
+   "spec": "§6.2, §27",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WEB-004",
+   "cat": "Website & enablement",
+   "name": "Reference guide",
+   "f": {
+    "kind": "Training",
+    "content": "One-pager: lifecycle ladder, pipelines and tiering"
+   },
+   "phase": 4,
+   "spec": "§6.2, §27",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-08"
+  },
+  {
+   "id": "WF-024",
+   "cat": "Workflows",
+   "name": "Lifecycle progression",
+   "f": {
+    "trigger": "Private client: email engagement plus 5+ product page views. Trade: counterparty confirmed. Named piece in discussion.",
+    "purpose": "Moves Subscriber or Lead to Qualified, and Qualified to Opportunity. Closes the gap in SDS 9.1 where no workflow advances these stages."
+   },
+   "phase": 2,
+   "spec": "",
+   "owner": "NEXA CRM Specialist",
+   "status": "Not started",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "",
+   "updated": "2026-10-15"
+  }
+ ],
+ "actions": [
+  {
+   "id": "CD-01",
+   "item": "CEO email address, for the executive summary",
+   "phase": 1,
+   "due": "2026-10-14",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Phil / Jen"
+  },
+  {
+   "id": "CD-02",
+   "item": "Confirmation of the shared enquiry inbox address",
+   "phase": 1,
+   "due": "2026-10-14",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Jen"
+  },
+  {
+   "id": "CD-03",
+   "item": "Social and advertising account access located and handed over",
+   "phase": 1,
+   "due": "2026-10-14",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Jen, Georgia"
+  },
+  {
+   "id": "CD-04",
+   "item": "Meta admin granted, then current holder removed from Sylvera's account",
+   "phase": 1,
+   "due": "2026-10-14",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Phil"
+  },
+  {
+   "id": "CD-05",
+   "item": "Written confirmation of the third-party connection risk disclosure (§13.1)",
+   "phase": 1,
+   "due": "2026-10-14",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Jen"
+  },
+  {
+   "id": "CD-06",
+   "item": "Marketing Hub Professional confirmed and purchased",
+   "phase": 2,
+   "due": "2026-10-21",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Jen"
+  },
+  {
+   "id": "CD-07",
+   "item": "Confirmation to proceed on the payments configuration",
+   "phase": 2,
+   "due": "2026-10-21",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Phil, Monica"
+  },
+  {
+   "id": "CD-08",
+   "item": "Business hours, so response standards can start timing",
+   "phase": 2,
+   "due": "2026-10-21",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Jen"
+  },
+  {
+   "id": "CD-09",
+   "item": "Trade contact list (Almas Tower B2B list)",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Georgia"
+  },
+  {
+   "id": "CD-10",
+   "item": "Fundraising list export from Pipedrive",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "UK team via Jen"
+  },
+  {
+   "id": "CD-11",
+   "item": "Historical event and guest lists, including Portugal",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Georgia"
+  },
+  {
+   "id": "CD-12",
+   "item": "Storefront collaborator access confirmed as valid",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Georgia"
+  },
+  {
+   "id": "CD-13",
+   "item": "Dedicated WhatsApp business number",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Jen"
+  },
+  {
+   "id": "CD-14",
+   "item": "Advertising form qualifying question wording",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Sylvera marketing"
+  },
+  {
+   "id": "CD-15",
+   "item": "Brand assets from the identity refresh",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Jen"
+  },
+  {
+   "id": "CD-16",
+   "item": "Named users and email addresses per seat",
+   "phase": 4,
+   "due": "2026-11-04",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Jen"
+  },
+  {
+   "id": "CD-17",
+   "item": "Stakeholder availability for training and UAT",
+   "phase": 4,
+   "due": "2026-11-04",
+   "status": "Open",
+   "received": "",
+   "notes": "",
+   "who": "Jen"
+  },
+  {
+   "id": "CD-18",
+   "item": "Sign-off on the SDS",
+   "phase": 0,
+   "due": "2026-10-06",
+   "status": "Received",
+   "received": "2026-10-06",
+   "notes": "Signed 06/10/26",
+   "who": "Jennifer Ashby"
+  },
+  {
+   "id": "CD-19",
+   "item": "Approximate size of the Shopify contact database",
+   "phase": 1,
+   "due": "2026-10-14",
+   "status": "Open",
+   "received": "",
+   "notes": "SDS assumption A-03 (1,000–2,500 records)",
+   "who": "Georgia"
+  },
+  {
+   "id": "CD-20",
+   "item": "Decision: whether to adopt a referral incentive policy (SDS §12)",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Referrals are tracked either way",
+   "who": "Jen"
+  },
+  {
+   "id": "CD-21",
+   "item": "Trade sales manager start date and name, when known",
+   "phase": 4,
+   "due": "2026-11-04",
+   "status": "Open",
+   "received": "",
+   "notes": "SDS assumption A-07; Jen remains interim owner",
+   "who": "Jen"
+  }
+ ],
+ "weekly": [
+  {
+   "id": "W1",
+   "week": "2026-10-08",
+   "rag": "Green",
+   "done": "SDS v1.1 signed 06/10/26. Build kick-off; tracker set up.",
+   "next": "Portal settings, contact/company/deal properties, lifecycle stages and lead statuses. Start social and ad account consolidation.",
+   "risks": "Phase 1 client inputs due 14 Oct: CD-01 to CD-05.",
+   "decisions": ""
+  }
+ ],
+ "archive": [
+  {
+   "id": "M-001",
+   "date": "2026-08-20",
+   "time": "",
+   "stage": "Sales & Pre-Kick off",
+   "type": "Meeting",
+   "purpose": "Sales email and comms",
+   "links": [
+    {
+     "label": "Proposal deck",
+     "url": "https://docs.google.com/presentation/d/1JCp8qO37IbQIkyAzA3Pk10N70WbW0DZDQruMUHvqjxI/edit?usp=sharing"
+    },
+    {
+     "label": "Shopify collaborator request: Domain sylveralondon",
+     "url": ""
+    }
+   ],
+   "attendees": "Narita",
+   "status": "Completed",
+   "notes": "Proposal handover and Shopify collaborator access requested. Discovery call recording moved to the 9 Jul entry; contract to the 14 Aug entry."
+  },
+  {
+   "id": "M-002",
+   "date": "2026-08-26",
+   "time": "10:00 am",
+   "stage": "Kick off",
+   "type": "Meeting",
+   "purpose": "Introduction and gathering requirements",
+   "links": [
+    {
+     "label": "Recording 1",
+     "url": "https://app.fireflies.ai/view/01M0YAQVJESR9A1VH2ZD67K0SP"
+    },
+    {
+     "label": "Recording 2: Kick-off meeting",
+     "url": "https://app.fireflies.ai/view/Sylvera-Kick-off-Meeting::01M0YAQN937Y9C0TPQ507NEVAK"
+    },
+    {
+     "label": "Questionnaire filled by client",
+     "url": "https://drive.google.com/file/d/1Q9xfL177Xi-b_SlLAhfW17q1HSHHMRBc/view?usp=sharing"
+    },
+    {
+     "label": "Whimsical board",
+     "url": "https://whimsical.com/digitalnexa9/sylvera-UacJbVVY5yDGmagpbu2977"
+    }
+   ],
+   "attendees": "Andrew, Narita, Anushri, Jennifer, Georgia, Monica",
+   "status": "Completed",
+   "notes": "Two business lines confirmed (Sylvera B2C, LondonDE B2B). AI pricing agent, Phil's AI assistant, iPad event capture and blockchain provenance confirmed out of scope."
+  },
+  {
+   "id": "M-003",
+   "date": "2026-09-02",
+   "time": "",
+   "stage": "Workshop 1",
+   "type": "Meeting",
+   "purpose": "Discovery & Foundations: data boundary, lifecycle stage definitions, contacts and companies, scoring v1",
+   "links": [
+    {
+     "label": "Recording",
+     "url": "https://app.fireflies.ai/view/Client-Sylvera-Discovery-Session-1::01M1GNPVFN7ZD8MGCNHH39AJKJ"
+    },
+    {
+     "label": "Workshop 1 summary (Vercel)",
+     "url": "https://sylvera-wkshp-1-live.vercel.app/"
+    }
+   ],
+   "attendees": "Narita, Anushri, Abhinandan (NEXA); Jen, Georgia, Monica (Sylvera)",
+   "status": "Completed",
+   "notes": "Decided: 8-stage lifecycle with 'Client' replacing 'Customer'; Lead is trade-only; dormant = 2 years; Fit + Engagement scoring with VIP / Tier 2 / Tier 3 (private clients only); Observed Occasions replaces religion/ethnicity; Jen and Monica Super Admins; Phil view-only with email summary; USD account currency; fundraising list (~400) kept separate under UK GDPR."
+  },
+  {
+   "id": "M-004",
+   "date": "2026-09-09",
+   "time": "",
+   "stage": "Workshop 2",
+   "type": "Meeting",
+   "purpose": "Discovery & Foundations: remaining Sales Hub",
+   "links": [
+    {
+     "label": "Workshop 2 summary (Vercel)",
+     "url": "https://sylvera-wkshp-2-live.vercel.app/"
+    },
+    {
+     "label": "Recording",
+     "url": "https://app.fireflies.ai/view/Sylvera-Workshop-2-Wed-09-Sep-2026-13-48-23-04-Untitled::01M22S332HKN3MZC3YQYJ20QSN"
+    }
+   ],
+   "attendees": "Narita, Anushri, Abhinandan",
+   "status": "Completed",
+   "notes": "Decided: 9-stage B2C pipeline with refundable ~USD 200 design consultation fee and 50% deposit; separate trade pipeline; Shopify Orders pipeline for revenue; fulfilment stays in Monday.com with bi-directional sync; nine Closed Lost reasons plus 'Lost To'; one abandoned-cart email after 2 days; Data Hub Starter already held; native Quotes need Revenue Hub (not held)."
+  },
+  {
+   "id": "M-005",
+   "date": "2026-09-10",
+   "time": "",
+   "stage": "Workshop 3",
+   "type": "Meeting",
+   "purpose": "Discovery & Foundations: Marketing Hub",
+   "links": [
+    {
+     "label": "Workshop 3 summary (Vercel)",
+     "url": "https://sylvera-wkshp-3-live.vercel.app/"
+    },
+    {
+     "label": "Recording",
+     "url": "https://app.fireflies.ai/view/Client-Sylvera-Discovery-Session-3::01M20A6BQD0F8CXA5N5Y86J4KD"
+    }
+   ],
+   "attendees": "Narita, Anushri, Abhinandan (NEXA); Jen, Georgia, Monica (Sylvera)",
+   "status": "Completed",
+   "notes": "Decided: single broad opt-in (no preference centre); minimal HubSpot forms; product-interest and 'how did you hear' removed from client-facing forms; bespoke quote template cut; six 2026 templates; RSVP max two emails; WhatsApp stays personal; six social channels and four ad platforms; birthdays/anniversaries as internal staff reminders; SEO/AEO, WeChat, early access and Valentine's deferred to 2027."
+  },
+  {
+   "id": "M-006",
+   "date": "2026-09-14",
+   "time": "",
+   "stage": "Consolidation",
+   "type": "Document",
+   "purpose": "Consolidated workshop summary, build sheet and SDD",
+   "links": [
+    {
+     "label": "Consolidated summary (Vercel)",
+     "url": "https://sylvera-consolidated-summary.vercel.app/"
+    },
+    {
+     "label": "Drive folder: build sheet and SDD",
+     "url": "https://drive.google.com/drive/folders/1WiaNjNOahNr-pF0NKr6MSNXksRgYOWQG"
+    }
+   ],
+   "attendees": "",
+   "status": "Completed",
+   "notes": "Consolidated summary of the three workshops shared with Sylvera."
+  },
+  {
+   "id": "M-007",
+   "date": "2026-10-06",
+   "time": "",
+   "stage": "SDS sign-off",
+   "type": "Approval",
+   "purpose": "CRM Strategy and Solution Design v1.1 signed; scope baseline for the build",
+   "links": [
+    {
+     "label": "Signed SDS (PDF)",
+     "url": "https://drive.google.com/file/d/1K-pLn5psEKt0-eS6QP7mdY6Uy-Y3Z6qA/view"
+    }
+   ],
+   "attendees": "Jennifer Ashby (Managing Director)",
+   "status": "Approved",
+   "notes": "Go-live set at 20 Nov 2026 in the signed SDS (earlier working target was end of October). Changes after sign-off go through a change order (SDS §28)."
+  },
+  {
+   "id": "M-008",
+   "date": "2026-07-09",
+   "time": "",
+   "stage": "Discovery call",
+   "type": "Meeting",
+   "purpose": "Initial HubSpot discussion; two onboarding models presented (NEXA-led setup vs guided self-setup)",
+   "links": [
+    {
+     "label": "Recording",
+     "url": "https://app.fireflies.ai/view/NEXA-Sylvera-London-Hubspot-NB-::01KX2XC8AKQG1BNNXTVTQWGHCP"
+    }
+   ],
+   "attendees": "Jatin, Afreen, Karen (NEXA); Jennifer, Georgia (Sylvera)",
+   "status": "Completed",
+   "notes": "Sylvera chose to prioritise CRM setup over marketing tools during the rebrand."
+  },
+  {
+   "id": "M-009",
+   "date": "2026-08-14",
+   "time": "",
+   "stage": "Contract signed",
+   "type": "Approval",
+   "purpose": "Phase 1 contract: HubSpot CRM build, Shopify integration, international payments and multi-currency, holding page, post go-live support",
+   "links": [
+    {
+     "label": "Contract",
+     "url": "https://drive.google.com/file/d/1pwiZUzKewPk6KEmk-wkpgDv_o6xcCDOx/view?usp=sharing"
+    }
+   ],
+   "attendees": "Andrew Thomas (NEXA); Philip Edward Spencer (LONDON DE FZCO)",
+   "status": "Approved",
+   "notes": "Payment schedule: 50% on signature, 50% on completion and go-live."
+  },
+  {
+   "id": "M-010",
+   "date": "2026-09-17",
+   "time": "",
+   "stage": "Solution design issued",
+   "type": "Document",
+   "purpose": "CRM Implementation and Growth Strategy, Strategy and Solution Design draft, and Requirements and Decisions issued for client review",
+   "links": [
+    {
+     "label": "Strategy and Solution Design (draft)",
+     "url": "https://docs.google.com/document/d/1af5clmucwXaEVhbl3AUDanfItimuPlNVNM5vIIJUKg8/edit"
+    },
+    {
+     "label": "CRM Implementation and Growth Strategy",
+     "url": "https://docs.google.com/document/d/16_HTHe2CZjxQgtU0d0-mOlCsf7mPMaPa3yYbUKJQUy4/edit"
+    },
+    {
+     "label": "Requirements and Decisions",
+     "url": "https://docs.google.com/document/d/10hF-jKoubJg2LfwXZCC3omS05VWew11My6czwzyR13E/edit"
+    }
+   ],
+   "attendees": "Narita (NEXA)",
+   "status": "Completed",
+   "notes": "Resolved: contracted multi-currency payments proceed; third pipeline is Client Relationship (post-purchase); Pipedrive holds the fundraising list."
+  },
+  {
+   "id": "M-011",
+   "date": "2026-10-08",
+   "time": "",
+   "stage": "Build kick-off",
+   "type": "Milestone",
+   "purpose": "Build starts against the signed SDS; weekly tracker shared with Sylvera",
+   "links": [],
+   "attendees": "",
+   "status": "Completed",
+   "notes": ""
+  },
+  {
+   "id": "M-012",
+   "date": "2026-11-20",
+   "time": "",
+   "stage": "Go-live",
+   "type": "Milestone",
+   "purpose": "Target go-live per signed SDS",
+   "links": [],
+   "attendees": "",
+   "status": "Scheduled",
+   "notes": "Second 50% payment due on completion and go-live."
+  }
+ ],
+ "history": [
+  {
+   "date": "2026-10-08",
+   "summary": [
+    "Tracker created: 61 build items, 133 assets, 18 client actions, Week 1 update.",
+    "Project archive added with 7 entries from pre-kick-off to SDS sign-off."
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "summary": [
+    "Cross-checked against contract, Fireflies recordings, workshop summaries, build brief and Requirements and Decisions.",
+    "Added 12 build items, 14 client actions (with owners) and 5 archive entries; workshop decisions recorded on archive entries."
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "summary": [
+    "Assets tracker expanded: 24 contact and 8 company properties listed individually with internal names, plus 9 response standards.",
+    "Deal property internal names aligned with the build brief; Implementation and Growth Strategy linked in the archive."
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "summary": [
+    "A-001 Preferred Contact Method: Not started → In build",
+    "A-002 Contact Type: Not started → In build",
+    "A-003 Client Classification: Not started → In build"
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "summary": [
+    "A-001 Preferred Contact Method: In build → Not started",
+    "A-002 Contact Type: In build → Not started",
+    "A-003 Client Classification: In build → Not started"
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "summary": [
+    "Scope check against the signed SDS: removed 3 build items, 11 client actions and 1 property that were not in the signed document (portal user clean-up, storefront clean-up, year-end campaign; decisions the SDS already settles; Client Classification property).",
+    "Client actions now mirror SDS §29.2 (CD-01 to CD-18) plus three items the SDS names as assumptions or options (CD-19 to CD-21)."
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "summary": [
+    "Changes & risks register added: 10 risks and 2 known issues from the signed SDS (assumptions, dependencies and platform constraints). No change requests since sign-off."
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "summary": [
+    "Assets tracker rebuilt with granular detail per section (209 assets across 14 sections), aligned to the signed SDS; each asset now has a QA status."
+   ]
+  },
+  {
+   "date": "2026-10-14",
+   "summary": [
+    "5 other asset edits (text or notes)"
+   ]
+  },
+  {
+   "date": "2026-10-14",
+   "summary": [
+    "1 other asset edit (text or notes)"
+   ]
+  },
+  {
+   "date": "2026-10-14",
+   "summary": [
+    "PROP-001 Preferred Contact Method: Not started → QA",
+    "PROP-002 Contact Type: Not started → QA",
+    "PROP-003 Ring Size: Not started → QA",
+    "PROP-004 Style / Product Preferences: Not started → Client review",
+    "PROP-005 Birthday: Not started → QA",
+    "PROP-006 Anniversary: Not started → QA",
+    "PROP-007 Observed Occasions: Not started → Client review",
+    "PROP-008 Residences: Not started → QA",
+    "PROP-009 Travel Patterns: Not started → QA",
+    "PROP-010 Event Attendance: Not started → Client review",
+    "PROP-011 Last Purchase Date: Not started → QA",
+    "PROP-012 Lifetime Value: Not started → QA",
+    "PROP-013 Dormant Flag: Not started → QA",
+    "PROP-014 Staff Purchase: Not started → QA",
+    "PROP-015 Advocacy: Not started → QA",
+    "PROP-016 Referral Source: Not started → Client review",
+    "PROP-017 Referred By: Not started → QA",
+    "PROP-018 Staff Referral: Not started → QA",
+    "PROP-019 Internal Lead Source: Not started → QA",
+    "PROP-020 Fit Score: Not started → QA",
+    "PROP-021 Engagement Score: Not started → QA",
+    "PROP-022 Client Tier: Not started → QA",
+    "PROP-023 Gold Bullion Interest: Not started → QA",
+    "PROP-024 Nature of Business: Not started → QA",
+    "PROP-025 Region: Not started → QA",
+    "…and 24 more changes"
+   ]
+  },
+  {
+   "date": "2026-10-15",
+   "summary": [
+    "B-008 Lifecycle stages: 8-stage ladder plus Other, Customer renamed to Client: Not started → Done",
+    "LC-001 Subscriber: Not started → QA",
+    "LC-002 Lead: Not started → QA",
+    "LC-003 Qualified: Not started → QA",
+    "LC-004 Opportunity: Not started → QA",
+    "LC-005 Client: Not started → QA",
+    "LC-006 Repeat Client: Not started → QA",
+    "LC-007 Private Client: Not started → QA",
+    "LC-008 Dormant: Not started → QA",
+    "LC-009 Other: Not started → QA",
+    "Asset WF-024 added: Lifecycle progression",
+    "2 other asset edits (text or notes)"
+   ]
+  },
+  {
+   "date": "2026-10-16",
+   "summary": [
+    "B-005 Contact properties: 7 groups, sylv_ prefix (core, clienteling, relationship, purchase history, attribution, scoring, product interest): Not started → In review",
+    "B-006 Company properties, trade side (nature of business, trading vs brand, raw vs set, licence and free zone, product interest): Not started → In review",
+    "B-007 Deal properties (19), incl. Design Reference, SKU, Quote Value, Payment Stage, Collection Location, Fulfilment Status: Not started → In review",
+    "B-009 Lead statuses: New, Attempting Contact, Connected, Qualified, Nurture, Unqualified: Not started → Done",
+    "LS-001 New: Not started → QA",
+    "LS-002 Attempting Contact: Not started → QA",
+    "LS-003 Connected: Not started → QA",
+    "LS-004 Qualified: Not started → QA",
+    "LS-005 Nurture: Not started → QA",
+    "LS-006 Unqualified: Not started → QA"
+   ]
+  },
+  {
+   "date": "2026-10-16",
+   "summary": [
+    "1 other asset edit (text or notes)"
+   ]
+  },
+  {
+   "date": "2026-10-16",
+   "summary": [
+    "SC-003 Travel patterns: Not started → Client review"
+   ]
+  }
+ ],
+ "register": [
+  {
+   "id": "R-001",
+   "type": "Risk",
+   "title": "Shopify plan may not support multi-market selling",
+   "detail": "Multi-currency checkout needs Shopify Markets on the current plan.",
+   "area": "Scope",
+   "likelihood": "Medium",
+   "impact": "High",
+   "response": "Verify in the Shopify admin before configuration; plan change needed if not supported.",
+   "owner": "NEXA Shopify Team",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§29 A-01"
+  },
+  {
+   "id": "R-002",
+   "type": "Risk",
+   "title": "Client data lists arrive late",
+   "detail": "Trade list, fundraising export and event lists are needed for Phase 3 migration.",
+   "area": "Timeline",
+   "likelihood": "Medium",
+   "impact": "High",
+   "response": "Requested by 28 Oct; migration runs on what has arrived, later lists imported after go-live.",
+   "owner": "Sylvera (Georgia, Jen)",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "CD-09 to CD-11"
+  },
+  {
+   "id": "R-003",
+   "type": "Risk",
+   "title": "Social and ad account ownership not established",
+   "detail": "Accounts were set up by a former employee; access is unclear. Connecting accounts already linked elsewhere can lock them.",
+   "area": "Access / data",
+   "likelihood": "High",
+   "impact": "Medium",
+   "response": "Consolidation starts in Phase 1; current holder grants access before removal; dedicated new WhatsApp number.",
+   "owner": "NEXA CRM Specialist + Jen",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§13.1, CD-03, CD-04"
+  },
+  {
+   "id": "R-004",
+   "type": "Risk",
+   "title": "Brand assets not ready in time for template design",
+   "detail": "Template visual design is held until the identity refresh lands.",
+   "area": "Timeline",
+   "likelihood": "Medium",
+   "impact": "Medium",
+   "response": "Templates ship with copy and logic complete; visual design follows when assets arrive.",
+   "owner": "Jen",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§29 A-08, CD-15"
+  },
+  {
+   "id": "R-005",
+   "type": "Risk",
+   "title": "Marketing Hub Professional not purchased",
+   "detail": "On Starter, the post-purchase sequence needs a manual staff step.",
+   "area": "Quality",
+   "likelihood": "Medium",
+   "impact": "Medium",
+   "response": "Build works on Starter with a staff task; moves to fully automated once Professional is in place.",
+   "owner": "Jen",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§5.2, CD-06"
+  },
+  {
+   "id": "R-006",
+   "type": "Risk",
+   "title": "Business hours not confirmed",
+   "detail": "Response standards cannot start timing without business hours.",
+   "area": "Quality",
+   "likelihood": "Medium",
+   "impact": "Medium",
+   "response": "Chase with Phase 2 inputs by 21 Oct.",
+   "owner": "Jen",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§22, CD-08"
+  },
+  {
+   "id": "R-007",
+   "type": "Risk",
+   "title": "Contact database larger than estimated",
+   "detail": "Cleansing effort changes materially above 1,000 to 2,500 records.",
+   "area": "Timeline",
+   "likelihood": "Low",
+   "impact": "Medium",
+   "response": "Confirm size from the Shopify export early in Phase 3.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§29 A-03"
+  },
+  {
+   "id": "R-008",
+   "type": "Risk",
+   "title": "Contacts without email or phone",
+   "detail": "Records with neither cannot be deduplicated and are quarantined at import.",
+   "area": "Quality",
+   "likelihood": "Low",
+   "impact": "Low",
+   "response": "Quarantine rather than merge; client reviews the quarantined set.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§21, §29 A-04"
+  },
+  {
+   "id": "R-009",
+   "type": "Risk",
+   "title": "Trade sales manager not hired before go-live",
+   "detail": "Trade pipeline is built for a role that may not be filled.",
+   "area": "Scope",
+   "likelihood": "Medium",
+   "impact": "Low",
+   "response": "Interim ownership continues with Jen; no change to the build.",
+   "owner": "Jen",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§29 A-07"
+  },
+  {
+   "id": "R-010",
+   "type": "Risk",
+   "title": "Pinterest scheduling not supported in HubSpot",
+   "detail": "One of six channels may need native management.",
+   "area": "Scope",
+   "likelihood": "Medium",
+   "impact": "Low",
+   "response": "Plan for native Pinterest management; other five channels unaffected.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§29 A-06"
+  },
+  {
+   "id": "IS-001",
+   "type": "Issue",
+   "title": "Native quotes unavailable on current subscription",
+   "detail": "HubSpot quotes need Revenue Hub, which is not held. Quote Sent is a stage move plus a Quote Value property.",
+   "area": "Scope",
+   "likelihood": "",
+   "impact": "Low",
+   "response": "Known limitation, disclosed in the signed SDS. Quoting continues through the current process.",
+   "owner": "NEXA Project Director",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§5.1"
+  },
+  {
+   "id": "IS-002",
+   "type": "Issue",
+   "title": "Shopify integration does not create deals",
+   "detail": "The current Shopify data sync creates no deals, so revenue reporting needs a built mechanism.",
+   "area": "Scope",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "Deal-creation workflow built in Phase 3 (B-030).",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-08",
+   "status": "Open",
+   "decided": "",
+   "ref": "§5.1, §13"
+  }
+ ]
+}
