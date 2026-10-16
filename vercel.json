@@ -1,22 +1,15 @@
 {
+  "rewrites": [
+    { "source": "/data/tracker.json", "destination": "/tracker.json" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
     },
     {
-      "source": "/data/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store"
-        }
-      ]
+      "source": "/(.*)\\.json",
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
     }
   ]
 }
