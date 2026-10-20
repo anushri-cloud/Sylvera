@@ -4,7 +4,7 @@
   "project": "HubSpot CRM Build",
   "start": "2026-10-08",
   "golive": "2026-11-20",
-  "lastSaved": "2026-10-19"
+  "lastSaved": "2026-10-20"
  },
  "build": [
   {
@@ -786,10 +786,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-28",
    "due": "2026-10-28",
-   "status": "Not started",
+   "status": "Done",
    "dep": "CD-17",
    "notes": "Training begins mid-October per SDS",
-   "updated": "2026-10-08"
+   "updated": "2026-10-20"
   },
   {
    "id": "B-050",
@@ -800,10 +800,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-11-05",
    "due": "2026-11-16",
-   "status": "Not started",
+   "status": "Done",
    "dep": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-20"
   },
   {
    "id": "B-051",
@@ -814,10 +814,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-11-05",
    "due": "2026-11-16",
-   "status": "Not started",
+   "status": "Done",
    "dep": "CD-01",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-20"
   },
   {
    "id": "B-052",
@@ -6068,6 +6068,14 @@
    "summary": [
     "PROP-053 Last recommendation date created (for WF-015)",
     "PROP-054 Service recovery flag added to the tracker (already in the portal)"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "summary": [
+    "B-054 Training session 1: Sales: Not started → Done",
+    "B-050 20 dashboards and reports: Not started → Done",
+    "B-051 Executive email summary to CEO: Not started → Done"
    ]
   }
  ],
