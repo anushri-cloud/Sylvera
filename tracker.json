@@ -732,7 +732,7 @@
    "due": "2026-11-11",
    "status": "In progress",
    "dep": "CD-34, CD-35, CD-37, CD-38, CD-39",
-   "notes": "WF-003 to WF-007, WF-009 to WF-013 built (off). Remaining WF-014 to WF-024 planned; client dependencies listed on each workflow asset. Placeholders and pending steps tracked on B-074.",
+   "notes": "WF-003 to WF-007 and WF-009 to WF-014 built (off). Remaining WF-015 to WF-024 planned; client dependencies listed on each workflow asset. Placeholders and pending steps tracked on B-074.",
    "updated": "2026-10-20"
   },
   {
@@ -3303,7 +3303,7 @@
    "status": "QA",
    "qa": "Built, not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5146647769/edit",
-   "notes": "Built, OFF. Waiting on client: CD-38 (can the Monday.com integration write to the HubSpot Fulfilment Status property, or do we use Zapier?), CD-37 (Shopify sync and shipping test). Placeholder: Deal owner stands in for logistics. Design: Ready to Ship emails the deal owner; Shipped on B2C New Business creates a delivery-confirmation task (2 business days), then moves the deal to In Production if it is still at an earlier stage (First Conversation to Deposit or Payment Received); later stages are left alone. No automatic move to Delivered (owner confirms, which triggers WF-006). Trigger excludes LondonDE Trade only. Confirm stage names under CD-22.",
+   "notes": "Built, OFF. Waiting on client: CD-38 (can the Monday.com integration write to the HubSpot Fulfilment Status property, or do we use Zapier?), CD-37 (Shopify sync and shipping test). Placeholder: Deal owner stands in for logistics. Design: Ready to Ship emails the deal owner; Shipped on B2C New Business creates a delivery-confirmation task (2 business days). No automatic move to Delivered (owner confirms, which triggers WF-006). Trigger excludes LondonDE Trade only. Deliberate deviation from manual step 3: the automatic move to In Production was removed, because that stage means \"production authorised, SKU assigned\" and moving it on shipping would record a false stage. Owners update the stage by hand.",
    "updated": "2026-10-20"
   },
   {
@@ -3317,11 +3317,11 @@
    "phase": 2,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-22 (stage owners), CD-08 (business hours). Internal: SLA-008, pipelines.",
-   "updated": "2026-10-19"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5146994932/edit",
+   "notes": "Built, OFF. Waiting on client: CD-22 (stage owners and Closed Lost reasons), CD-08 (business hours). Placeholder: Jennifer Ashby stands in for the client experience lead (6-week alert; also covers trade). Design: open B2C and Trade deals with no activity for 28 days get a notification and a call task for the deal owner; 10 business days later, if still quiet, Jennifer is alerted. Excludes closed stages, In Production, Delivered, Order Confirmed, Fulfilled, and Cancellation Requested. Not built on purpose: optional Closed Lost (Went cold) at 8 weeks, until the client agrees. SLA-008 is checked by WF-018. Delay is business days only, so 10 gives about 2 weeks.",
+   "updated": "2026-10-20"
   },
   {
    "id": "WF-015",
@@ -3337,8 +3337,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-35 (occasions and service track). Internal: WF-011, WF-017 (reads the service recovery flag).",
-   "updated": "2026-10-19"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-35 (occasions and service track). Internal: WF-011, WF-017 (reads the service recovery flag). Properties ready: PROP-053 Last recommendation date (created), PROP-054 Service recovery flag (existing).",
+   "updated": "2026-10-20"
   },
   {
    "id": "WF-016",
@@ -5059,6 +5059,50 @@
    "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
    "notes": "Created 19 Oct for WF-011; also read by WF-010 (optional exclusion) and WF-015. Not yet populated.",
    "updated": "2026-10-19"
+  },
+  {
+   "cat": "Properties",
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-20",
+   "id": "PROP-053",
+   "name": "Last recommendation date",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_last_recommendation_date",
+    "type": "Date picker",
+    "options": "",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "WF-015"
+   },
+   "notes": "Created 20 Oct for WF-015, which sets it to today and uses it to hold the 11-month gap between recommendations. Empty until WF-015 runs."
+  },
+  {
+   "cat": "Properties",
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-20",
+   "id": "PROP-054",
+   "name": "Service recovery flag",
+   "f": {
+    "object": "Contact",
+    "internal": "(confirm internal name)",
+    "type": "Single checkbox",
+    "options": "",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "WF-017"
+   },
+   "notes": "Already existed in the portal; added to the tracker 20 Oct. Read as an exclusion by WF-015, WF-006 and WF-004; set by WF-017 (not built), so empty until then. Confirm the internal name and whether the sylv_ prefix was used."
   }
  ],
  "actions": [
@@ -6005,6 +6049,25 @@
    "date": "2026-10-20",
    "summary": [
     "WF-013: stage catch-up restored (Shipped deals at an earlier B2C stage move to In Production); delivery task kept for all Shipped B2C deals"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "summary": [
+    "WF-013 checked: automatic move to In Production removed on purpose (deviation from manual step 3, reason recorded)"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "summary": [
+    "WF-014 Stalled deal alert built (off), set to QA with link and dependencies; delay corrected to 10 business days after check"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "summary": [
+    "PROP-053 Last recommendation date created (for WF-015)",
+    "PROP-054 Service recovery flag added to the tracker (already in the portal)"
    ]
   }
  ],
