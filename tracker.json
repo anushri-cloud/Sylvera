@@ -4,7 +4,7 @@
   "project": "HubSpot CRM Build",
   "start": "2026-10-08",
   "golive": "2026-11-20",
-  "lastSaved": "2026-10-16"
+  "lastSaved": "2026-10-19"
  },
  "build": [
   {
@@ -74,8 +74,8 @@
    "due": "2026-10-16",
    "status": "In review",
    "dep": "",
-   "notes": "",
-   "updated": "2026-10-16"
+   "notes": "Do not contact (do_not_contact) added 19 Oct for workflow exclusions; sylv_ prefix not applied.",
+   "updated": "2026-10-19"
   },
   {
    "id": "B-006",
@@ -241,9 +241,9 @@
    "start": "2026-10-08",
    "due": "2026-10-21",
    "status": "Not started",
-   "dep": "CD-12",
+   "dep": "CD-12, CD-37",
    "notes": "Opportunity stage and abandoned checkout workflow depend on it",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "B-067",
@@ -282,10 +282,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-15",
    "due": "2026-10-24",
-   "status": "Not started",
+   "status": "Done",
    "dep": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "B-017",
@@ -296,10 +296,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-15",
    "due": "2026-10-24",
-   "status": "Not started",
+   "status": "Done",
    "dep": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "B-018",
@@ -310,10 +310,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-15",
    "due": "2026-10-24",
-   "status": "Not started",
+   "status": "Done",
    "dep": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "B-019",
@@ -324,10 +324,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-15",
    "due": "2026-10-24",
-   "status": "Not started",
+   "status": "Done",
    "dep": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "B-020",
@@ -338,10 +338,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-15",
    "due": "2026-10-24",
-   "status": "Not started",
+   "status": "Done",
    "dep": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "B-021",
@@ -408,10 +408,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-15",
    "due": "2026-11-04",
-   "status": "Not started",
-   "dep": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "status": "In progress",
+   "dep": "CD-33, CD-36",
+   "notes": "WF-001 and WF-002 built (off). Scoring recalculation (WF-008) skipped pending client scoring answers; stalled deal alert and form routing not yet built.",
+   "updated": "2026-10-19"
   },
   {
    "id": "B-026",
@@ -465,9 +465,9 @@
    "start": "2026-10-22",
    "due": "2026-10-28",
    "status": "Not started",
-   "dep": "CD-12",
-   "notes": "",
-   "updated": "2026-10-08"
+   "dep": "CD-12, CD-37",
+   "notes": "Last Shopify sync activity 4 Jun 2026; must be proven before WF-006 and WF-007 are relied on.",
+   "updated": "2026-10-19"
   },
   {
    "id": "B-030",
@@ -674,10 +674,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-22",
    "due": "2026-11-11",
-   "status": "Not started",
-   "dep": "",
+   "status": "In progress",
+   "dep": "CD-23, CD-24, CD-25",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "B-045",
@@ -702,10 +702,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-22",
    "due": "2026-11-11",
-   "status": "Not started",
+   "status": "In progress",
    "dep": "CD-14",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "B-047",
@@ -716,10 +716,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-22",
    "due": "2026-11-11",
-   "status": "Not started",
-   "dep": "",
+   "status": "In progress",
+   "dep": "CD-26, CD-27, CD-28, CD-29",
    "notes": "Visual design held for brand refresh (CD-15)",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "B-048",
@@ -730,10 +730,10 @@
    "owner": "NEXA CRM Specialist",
    "start": "2026-10-22",
    "due": "2026-11-11",
-   "status": "Not started",
-   "dep": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "status": "In progress",
+   "dep": "CD-34, CD-35, CD-37, CD-38, CD-39",
+   "notes": "WF-003 to WF-007, WF-009 to WF-013 built (off). Remaining WF-014 to WF-024 planned; client dependencies listed on each workflow asset. Placeholders and pending steps tracked on B-074.",
+   "updated": "2026-10-20"
   },
   {
    "id": "B-068",
@@ -986,6 +986,20 @@
    "dep": "",
    "notes": "",
    "updated": "2026-10-08"
+  },
+  {
+   "id": "B-074",
+   "phase": 3,
+   "area": "Automation",
+   "item": "Replace workflow placeholders and complete pending steps (published emails, consent property, event and service properties)",
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "start": "2026-10-22",
+   "due": "2026-11-13",
+   "status": "Not started",
+   "dep": "CD-24, CD-27, CD-28, CD-29, CD-34, CD-35, CD-37, CD-33, CD-38, CD-39, CD-20, CD-13",
+   "notes": "See notes on WF-001 to WF-010. Workflows stay OFF until this, UAT and Sylvera approval.",
+   "updated": "2026-10-19"
   }
  ],
  "assets": [
@@ -2075,7 +2089,7 @@
     "object": "Deal",
     "internal": "sylv_fulfilment_status",
     "type": "Dropdown",
-    "options": "Not started; In quality control; Ready to ship; Shipped; Delivered",
+    "options": "Not started; In quality control; Ready to ship; Shipped; Delivered; On hold",
     "required": "No",
     "group": "Fulfilment",
     "populated": "Monday.com sync"
@@ -2086,8 +2100,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-14"
+   "notes": "On hold option added 19 Oct for WF-012 (cancellation hold); WF-013 also reads it.",
+   "updated": "2026-10-19"
   },
   {
    "id": "LC-001",
@@ -2397,11 +2411,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-002",
@@ -2417,11 +2431,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-003",
@@ -2437,11 +2451,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-004",
@@ -2457,11 +2471,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-005",
@@ -2477,11 +2491,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-006",
@@ -2497,11 +2511,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-007",
@@ -2517,11 +2531,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-008",
@@ -2537,11 +2551,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-009",
@@ -2557,11 +2571,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-010",
@@ -2577,11 +2591,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-011",
@@ -2597,11 +2611,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-012",
@@ -2617,11 +2631,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "In build",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-013",
@@ -2637,11 +2651,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-014",
@@ -2657,11 +2671,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-015",
@@ -2677,11 +2691,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-016",
@@ -2697,11 +2711,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-017",
@@ -2717,11 +2731,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-018",
@@ -2737,11 +2751,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-019",
@@ -2757,11 +2771,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "PL-020",
@@ -2777,11 +2791,11 @@
    "phase": 2,
    "spec": "§10",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "SC-001",
@@ -3082,11 +3096,11 @@
    "phase": 2,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5134867650/edit",
+   "notes": "Built in HubSpot, OFF. Pending: confirm trigger Contact Type condition; archive test contact 895361804500; shared enquiry inbox (CD-02). Interim owner Jennifer Ashby.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-002",
@@ -3099,11 +3113,11 @@
    "phase": 2,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5138405610/edit",
+   "notes": "Built in HubSpot, OFF. Interim owner Jennifer Ashby until named users are confirmed (CD-16). Needs test enquiry before turning on.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-003",
@@ -3116,11 +3130,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5138740441/edit",
+   "notes": "Built in HubSpot, OFF. Pending: Event Attendance option list, LIST-011 naming per event, events owner.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-004",
@@ -3133,11 +3147,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5138744546/edit",
+   "notes": "Built in HubSpot, OFF. Pending: event date property and 14-day delay, private event definition, events owner; FT-006 publication and sender settings.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-005",
@@ -3150,11 +3164,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "Sets Client and Repeat Client lifecycle stages. Review HubSpot's automatic lifecycle settings (deal created / closed-won) first so they do not clash with this workflow.",
-   "updated": "2026-10-15"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5138751731/edit",
+   "notes": "Sets Client and Repeat Client lifecycle stages. Review HubSpot's automatic lifecycle settings (deal created / closed-won) first so they do not clash with this workflow. Built in HubSpot, OFF. Pending: order confirmation email (SLA-006); step 4 New vs Existing Client (deal vs contact property); FT-005 publication and sender. Review HubSpot automatic lifecycle settings so they do not clash.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-006",
@@ -3167,11 +3181,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5139430641/edit",
+   "notes": "Built in HubSpot, OFF. Pending: add Send email (FT-010 care guidance) after the delay once published; Do not contact not yet populated; Delivered stage moved manually until WF-013 exists; Service recovery flag populated by WF-017 (not built).",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-007",
@@ -3184,11 +3198,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5139436775/edit",
+   "notes": "Built in HubSpot, OFF. Placeholder: internal notification to Jennifer Ashby replaces the one abandoned-checkout reminder email; replace with published email. Pending: Shopify sync proof and test checkout (last sync 4 Jun 2026), real cart Status value, marketing consent source, Last Purchase Date check is an approximation.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-008",
@@ -3204,8 +3218,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built. Skipped for now: lead scoring client questions D1-D6 outstanding. Build Sheets 'Scoring' tab and WF-008 spec are ready.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-009",
@@ -3218,11 +3232,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "Add a second branch: when a Dormant contact responds, clear the lifecycle stage, then set Client or Repeat Client by purchase count (HubSpot will not move a stage backwards).",
-   "updated": "2026-10-15"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5140362467/edit",
+   "notes": "Add a second branch: when a Dormant contact responds, clear the lifecycle stage, then set Client or Repeat Client by purchase count (HubSpot will not move a stage backwards). Built in HubSpot, OFF. Placeholder: internal notification replaces the re-engagement email. Pending: set Client Relationship deal to Lapsed manually or via a separate deal-based workflow; test clear-then-set lifecycle move on response; reset-on-new-order piece; optional new-deal condition in Responded branch; confirm Lapsed stage exists.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-010",
@@ -3235,11 +3249,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5140391139/edit",
+   "notes": "Built in HubSpot, OFF. Birthday/Anniversary within 35 days, every year; task to contact owner due in 28 days; reminder to Jennifer Ashby after 21 days if no activity. Pending: Occasion Date property for observed occasions; Service track property now exists (PROP-052), optional exclusion not yet added; Client Relationship deal at Occasion-Based Outreach not built; 'task still open' approximated by last activity; test yearly repeat; lower 28-day bound not applied (only matters at go-live backfill).",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-011",
@@ -3252,11 +3266,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5140389091/edit",
+   "notes": "Built in HubSpot, OFF. Sets Service track (Service-led for VIP or Lifetime Value over 25,000, else Standard); task for VIP branch due in 5 business days; no email. Pending: depends on WF-008 (Client Tier and Lifetime Value not populated until scoring is built); owner rotation to client experience lead skipped until a lead is named; test with TEST contacts only.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-012",
@@ -3269,11 +3283,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5140390092/edit",
+   "notes": "Built, OFF. Pendings: (1) Jennifer Ashby is placeholder for logistics owner and client experience lead (CD-24/CD-27 style replacement under B-074). (2) Dispatch visibility needs Shopify/Monday.com status (WF-013, CD-37). (3) Outcome handling is manual: owner sets Cancelled and moves deal to Closed Lost with reason, or resets to Not cancelled. (4) Verify cancellation-status exclusion exists in WF-005 and WF-006. Uses Fulfilment Status option On hold. Order Confirmed (Trade) stage not excluded.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-013",
@@ -3286,11 +3300,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5146647769/edit",
+   "notes": "Built, OFF. Waiting on client: CD-38 (can the Monday.com integration write to the HubSpot Fulfilment Status property, or do we use Zapier?), CD-37 (Shopify sync and shipping test). Placeholder: Deal owner stands in for logistics. Design: Ready to Ship emails the deal owner; Shipped on B2C New Business creates a delivery-confirmation task (2 business days), then moves the deal to In Production if it is still at an earlier stage (First Conversation to Deposit or Payment Received); later stages are left alone. No automatic move to Delivered (owner confirms, which triggers WF-006). Trigger excludes LondonDE Trade only. Confirm stage names under CD-22.",
+   "updated": "2026-10-20"
   },
   {
    "id": "WF-014",
@@ -3306,8 +3320,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-22 (stage owners), CD-08 (business hours). Internal: SLA-008, pipelines.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-015",
@@ -3323,8 +3337,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-35 (occasions and service track). Internal: WF-011, WF-017 (reads the service recovery flag).",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-016",
@@ -3340,8 +3354,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-20 (referral incentive policy decision). Internal: advocacy, referred-by and referral-source properties.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-017",
@@ -3357,8 +3371,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Internal: create the Service recovery flag property (Yes/No); WF-015 reads it as an exclusion.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-018",
@@ -3374,8 +3388,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-08 (business hours). Internal: B-004, create SLA breached (Yes/No) and SLA breach note properties.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-019",
@@ -3391,8 +3405,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-13 (WhatsApp business number connected in HubSpot). Internal: SLA-003.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-020",
@@ -3408,8 +3422,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-30 (form fields, consent wording, recipients), CD-14, CD-31. Internal: FT-001 to FT-003, lifecycle stages.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-021",
@@ -3425,8 +3439,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-24 (consent property name), CD-27 (approve email copy), CD-26 (audience). Internal: SLA-009. Build with placeholders; do not send.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-022",
@@ -3442,8 +3456,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-24, CD-10 (fundraising export), CD-39 (legal review of fundraising consent wording). Internal: LIST-010, LIST-011.",
+   "updated": "2026-10-19"
   },
   {
    "id": "WF-023",
@@ -3459,8 +3473,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-33 (scoring answers), CD-26 (campaign audience), CD-34 (events). Internal: WF-008, LIST-003, FT-009.",
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-001",
@@ -3474,11 +3488,11 @@
    "phase": 3,
    "spec": "§14",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: dormancy window length (CD-25).",
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-002",
@@ -3492,11 +3506,11 @@
    "phase": 3,
    "spec": "§14",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: dormancy window length (CD-25).",
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-003",
@@ -3510,11 +3524,11 @@
    "phase": 3,
    "spec": "§14",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-004",
@@ -3528,11 +3542,11 @@
    "phase": 3,
    "spec": "§14",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-005",
@@ -3546,11 +3560,11 @@
    "phase": 3,
    "spec": "§14",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-006",
@@ -3564,11 +3578,11 @@
    "phase": 3,
    "spec": "§14",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: marketing consent property (CD-24); Marketing contact status used as a proxy for now.",
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-007",
@@ -3582,11 +3596,11 @@
    "phase": 3,
    "spec": "§14",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: marketing consent property (CD-24); Marketing contact status used as a proxy for now.",
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-008",
@@ -3600,11 +3614,11 @@
    "phase": 3,
    "spec": "§14",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
    "notes": "",
-   "updated": "2026-10-08"
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-009",
@@ -3621,8 +3635,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built. Needs how press contacts are identified (CD-23).",
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-010",
@@ -3636,11 +3650,11 @@
    "phase": 3,
    "spec": "§14",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: fundraising-source property name (CD-24).",
+   "updated": "2026-10-19"
   },
   {
    "id": "LIST-011",
@@ -3657,8 +3671,8 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Not built. Needs consent and fundraising-source property names (CD-24); naming per event.",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-001",
@@ -3667,16 +3681,16 @@
    "f": {
     "kind": "Form",
     "content": "Name, email, phone, enquiry detail, preferred contact method",
-    "purpose": "Replaces the Shopify contact form; bespoke uses the same form"
+    "purpose": "Replaces the S | Built in portal 19 Oct (published, not on any page yet). To do: consent checkbox and notification recipients.hopify contact form; bespoke uses the same form"
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: client approval of fields, consent wording and notification recipients (CD-30); shared enquiry inbox (CD-02).",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-002",
@@ -3685,16 +3699,16 @@
    "f": {
     "kind": "Form",
     "content": "First name, email, consent",
-    "purpose": "Replaces the Shopify newsletter form"
+    "purpose": "Replaces the S | Built 19 Oct. To do: marketing consent property and checkbox, intro copy.hopify newsletter form"
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: consent wording approval (CD-30).",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-003",
@@ -3703,16 +3717,16 @@
    "f": {
     "kind": "Form",
     "content": "Standard fields plus one distinctive qualifying question",
-    "purpose": "Stops autofill low-intent leads; wording from Sylvera"
+    "purpose": "Stops autofill l | Built 19 Oct with placeholder qualifying question; Sylvera wording needed (CD-14).ow-intent leads; wording from Sylvera"
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: qualifying question wording (CD-14); consent wording (CD-30).",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-004",
@@ -3721,16 +3735,16 @@
    "f": {
     "kind": "Form",
     "content": "Respondent details and event",
-    "purpose": "Feeds RSVP auto-save"
+    "purpose": "Feeds RSVP au | Built 19 Oct. To do: RSVP response property so WF-011 can read it.to-save"
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: RSVP response options (CD-31); consent wording (CD-30).",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-005",
@@ -3739,16 +3753,16 @@
    "f": {
     "kind": "Email template",
     "content": "Sent on enquiry",
-    "purpose": "Copy and logic now; design after brand refresh"
+    "purpose": "Copy and logic now; design after brand refresh. Draft built in HubSpot 19 Oct with placeholder copy; nothing sent. Awaiting copy approval (CD-27) and sender (CD-29)."
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Draft with placeholder copy; nothing sent. Pending: copy approval (CD-27), sender and reply-to (CD-29). Not yet published, so WF-005 uses placeholders.",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-006",
@@ -3757,16 +3771,16 @@
    "f": {
     "kind": "Email template",
     "content": "Invitation plus one reminder",
-    "purpose": "Copy and logic now; design after brand refresh"
+    "purpose": "Copy and logic now; design after brand refresh. Draft built 19 Oct with placeholder copy; nothing sent. Awaiting event details and RSVP link (CD-28) and copy approval (CD-27)."
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: event details and RSVP link (CD-28), copy approval (CD-27), sender (CD-29).",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-007",
@@ -3775,16 +3789,16 @@
    "f": {
     "kind": "Email template",
     "content": "Campaign",
-    "purpose": "Copy and logic now; design after brand refresh"
+    "purpose": "Copy and logic now; design after brand refresh. Draft built 19 Oct with placeholder copy; nothing sent. Awaiting audience (CD-26) and copy approval (CD-27)."
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: audience (CD-26), copy approval (CD-27), sender (CD-29).",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-008",
@@ -3793,16 +3807,16 @@
    "f": {
     "kind": "Email template",
     "content": "Campaign",
-    "purpose": "Copy and logic now; design after brand refresh"
+    "purpose": "Copy and logic now; design after brand refresh. Draft built 19 Oct with placeholder copy; nothing sent. Awaiting audience (CD-26), collection details (CD-28) and copy approval (CD-27)."
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: audience (CD-26), collection details (CD-28), copy approval (CD-27), sender (CD-29).",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-009",
@@ -3811,16 +3825,16 @@
    "f": {
     "kind": "Email template",
     "content": "VIP and Tier 2 only",
-    "purpose": "Copy and logic now; design after brand refresh"
+    "purpose": "Copy and logic now; design after brand refresh. Draft built 19 Oct with placeholder copy; nothing sent. Send to VIP and Tier 2 only (LIST-003); awaiting CD-26 and CD-27."
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: audience (CD-26), copy approval (CD-27), sender (CD-29).",
+   "updated": "2026-10-19"
   },
   {
    "id": "FT-010",
@@ -3829,16 +3843,16 @@
    "f": {
     "kind": "Email template",
     "content": "On delivery; replaces the generic invoice email",
-    "purpose": "Copy and logic now; design after brand refresh"
+    "purpose": "Copy and logic now; design after brand refresh. Draft built 19 Oct with placeholder copy; nothing sent. Awaiting care guidance (CD-28) and copy approval (CD-27)."
    },
    "phase": 3,
    "spec": "§15.1, §15.3",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "QA",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-08"
+   "notes": "Pending: care guidance (CD-28), copy approval (CD-27), sender (CD-29). WF-006 needs a Send email step added once published.",
+   "updated": "2026-10-19"
   },
   {
    "id": "DB-001",
@@ -4999,8 +5013,52 @@
    "status": "Not started",
    "qa": "Not tested",
    "link": "",
-   "notes": "",
-   "updated": "2026-10-15"
+   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-22 (pipeline confirmation). Internal: WF-001, WF-002, email and page-view tracking.",
+   "updated": "2026-10-19"
+  },
+  {
+   "id": "PROP-051",
+   "cat": "Properties",
+   "name": "Do not contact",
+   "f": {
+    "object": "Contact",
+    "internal": "do_not_contact",
+    "type": "Single checkbox",
+    "options": "Yes / No",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "Manual"
+   },
+   "phase": 1,
+   "spec": "§8.3",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "",
+   "notes": "Added 19 Oct as an exclusion for WF-006, WF-007, WF-009, WF-010. Internal name has no sylv_ prefix (cannot be renamed after creation); decide whether to accept. Not yet populated.",
+   "updated": "2026-10-19"
+  },
+  {
+   "id": "PROP-052",
+   "cat": "Properties",
+   "name": "Service track",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_service_track",
+    "type": "Dropdown select",
+    "options": "Service-led; Standard",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "WF-011"
+   },
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "notes": "Created 19 Oct for WF-011; also read by WF-010 (optional exclusion) and WF-015. Not yet populated.",
+   "updated": "2026-10-19"
   }
  ],
  "actions": [
@@ -5213,6 +5271,186 @@
    "received": "",
    "notes": "SDS assumption A-07; Jen remains interim owner",
    "who": "Jen"
+  },
+  {
+   "id": "CD-22",
+   "item": "Pipelines: confirm stage owners and Closed Lost reasons for all four pipelines",
+   "who": "Jen",
+   "phase": 2,
+   "due": "2026-10-21",
+   "status": "Open",
+   "received": "",
+   "notes": ""
+  },
+  {
+   "id": "CD-23",
+   "item": "Lists: how press contacts are identified, so LIST-009 Press can be built",
+   "who": "Georgia",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. No Press value on Contact Type today."
+  },
+  {
+   "id": "CD-24",
+   "item": "Lists and consent: confirm marketing-consent and fundraising-source property names, so LIST-011 can be built",
+   "who": "Jen",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. Tied to the open consent property decision."
+  },
+  {
+   "id": "CD-25",
+   "item": "Lists: length of the dormancy window used for Active and Dormant clients (LIST-001, LIST-002)",
+   "who": "Jen",
+   "phase": 2,
+   "due": "2026-10-21",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. Lists are built on the Dormant Flag until the window is confirmed."
+  },
+  {
+   "id": "CD-26",
+   "item": "Emails: audience for the three campaign emails (FT-007, FT-008, FT-009)",
+   "who": "Georgia",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. FT-009 should go to VIP and Tier 2 only (LIST-003)."
+  },
+  {
+   "id": "CD-27",
+   "item": "Emails: approve the copy for the six email templates (FT-005 to FT-010)",
+   "who": "Jen",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. Six drafts in HubSpot carry placeholder copy; nothing sent."
+  },
+  {
+   "id": "CD-28",
+   "item": "Emails: event details and RSVP link, collection details, and care guidance (FT-006, FT-008, FT-010)",
+   "who": "Georgia",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. Placeholders in the drafts mark where each goes."
+  },
+  {
+   "id": "CD-29",
+   "item": "Emails: sender name and reply-to inbox for all templates (ties to CD-02)",
+   "who": "Jen",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. Drafts use Sylvera London and georgia@sylvera-london.com for now."
+  },
+  {
+   "id": "CD-30",
+   "item": "Forms: approve fields, consent wording and notification recipients (FT-001 to FT-004)",
+   "who": "Jen",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. Forms are published but on no page; fields and consent wording need sign-off."
+  },
+  {
+   "id": "CD-31",
+   "item": "Forms: RSVP response options for the event RSVP form (FT-004)",
+   "who": "Georgia",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. Needed for the RSVP response property."
+  },
+  {
+   "id": "CD-32",
+   "item": "Portal: time zone decision (portal is US/Eastern, Sylvera is in Dubai/London)",
+   "who": "Phil",
+   "phase": 1,
+   "due": "2026-10-21",
+   "status": "Open",
+   "received": "",
+   "notes": "Raised 19 Oct. Affects send times, workflow delays and report dates."
+  },
+  {
+   "id": "CD-33",
+   "item": "Scoring: answers to the lead scoring questions (D1 to D6), so the scoring workflow can be built",
+   "who": "Sylvera London",
+   "phase": 2,
+   "due": "2026-10-21",
+   "status": "Open",
+   "received": "",
+   "notes": "Needed for WF-008 and B-021 to B-024"
+  },
+  {
+   "id": "CD-34",
+   "item": "Events: who owns events, how a private event is defined, the event date and the Event Attendance options",
+   "who": "Sylvera London",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Needed for WF-003, WF-004 and LIST-011"
+  },
+  {
+   "id": "CD-35",
+   "item": "Occasions: how observed occasions are recorded (date) and whether a service-led track is tracked",
+   "who": "Sylvera London",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Needed for WF-010"
+  },
+  {
+   "id": "CD-36",
+   "item": "Deals: how estimated budget is captured on enquiry deals (deal Amount or a separate field)",
+   "who": "Sylvera London",
+   "phase": 2,
+   "due": "2026-10-21",
+   "status": "Open",
+   "received": "",
+   "notes": "Used by enquiry routing workflows"
+  },
+  {
+   "id": "CD-37",
+   "item": "Shopify: confirm sync status (last activity 4 Jun 2026), allow a test checkout, and agree switching off generic shipping emails",
+   "who": "Sylvera London",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Needed for WF-006, WF-007, B-029, B-066"
+  },
+  {
+   "id": "CD-38",
+   "item": "Monday.com: confirm the integration can write the status to the HubSpot Fulfilment Status property (otherwise we use Zapier or a Monday.com automation)",
+   "phase": 3,
+   "due": "2026-10-23",
+   "status": "Open",
+   "received": "",
+   "notes": "Needed for WF-013. Added 19 Oct.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-39",
+   "item": "Legal review of the fundraising consent wording (WF-022), and approval of the standalone invitation",
+   "phase": 3,
+   "due": "2026-10-23",
+   "status": "Open",
+   "received": "",
+   "notes": "Needed for WF-022. Added 19 Oct.",
+   "who": "Sylvera London"
   }
  ],
  "weekly": [
@@ -5224,6 +5462,15 @@
    "next": "Portal settings, contact/company/deal properties, lifecycle stages and lead statuses. Start social and ad account consolidation.",
    "risks": "Phase 1 client inputs due 14 Oct: CD-01 to CD-05.",
    "decisions": ""
+  },
+  {
+   "id": "W2-manual",
+   "week": "2026-10-15",
+   "rag": "Amber",
+   "done": "Pipelines built and default Sales Pipeline retired. Lists and six email templates drafted. Workflows WF-001 to WF-007, WF-009 and WF-010 built in HubSpot (all off). Do not contact property added.",
+   "next": "WF-011 onwards; review placeholders and pending steps (B-074); test records for built workflows.",
+   "risks": "Phase 1 client inputs (CD-01 to CD-05, CD-19) past due. Shopify sync inactive since 4 Jun 2026 (R-011). Lead scoring answers outstanding (R-012). Unpublished emails use internal placeholder notifications.",
+   "decisions": "Confirm marketing consent property and sender details (CD-24, CD-29); lead scoring answers. Lead scoring answers (CD-33); event and occasion decisions (CD-34, CD-35); Shopify test checkout (CD-37)."
   }
  ],
  "archive": [
@@ -5240,7 +5487,7 @@
      "url": "https://docs.google.com/presentation/d/1JCp8qO37IbQIkyAzA3Pk10N70WbW0DZDQruMUHvqjxI/edit?usp=sharing"
     },
     {
-     "label": "Shopify collaborator request: Domain sylveralondon",
+     "label": "Shopify collaborator request sent (domain: sylveralondon)",
      "url": ""
     }
    ],
@@ -5460,6 +5707,18 @@
    "attendees": "",
    "status": "Scheduled",
    "notes": "Second 50% payment due on completion and go-live."
+  },
+  {
+   "id": "M-013",
+   "date": "2026-10-19",
+   "time": "",
+   "stage": "Workflow build session",
+   "type": "Milestone",
+   "purpose": "Workflows WF-001 to WF-007, WF-009 and WF-010 built in HubSpot (all off); lists, forms and email templates drafted",
+   "links": [],
+   "attendees": "NEXA CRM Specialist",
+   "status": "Completed",
+   "notes": "WF-008 skipped pending scoring answers. Placeholders and pending steps are noted on each workflow asset and tracked under B-074. No workflow has been turned on."
   }
  ],
  "history": [
@@ -5604,6 +5863,148 @@
    "date": "2026-10-16",
    "summary": [
     "SC-003 Travel patterns: Not started → Client review"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "summary": [
+    "B-016 B2C New Business pipeline, 9 stages: Not started → Done",
+    "B-017 Client Relationship pipeline (post-purchase), 5 stages: Not started → Done",
+    "B-018 LondonDE Trade pipeline, 5 stages, interim owner: Not started → Done",
+    "B-019 Shopify Orders operational pipeline, single stage: Not started → Done",
+    "B-020 Retire default Sales Pipeline: Not started → Done",
+    "B-046 HubSpot forms replace 2 Shopify forms; newsletter, advertising and RSVP forms: Not started → In progress",
+    "PL-001 B2C New Business · First Conversation: Not started → QA",
+    "PL-002 B2C New Business · Piece Identified: Not started → QA",
+    "PL-003 B2C New Business · Rough Quote Sent: Not started → QA",
+    "PL-004 B2C New Business · Design Consultation Fee Paid: Not started → QA",
+    "PL-005 B2C New Business · Design Review: Not started → QA",
+    "PL-006 B2C New Business · Deposit or Payment Received: Not started → QA",
+    "PL-007 B2C New Business · In Production: Not started → QA",
+    "PL-008 B2C New Business · Delivered: Not started → QA",
+    "PL-009 B2C New Business · Closed Won / Closed Lost: Not started → QA",
+    "PL-010 Client Relationship · Recent Purchase: Not started → QA",
+    "PL-011 Client Relationship · Aftercare Follow-Up: Not started → QA",
+    "PL-012 Client Relationship · Occasion-Based Outreach: Not started → In build",
+    "PL-013 Client Relationship · Repeat Purchase Opportunity: Not started → QA",
+    "PL-014 Client Relationship · VIP Review: Not started → QA",
+    "PL-015 LondonDE Trade · Enquiry: Not started → QA",
+    "PL-016 LondonDE Trade · Qualifying: Not started → QA",
+    "PL-017 LondonDE Trade · Quote Sent: Not started → QA",
+    "PL-018 LondonDE Trade · Order Confirmed: Not started → QA",
+    "PL-019 LondonDE Trade · Fulfilled or Closed: Not started → QA",
+    "…and 5 more changes"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "summary": [
+    "Client action CD-22 added: Pipelines: confirm stage owners and Closed Lost reasons for all four pipelines",
+    "Client action CD-23 added: Lists: how press contacts are identified, so LIST-009 Press can be built",
+    "Client action CD-24 added: Lists and consent: confirm marketing-consent and fundraising-source property names, so LIST-011 can be built",
+    "Client action CD-25 added: Lists: length of the dormancy window used for Active and Dormant clients (LIST-001, LIST-002)",
+    "Client action CD-26 added: Emails: audience for the three campaign emails (FT-007, FT-008, FT-009)",
+    "Client action CD-27 added: Emails: approve the copy for the six email templates (FT-005 to FT-010)",
+    "Client action CD-28 added: Emails: event details and RSVP link, collection details, and care guidance (FT-006, FT-008, FT-010)",
+    "Client action CD-29 added: Emails: sender name and reply-to inbox for all templates (ties to CD-02)",
+    "Client action CD-30 added: Forms: approve fields, consent wording and notification recipients (FT-001 to FT-004)",
+    "Client action CD-31 added: Forms: RSVP response options for the event RSVP form (FT-004)",
+    "Client action CD-32 added: Portal: time zone decision (portal is US/Eastern, Sylvera is in Dubai/London)"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "summary": [
+    "B-044 Segments and lists (11), incl. re-permission and quarantine lists: Not started → In progress",
+    "B-047 Six email templates: copy and logic: Not started → In progress",
+    "LIST-001 Active clients: Not started → QA",
+    "LIST-002 Dormant clients: Not started → QA",
+    "LIST-003 VIP and Tier 2: Not started → QA",
+    "LIST-004 Trade: trading houses: Not started → QA",
+    "LIST-005 Trade: brand accounts: Not started → QA",
+    "LIST-006 Pending re-permission, subscribers: Not started → QA",
+    "LIST-007 Pending re-permission, verified clients: Not started → QA",
+    "LIST-008 Other: staff, family: Not started → QA",
+    "LIST-010 Fundraising database, quarantined: Not started → QA",
+    "FT-005 Enquiry acknowledgement: Not started → QA",
+    "FT-006 Event invitation: Not started → QA",
+    "FT-007 Engagement and proposal planning: Not started → QA",
+    "FT-008 New collection launch: Not started → QA",
+    "FT-009 Exclusive private events: Not started → QA",
+    "FT-010 Post-purchase care guidance: Not started → QA"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "summary": [
+    "WF-001 Enquiry routing, private client: Not started → QA, HubSpot link added",
+    "WF-002 Enquiry routing, trade: Not started → QA, HubSpot link added",
+    "WF-003 RSVP auto-save: Not started → QA, HubSpot link added",
+    "WF-004 Event reminder sequence: Not started → QA, HubSpot link added",
+    "WF-005 Post-purchase sequence: Not started → QA, HubSpot link added",
+    "WF-006 Post-delivery care guidance: Not started → QA, HubSpot link added",
+    "WF-007 Abandoned checkout: Not started → QA, HubSpot link added",
+    "WF-009 Dormancy flagging and re-engagement: Not started → QA, HubSpot link added",
+    "WF-010 Occasion notifications: Not started → QA, HubSpot link added",
+    "WF-008 Scoring recalculation: skipped, note added",
+    "PROP-051 Do not contact added",
+    "B-025 Core workflows: Not started → In progress",
+    "B-048 Remaining workflows: Not started → In progress",
+    "Build item B-074 added: replace workflow placeholders",
+    "Register item R-011 added: Shopify sync inactive",
+    "Register item R-012 added: lead scoring rules unconfirmed",
+    "Weekly update added for w/c 15 Oct",
+    "Dependency notes added to lists LIST-001 to LIST-011, forms FT-001 to FT-004 and email templates FT-005 to FT-010",
+    "Client actions CD-33 to CD-37 added: scoring answers, events, occasions, estimated budget, Shopify sync",
+    "Dependencies updated on B-025, B-029, B-048, B-066, B-074",
+    "Archive entry added: Workflow build session"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "summary": [
+    "PROP-052 Service track added (sylv_service_track, Dropdown: Service-led / Standard, group Clienteling)",
+    "WF-011 Purchase-history segmentation: Not started → In build",
+    "WF-010 note updated: Service track property now exists"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "summary": [
+    "WF-011 Purchase-history segmentation: In build → QA, HubSpot link added; trigger Group 2 corrected (Lifetime Value only, Do not contact include-empty)",
+    "B-048 note updated: WF-011 built"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "summary": [
+    "PROP-050 Fulfilment Status: option 'On hold' added (for WF-012)"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "summary": [
+    "WF-012 Cancellation outreach built (off), set to QA with link and pendings; B-048 note updated"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "summary": [
+    "WF-013 to WF-024 planned for 20 Oct; client and internal dependencies recorded on each workflow asset",
+    "Client actions CD-38 (Monday.com integration) and CD-39 (legal review, fundraising consent) added",
+    "Tracker page: dependency colour key (orange = waiting on client, blue = internal), highlighted rows, and \"Holds up\" links on Client actions"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "summary": [
+    "WF-013 Monday.com fulfilment sync built (off), set to QA with link and dependencies (CD-37, CD-38); trigger and task fixed after check"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "summary": [
+    "WF-013: stage catch-up restored (Shipped deals at an earlier B2C stage move to In Production); delivery task kept for all Shipped B2C deals"
    ]
   }
  ],
@@ -5799,6 +6200,38 @@
    "status": "Open",
    "decided": "",
    "ref": "§5.1, §13"
+  },
+  {
+   "id": "R-011",
+   "type": "Risk",
+   "title": "Shopify sync inactive since 4 Jun 2026",
+   "detail": "Abandoned checkout and purchase-based workflows (WF-007, WF-009) rely on Shopify data; cart data and Last Purchase Date are unproven.",
+   "area": "Access / data",
+   "likelihood": "High",
+   "impact": "Medium",
+   "response": "Confirm sync status and run a test checkout before relying on WF-007; verify Last Purchase Date population.",
+   "owner": "NEXA Shopify Team",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-19",
+   "status": "Open",
+   "decided": "",
+   "ref": "B-029, B-066, WF-007"
+  },
+  {
+   "id": "R-012",
+   "type": "Risk",
+   "title": "Lead scoring rules not confirmed",
+   "detail": "Client scoring questions D1-D6 are outstanding, so the scoring recalculation workflow (WF-008) has not been built.",
+   "area": "Scope",
+   "likelihood": "Medium",
+   "impact": "High",
+   "response": "Chase client answers; build WF-008 from the Scoring sheet once confirmed.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-19",
+   "status": "Open",
+   "decided": "",
+   "ref": "B-021 to B-024, WF-008"
   }
  ]
 }
