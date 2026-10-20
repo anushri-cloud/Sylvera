@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta name="robots" content="noindex,nofollow"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta name="robots" content="noindex,nofollow"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Sylvera London CRM Build Tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,6 +98,17 @@ tr:last-child td{border-bottom:0}
 tr.grp td{background:var(--bg);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding-top:12px}
 td.item{min-width:260px}
 td.notes{min-width:200px;color:var(--muted)}
+:root{--cl:#b4530a;--cl-bg:#fde8d2;--in:#2a5d9f;--in-bg:#e4edf8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cl:#ffb066;--cl-bg:#4a2a0e;--in:#8fb6ec;--in-bg:#1b2a40}}
+:root[data-theme="dark"]{--cl:#ffb066;--cl-bg:#4a2a0e;--in:#8fb6ec;--in-bg:#1b2a40}
+.dchip{display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px;margin:1px 2px 1px 0;white-space:nowrap}
+.dchip.dc{background:var(--cl-bg);color:var(--cl);border:1px solid var(--cl)}
+.dchip.dc.got{background:var(--ok-bg);color:var(--ok);border-color:var(--ok);text-decoration:line-through}
+.dchip.di{background:var(--in-bg);color:var(--in)}
+tr.needs-client>td:first-child{box-shadow:inset 4px 0 0 var(--cl)}
+tr.needs-client{background:color-mix(in srgb,var(--cl-bg) 45%,transparent)}
+.dkey{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:12px;color:var(--muted);margin:0 0 10px;padding:8px 12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.neededby{display:block;margin-top:4px;font-size:12px}
 td.wide{min-width:220px}
 tbody td:first-child{white-space:nowrap}
 td input,td select,td textarea{font:inherit;font-size:13px;width:100%;min-width:90px;padding:4px 6px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--fg)}
@@ -236,6 +247,11 @@ const weekStart=n=>{const t=(dnum(START)+(n-1)*7)*864e5;const d=new Date(t);retu
 
 function stClass(s){return({"Done":"s-done","Completed":"s-done","Approved":"s-done","Scheduled":"s-progress","Pending approval":"s-review","Live":"s-live","Received":"s-received","Green":"s-green","In progress":"s-progress","In build":"s-build","QA":"s-qa","In review":"s-review","Client review":"s-review","Amber":"s-amber","Blocked":"s-blocked","Overdue":"s-overdue","Red":"s-red"})[s]||"s-idle"}
 const pill=s=>`<span class="pill ${stClass(s)}">${esc(s)}</span>`;
+const DEPRE=/\b(?:CD|B|WF|LIST|FT|PROP|SLA|R)-\d{1,3}\b/g;
+const cdGot=id=>{const a=(S.actions||[]).find(x=>x.id===id);return !!a&&a.status!=="Open"};
+function rich(t){return esc(t).replace(DEPRE,m=>m.startsWith("CD-")?`<span class="dchip dc${cdGot(m)?" got":""}" title="${cdGot(m)?"Client input received":"Waiting on client input (see Client actions)"}">${m}</span>`:`<span class="dchip di" title="Internal dependency">${m}</span>`)}
+const needsClient=t=>((String(t||"").match(/\bCD-\d{1,3}\b/g))||[]).some(id=>!cdGot(id));
+const DKEY=`<div class="dkey"><b>Key:</b> <span class="dchip dc">CD-00</span> waiting on client input <span class="dchip dc got">CD-00</span> client input received <span class="dchip di">B-000 / WF-000</span> internal dependency · rows with an orange left edge are limited until the client replies</div>`;
 const isLate=r=>r.due && r.status!=="Done" && r.due<todayISO();
 const actStatus=a=>a.status==="Open" && a.due<todayISO()?"Overdue":a.status;
 
@@ -261,8 +277,10 @@ function header(){
 /* ---------- Overview ---------- */
 function overview(){
   const t=todayISO();
-  const done=S.build.filter(r=>r.status==="Done").length, bp=Math.round(done/S.build.length*100);
-  const live=S.assets.filter(a=>a.status==="Live").length, ap=Math.round(live/S.assets.length*100);
+  const BW={"Done":1,"In review":.75,"In progress":.5,"Blocked":.25},AW={"Live":1,"Client review":.9,"QA":.75,"In build":.4};
+  const bwt=r=>BW[r.status]||0, awt=a=>AW[a.status]||0;
+  const done=S.build.filter(r=>r.status==="Done").length, bp=Math.round(S.build.reduce((s,r)=>s+bwt(r),0)/S.build.length*100), bwip=S.build.filter(r=>r.status==="In progress"||r.status==="In review").length;
+  const live=S.assets.filter(a=>a.status==="Live").length, ap=Math.round(S.assets.reduce((s,a)=>s+awt(a),0)/S.assets.length*100), aqa=S.assets.filter(a=>a.status==="QA"||a.status==="Client review").length;
   const openA=S.actions.filter(a=>a.status==="Open"), overA=openA.filter(a=>a.due<t);
   const blocked=S.build.filter(r=>r.status==="Blocked"), late=S.build.filter(isLate);
   const hiRisk=(S.register||[]).filter(x=>!regClosed(x)&&rating(x)==="High");
@@ -270,7 +288,7 @@ function overview(){
   const g0=dnum(START),g1=dnum("2026-11-21"),span=g1-g0,pct=iso=>Math.min(100,Math.max(0,(dnum(iso)-g0)/span*100));
   let ticks="";for(let i=0;i<7;i++){const w=weekStart(i+1);ticks+=`<span style="left:${pct(w)}%">W${i+1} · ${fmt(w)}</span>`}
   const tp=pct(t),showToday=dnum(t)>=g0&&dnum(t)<=g1;
-  const rows=[1,2,3,4].map(p=>{const items=S.build.filter(r=>+r.phase===p),d=items.filter(r=>r.status==="Done").length,pr=items.length?Math.round(d/items.length*100):0;const [a,b]=PH_DATES[p];
+  const rows=[1,2,3,4].map(p=>{const items=S.build.filter(r=>+r.phase===p),d=items.filter(r=>r.status==="Done").length,pr=items.length?Math.round(items.reduce((s,r)=>s+bwt(r),0)/items.length*100):0;const [a,b]=PH_DATES[p];
     return `<div class="g-row"><div class="g-lab">Phase ${p}<small>${esc(PHASES[p])}</small></div><div class="g-track"><div class="g-seg" style="left:${pct(a)}%;width:${pct(b)-pct(a)+100/span}%" title="${fmt(a)} – ${fmt(b)} · ${d}/${items.length} done"><i style="width:${pr}%"></i></div></div></div>`}).join("");
   const att=[...overA.map(a=>`<li>${pill("Overdue")}<span><span class="mono">${a.id}</span> ${esc(a.item)} <span class="muted">· client, due ${fmt(a.due)}</span></span></li>`),
     ...blocked.map(r=>`<li>${pill("Blocked")}<span><span class="mono">${r.id}</span> ${esc(r.item)}${r.dep?` <span class="muted">· waiting on ${esc(r.dep)}</span>`:""}</span></li>`),
@@ -278,8 +296,8 @@ function overview(){
     ...late.filter(r=>r.status!=="Blocked").map(r=>`<li>${pill("Overdue")}<span><span class="mono">${r.id}</span> ${esc(r.item)} <span class="muted">· due ${fmt(r.due)}</span></span></li>`)];
   const nextDue=S.build.filter(r=>r.status!=="Done"&&r.due>=t).sort((a,b)=>a.due.localeCompare(b.due)).slice(0,6);
   return `<section class="kpis">
-    <div class="kpi"><div class="l">Build items done</div><div class="v">${bp}%</div><div class="s">${done} of ${S.build.length} items</div><div class="bar"><i style="width:${bp}%"></i></div></div>
-    <div class="kpi"><div class="l">Assets live</div><div class="v">${live}<span class="muted" style="font-size:20px"> / ${S.assets.length}</span></div><div class="s">properties, pipelines, workflows, reports…</div><div class="bar"><i style="width:${ap}%"></i></div></div>
+    <div class="kpi"><div class="l">Build items done</div><div class="v">${bp}%</div><div class="s">${done} done · ${bwip} in progress or review of ${S.build.length}</div><div class="bar"><i style="width:${bp}%"></i></div></div>
+    <div class="kpi"><div class="l">Assets built</div><div class="v">${ap}%</div><div class="s">${live} live · ${aqa} built and in QA · of ${S.assets.length}</div><div class="bar"><i style="width:${ap}%"></i></div></div>
     <div class="kpi"><div class="l">Client actions open</div><div class="v">${openA.length}</div><div class="s ${overA.length?"late":""}">${overA.length?overA.length+" past due date":"none past due"}</div></div>
     <div class="kpi"><div class="l">Status this week</div><div class="v">${latest?pill(latest.rag):"–"}</div><div class="s">${latest?"Week of "+fmt(latest.week):"No update yet"}</div></div>
   </section>
@@ -288,7 +306,7 @@ function overview(){
       <div class="panel"><h2>Phase timeline</h2><div class="gantt"><div class="gantt-inner">
         <div class="g-axis"><div></div><div class="g-ticks">${ticks}</div></div>
         <div style="position:relative">${rows}${showToday?`<div style="position:absolute;inset:0 0 0 160px;pointer-events:none"><div class="g-today" style="left:${tp}%"><em>Today</em></div></div>`:""}</div>
-      </div></div><p class="legend">Filled share of each bar = items done in that phase. Go-live 20 Nov 2026.</p></div>
+      </div></div><p class="legend">Filled share of each bar = weighted progress in that phase (Done 100%, In review 75%, In progress 50%). Go-live 20 Nov 2026.</p></div>
       <div class="panel"><h2>Due next</h2>${nextDue.length?`<ul class="attn">${nextDue.map(r=>`<li><span class="mono">${fmt(r.due)}</span><span>${esc(r.item)} <span class="muted">· ${esc(r.owner)}</span></span></li>`).join("")}</ul>`:`<p class="empty">Nothing outstanding.</p>`}</div>
     </div>
     <div style="display:grid;gap:16px;align-content:start;min-width:0">
@@ -322,12 +340,12 @@ function buildView(){
       <td class="notes"><textarea ${k} data-f="notes" aria-label="Notes">${esc(r.notes)}</textarea></td>
       <td><button class="del" data-del="build" data-id="${esc(r.id)}" aria-label="Delete ${esc(r.id)}">Delete</button></td></tr>`;
     }else{
-      body+=`<tr><td class="mono">${esc(r.id)}</td><td class="mono">P${esc(r.phase)}</td><td>${esc(r.area)}</td><td class="item">${esc(r.item)}</td><td class="mono">${esc(r.spec)}</td><td>${esc(r.owner)}</td>
-      <td class="mono">${fmt(r.start)}</td><td class="mono ${isLate(r)?"late":""}">${fmt(r.due)}${isLate(r)?" · late":""}</td><td>${pill(r.status)}</td><td class="mono">${esc(r.dep)||"–"}</td><td class="notes">${esc(r.notes)}</td><td class="mono muted">${fmt(r.updated)}</td></tr>`;
+      body+=`<tr class="${needsClient(r.dep+" "+r.notes)?"needs-client":""}"><td class="mono">${esc(r.id)}</td><td class="mono">P${esc(r.phase)}</td><td>${esc(r.area)}</td><td class="item">${esc(r.item)}</td><td class="mono">${esc(r.spec)}</td><td>${esc(r.owner)}</td>
+      <td class="mono">${fmt(r.start)}</td><td class="mono ${isLate(r)?"late":""}">${fmt(r.due)}${isLate(r)?" · late":""}</td><td>${pill(r.status)}</td><td>${r.dep?rich(r.dep):"–"}</td><td class="notes">${rich(r.notes)}</td><td class="mono muted">${fmt(r.updated)}</td></tr>`;
     }
   });
   const head=editing?["ID","Phase","Area","Build item","SDS §","Owner","Start","Due","Status","Depends on","Notes",""]:["ID","Phase","Area","Build item","SDS §","Owner","Start","Due","Status","Depends on","Notes","Updated"];
-  return `<div class="chips">${counts.map(([s,n])=>`<button class="chip" data-chip="build-status" data-v="${esc(s)}" aria-pressed="${f.status===s}">${esc(s)} <span class="mono">${n}</span></button>`).join("")}</div>
+  return DKEY+`<div class="chips">${counts.map(([s,n])=>`<button class="chip" data-chip="build-status" data-v="${esc(s)}" aria-pressed="${f.status===s}">${esc(s)} <span class="mono">${n}</span></button>`).join("")}</div>
   <div class="filters">
     <input id="fb-q" type="search" placeholder="Search items, notes, dependencies" value="${esc(f.q)}" aria-label="Search build items">
     ${sel(["All phases","1","2","3","4"],f.phase||"All phases",`id="fb-phase" aria-label="Filter by phase"`)}
@@ -376,9 +394,9 @@ function assetsView(){
       <td class="notes"><textarea ${k} data-f="notes" aria-label="Notes">${esc(a.notes)}</textarea></td><td><button class="del" data-del="assets" data-id="${esc(a.id)}" aria-label="Delete ${esc(a.id)}">Delete</button></td></tr>`;
     const link=/^https:\/\//.test(a.link)?`<a class="lnk" href="${esc(a.link)}" target="_blank" rel="noopener">Open</a>`:"–";
     const qa=a.qa||"Not tested";
-    return `<tr><td class="mono">${esc(a.id)}</td><td class="item"><b style="font-weight:600">${esc(a.name)}</b></td>${sec.cols.map(c=>cell(a,c)).join("")}<td class="mono">P${esc(a.phase)}</td><td>${esc(a.owner)||"–"}</td><td>${pill(a.status)}</td><td><span class="pill ${qa==="Passed"?"s-green":qa==="Failed"?"s-red":qa==="Re-test"?"s-amber":"s-idle"}">${esc(qa)}</span></td><td>${link}</td><td class="notes">${esc(a.notes)}</td><td class="mono muted">${fmt(a.updated)}</td></tr>`}).join("");
+    return `<tr class="${needsClient(a.notes)?"needs-client":""}"><td class="mono">${esc(a.id)}</td><td class="item"><b style="font-weight:600">${esc(a.name)}</b></td>${sec.cols.map(c=>cell(a,c)).join("")}<td class="mono">P${esc(a.phase)}</td><td>${esc(a.owner)||"–"}</td><td>${pill(a.status)}</td><td><span class="pill ${qa==="Passed"?"s-green":qa==="Failed"?"s-red":qa==="Re-test"?"s-amber":"s-idle"}">${esc(qa)}</span></td><td>${link}</td><td class="notes">${rich(a.notes)}</td><td class="mono muted">${fmt(a.updated)}</td></tr>`}).join("");
   const head=["ID","Name",...sec.cols.map(c=>c[1]),"Phase","Owner","Status","QA",editing?"HubSpot link":"Link","Notes",editing?"":"Updated"];
-  return `<div class="chips">${chips}</div>
+  return DKEY+`<div class="chips">${chips}</div>
   <div class="filters">
     <input id="fa-q" type="search" placeholder="Search ${esc(f.cat.toLowerCase())}" value="${esc(f.q)}" aria-label="Search assets">
     ${sel(["All statuses",...ASSET_ST],f.status||"All statuses",`id="fa-status" aria-label="Filter by status"`)}
@@ -396,9 +414,10 @@ function actionsView(){
     if(editing)return `<tr><td class="mono">${esc(a.id)}</td><td class="item"><textarea ${k} data-f="item" aria-label="What we need">${esc(a.item)}</textarea></td><td><input ${k} data-f="who" value="${esc(a.who)}" aria-label="Who"></td><td>${sel(["0","1","2","3","4"],String(a.phase),`${k} data-f="phase" aria-label="Needed for phase"`)}</td>
       <td><input type="date" ${k} data-f="due" value="${esc(a.due)}" aria-label="Due"></td><td>${sel(ACT_ST,a.status,`${k} data-f="status" aria-label="Status"`)}</td>
       <td><input type="date" ${k} data-f="received" value="${esc(a.received)}" aria-label="Date received"></td><td class="notes"><textarea ${k} data-f="notes" aria-label="Notes">${esc(a.notes)}</textarea></td><td><button class="del" data-del="actions" data-id="${esc(a.id)}" aria-label="Delete ${esc(a.id)}">Delete</button></td></tr>`;
-    return `<tr><td class="mono">${esc(a.id)}</td><td class="item">${esc(a.item)}</td><td>${esc(a.who)||"–"}</td><td class="mono">${a.phase?"Phase "+a.phase:"Before build"}</td><td class="mono ${st==="Overdue"?"late":""}">${fmt(a.due)}</td><td>${pill(st)}</td><td class="mono">${fmt(a.received)}</td><td class="notes">${esc(a.notes)}</td></tr>`}).join("");
+    const by=[...S.build.filter(b=>(b.dep+" "+b.notes).includes(a.id+"")&&new RegExp("\\b"+a.id+"\\b").test(b.dep+" "+b.notes)).map(b=>b.id),...S.assets.filter(x=>new RegExp("\\b"+a.id+"\\b").test(x.notes||"")).map(x=>x.id)];
+    return `<tr class="${a.status==="Open"?"needs-client":""}"><td class="mono">${esc(a.id)}</td><td class="item">${esc(a.item)}${by.length?`<span class="neededby muted">Holds up: ${by.map(i=>`<span class="dchip di">${i}</span>`).join(" ")}</span>`:""}</td><td>${esc(a.who)||"–"}</td><td class="mono">${a.phase?"Phase "+a.phase:"Before build"}</td><td class="mono ${st==="Overdue"?"late":""}">${fmt(a.due)}</td><td>${pill(st)}</td><td class="mono">${fmt(a.received)}</td><td class="notes">${esc(a.notes)}</td></tr>`}).join("");
   const open=S.actions.filter(a=>a.status==="Open").length;
-  return `<p style="margin:0 0 12px;max-width:70ch">Inputs and decisions we need from Sylvera London to keep the 20 November go-live on track (SDS §29.2). Each is due before the phase that depends on it starts. <b>${open}</b> still open.</p>
+  return `<p style="margin:0 0 12px;max-width:70ch">Inputs and decisions we need from Sylvera London to keep the 20 November go-live on track (SDS §29.2). Each is due before the phase that depends on it starts. <b>${open}</b> still open.</p>${DKEY}
   <div class="tbl"><table><thead><tr>${["ID","What we need","Who",editing?"Phase (0 = before build)":"Needed for","Due","Status","Received","Notes",...(editing?[""]:[])].map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${body}</tbody></table></div>
   ${canWrite?`<button class="btn rowadd" id="add-action">+ Add client action</button>`:""}`;
 }
