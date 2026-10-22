@@ -4,7 +4,7 @@
   "project": "HubSpot CRM Build",
   "start": "2026-10-08",
   "golive": "2026-11-20",
-  "lastSaved": "2026-10-22"
+  "lastSaved": "2026-10-23"
  },
  "build": [
   {
@@ -732,8 +732,8 @@
    "due": "2026-11-11",
    "status": "In progress",
    "dep": "CD-20, CD-22, CD-24, CD-25, CD-27, CD-29, CD-33, CD-34, CD-35, CD-37, CD-38, CD-39, CD-40, CD-41, CD-42",
-   "notes": "WF-003 to WF-007 and WF-009 to WF-018 built (off). Remaining WF-019 to WF-024 planned; client dependencies listed on each workflow asset. Placeholders and pending steps tracked on B-074. WF-020 built 23 Oct (off), consent steps pending CD-24.",
-   "updated": "2026-10-22"
+   "notes": "WF-003 to WF-007 and WF-009 to WF-018 built (off). Remaining WF-019 to WF-024 planned; client dependencies listed on each workflow asset. Placeholders and pending steps tracked on B-074. WF-020 built 23 Oct (off), consent steps pending CD-24. WF-022 built 23 Oct (off, skeleton; invitation, legal review and lists pending). WF-023 built 23 Oct (off); needs WF-008 (CD-33) to run end to end. WF-024 built 23 Oct (off); product page URL is a placeholder.",
+   "updated": "2026-10-23"
   },
   {
    "id": "B-068",
@@ -3453,11 +3453,11 @@
    "phase": 4,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-24, CD-10 (fundraising export), CD-39 (legal review of fundraising consent wording). Internal: LIST-010, LIST-011.",
-   "updated": "2026-10-19"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5162159333/edit",
+   "notes": "Built 23 Oct (OFF), skeleton only; Phase 4, to run after go-live. Manual enrolment, re-enrol off. Sets Fundraising consent status to Re-permission requested, sends a PLACEHOLDER internal email to Jennifer Ashby (not to the contact), waits 30 days, then: Opted in branch (no action; LIST-011 should filter on the property) or No response branch (still Re-permission requested) sets status to No response. No suppression or deletion, by design. Not built: the standalone fundraising invitation and landing page, legal review of the wording, batch size and spacing, LIST-010/LIST-011 (not confirmed to exist). Fundraising consent status options extended on 23 Oct (PROP-063). Must stay OFF. Earlier note: Not built yet, planned 20 Oct. Waiting on client: CD-24, CD-10 (fundraising export), CD-39 (legal review of fundraising consent wording). Internal: LIST-010, LIST-011.",
+   "updated": "2026-10-23"
   },
   {
    "id": "WF-023",
@@ -3470,11 +3470,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-33 (scoring answers), CD-26 (campaign audience), CD-34 (events). Internal: WF-008, LIST-003, FT-009.",
-   "updated": "2026-10-19"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5162547425/edit",
+   "notes": "Built 23 Oct (OFF). Trigger: Group 1 = Client Tier VIP/Tier 2, Marketing consent status Opted in, Contact Type not Internal/Supplier, not Non-marketing; Group 2 = Client Tier No tier/Tier 3 AND Private event invitation eligible is true (consent condition removed from Group 2 so people who drop tier are always cleared). Re-enrol on. Branch Became eligible sets Private event invitation eligible = true and creates a task 'Add to next private event guest list' for the contact owner (7 business days; manual says 7 days, untick Business days only if wanted). Branch Moved down sets eligible = false. Cannot run end to end until WF-008 sets Client Tier (CD-33). Waiting on client: CD-24 (consent property), CD-26, CD-34. Internal: LIST-003 (if static, add Remove from static list to Moved down), FT-009 template.",
+   "updated": "2026-10-23"
   },
   {
    "id": "LIST-001",
@@ -5010,11 +5010,11 @@
    "phase": 2,
    "spec": "",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-22 (pipeline confirmation). Internal: WF-001, WF-002, email and page-view tracking.",
-   "updated": "2026-10-19"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5162555594/edit",
+   "notes": "Built 23 Oct (OFF). Re-enrol on. Trigger has four groups: (1) Subscriber + marketing email opened + 5+ page views; (2) Subscriber + marketing email clicked 1+ + 5+ page views; (3) Lead + associated LondonDE Trade deal at Qualifying; (4) Subscriber/Lead/Qualified + deal at Piece Identified (B2C New Business) or Quote Sent (LondonDE Trade). Branches in order: To Opportunity (stage Subscriber/Lead/Qualified + those deal stages) sets Opportunity; Trade to Qualified (Lead + Qualifying) sets Qualified; Private client to Qualified (Subscriber) sets Qualified; No change. PLACEHOLDER: page-view URL is set to contains /products/ because the real product URL path is not confirmed, so replace it in Groups 1 and 2. Opened/clicked is lifetime (property based), not tied to a date. Stage is never moved backwards (Client, Repeat Client, Private Client, Dormant, Other are excluded as they are never in the trigger stage lists). Needs CD-22 (pipeline confirmation) and WF-001/WF-002 live. Earlier note: Not built yet, planned 20 Oct. Waiting on client: CD-22 (pipeline confirmation). Internal: WF-001, WF-002, email and page-view tracking.",
+   "updated": "2026-10-23"
   },
   {
    "id": "PROP-051",
@@ -5295,12 +5295,34 @@
     "object": "Contact",
     "internal": "sylv_fundraising_consent_status",
     "type": "Dropdown select",
-    "options": "Not asked; Opted in; Not opted in",
+    "options": "Not asked; Opted in; Not opted in; Re-permission requested; No response",
     "required": "No",
     "group": "Core operational",
     "populated": "Fundraising workflows (WF-022)"
    },
-   "notes": "Created 23 Oct as PROVISIONAL. Options are our proposal, to confirm with the client (CD-24)."
+   "notes": "Created 23 Oct as PROVISIONAL. Options are our proposal, to confirm with the client (CD-24). 23 Oct: added Re-permission requested and No response for WF-022."
+  },
+  {
+   "cat": "Properties",
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-23",
+   "id": "PROP-064",
+   "name": "Private event invitation eligible",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_private_event_eligible",
+    "type": "Single checkbox",
+    "options": "",
+    "required": "No",
+    "group": "Core operational",
+    "populated": "WF-023"
+   },
+   "notes": "Created 23 Oct for WF-023. Set true when a contact reaches VIP/Tier 2, false when they drop to Tier 3/No tier."
   }
  ],
  "actions": [
@@ -5722,6 +5744,96 @@
    "status": "Open",
    "received": "",
    "notes": "Added 22 Oct while marking workflow dependencies.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-43",
+   "item": "Website: the real product page URL path (replace the /products/ placeholder in the WF-024 trigger, groups 1 and 2)",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 23 Oct while building workflows. Needed for WF-024. Placeholder is page URL contains /products/.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-44",
+   "item": "Lists: confirm whether LIST-003 (VIP and Tier 2) is active or static",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 23 Oct while building workflows. Needed for WF-023. If static, a Remove from static list action is added to the Moved down branch.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-45",
+   "item": "Lists: confirm the fundraising lists LIST-010 and LIST-011 (membership rules and consent source)",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 23 Oct while building workflows. Needed for WF-021 and WF-022. Links to CD-24 and CD-34.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-46",
+   "item": "Tasks: confirm the follow-up task due date rule for WF-023 (7 days or 7 business days)",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 23 Oct while building workflows. WF-023 uses a placeholder due date until confirmed.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-47",
+   "item": "Service levels: confirm SLA-003 to SLA-009 targets, hours and escalation recipients",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 23 Oct while building workflows. Needed for WF-018. Delay steps are placeholders until this and CD-08 and CD-32 are confirmed.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-48",
+   "item": "Fundraising emails: final copy, opt-in link, suppression lists and send batch size",
+   "phase": 3,
+   "due": "2026-11-04",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 23 Oct while building workflows. Needed for WF-021 and WF-022. Email content is placeholder until supplied.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-49",
+   "item": "Lead scoring: confirm WF-008 can be built once CD-33 answers arrive, and agree when Client Tier is first populated",
+   "phase": 2,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 23 Oct while building workflows. WF-023 cannot run end to end until WF-008 sets Client Tier.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-50",
+   "item": "WhatsApp: connect the WhatsApp channel in HubSpot so the WF-019 trigger can be finished",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 23 Oct while building workflows. Depends on CD-13. WF-019 is unsaved until then.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-51",
+   "item": "Confirm the internal name of the Service recovery flag property and its use as an exclusion in WF-004, WF-005 and WF-006",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 23 Oct while building workflows. Linked to CD-40.",
    "who": "Sylvera London"
   }
  ],
@@ -6381,6 +6493,44 @@
    "summary": [
     "WF-021 Consent re-permission built in HubSpot (off), checked and fixed: No response branches, empty Consent granted branch, non-marketing action; logged as QA, Built not tested"
    ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "PROP-063 Fundraising consent status: added options Re-permission requested and No response (for WF-022)"
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "WF-022 Consent re-permission, fundraising built in HubSpot (off), checked, no fixes needed; logged as QA, Built not tested"
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "WF-023 VIP invitation list build built in HubSpot (off), checked, Group 2 consent condition removed; logged as QA, Built not tested",
+    "Property added: Private event invitation eligible (PROP-064)"
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "WF-024 Lifecycle progression built in HubSpot (off), checked; logged as QA, Built not tested",
+    "Placeholder: product page URL (/products/) in WF-024 triggers pending real URL path"
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "Added CD-43 to CD-51: every outstanding client requirement from the workflow builds (WF-018 to WF-024) now tracked as a client dependency"
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "Added IS-003 to IS-014 to the register: Digital Nexa fixes, placeholders and untested items to clear before QA"
+   ]
   }
  ],
  "register": [
@@ -6607,6 +6757,198 @@
    "status": "Open",
    "decided": "",
    "ref": "B-021 to B-024, WF-008"
+  },
+  {
+   "id": "IS-003",
+   "type": "Issue",
+   "title": "WF-001 to confirm Contact Type condition; archive test contact 895361804500",
+   "detail": "Check the Contact Type condition in WF-001 matches the SDS, then archive the test contact left from testing.",
+   "area": "Quality",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-001"
+  },
+  {
+   "id": "IS-004",
+   "type": "Issue",
+   "title": "WF-004 and WF-006 to verify Service recovery flag exclusions",
+   "detail": "Confirm the Service recovery flag is excluded in WF-004 and WF-006. Needs the property internal name (CD-49 to CD-51 range, see CD-51).",
+   "area": "Quality",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-004, WF-006"
+  },
+  {
+   "id": "IS-005",
+   "type": "Issue",
+   "title": "WF-005 and WF-006 to verify cancellation exclusions",
+   "detail": "Confirm cancelled records are excluded from both workflows.",
+   "area": "Quality",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-005, WF-006"
+  },
+  {
+   "id": "IS-006",
+   "type": "Issue",
+   "title": "WF-009 missing Dormant-responds branch",
+   "detail": "Add the branch for dormant clients who respond, per the Build Manual.",
+   "area": "Scope",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-009"
+  },
+  {
+   "id": "IS-007",
+   "type": "Issue",
+   "title": "WF-017 notification lacks contact name",
+   "detail": "Add the contact name to the email sent to Jennifer Ashby.",
+   "area": "Quality",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-017"
+  },
+  {
+   "id": "IS-008",
+   "type": "Issue",
+   "title": "Placeholder notifications to Jennifer Ashby to be repointed",
+   "detail": "Replace with real recipients once CD-42 and CD-26 to CD-29 are answered.",
+   "area": "Quality",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-003 to WF-024"
+  },
+  {
+   "id": "IS-009",
+   "type": "Issue",
+   "title": "WF-018 delay steps are placeholders",
+   "detail": "Real delays depend on CD-08, CD-32 and CD-47.",
+   "area": "Quality",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-018"
+  },
+  {
+   "id": "IS-010",
+   "type": "Issue",
+   "title": "WF-023 cannot run end to end",
+   "detail": "Client Tier is only set by WF-008, which is blocked on CD-33.",
+   "area": "Scope",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-023, WF-008"
+  },
+  {
+   "id": "IS-011",
+   "type": "Issue",
+   "title": "WF-024 product URL placeholder and lifetime email properties",
+   "detail": "Trigger uses /products/ (CD-43). Email opened and clicked are lifetime properties, not date limited. Private client branch relies on trigger checks.",
+   "area": "Quality",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-024"
+  },
+  {
+   "id": "IS-012",
+   "type": "Issue",
+   "title": "Consent properties are provisional",
+   "detail": "Marketing consent and fundraising source properties depend on CD-24; WF-021, WF-022 and WF-023 use them.",
+   "area": "Scope",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-021, WF-022, WF-023"
+  },
+  {
+   "id": "IS-013",
+   "type": "Issue",
+   "title": "WF-008 and WF-019 not built",
+   "detail": "WF-008 waits on CD-33; WF-019 waits on CD-13 and CD-50. Both must be built before QA closes.",
+   "area": "Scope",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-008, WF-019"
+  },
+  {
+   "id": "IS-014",
+   "type": "Issue",
+   "title": "All built workflows are OFF and untested",
+   "detail": "Every workflow is Built, not tested. QA needs test records, then turning on in order once dependencies (CD-22, WF-001, WF-002 live) are met. Never turn on before sign-off.",
+   "area": "Quality",
+   "likelihood": "",
+   "impact": "Medium",
+   "response": "To resolve before QA sign-off.",
+   "owner": "NEXA CRM Specialist",
+   "raisedBy": "NEXA",
+   "raised": "2026-10-23",
+   "status": "Open",
+   "decided": "",
+   "ref": "WF-001 to WF-024"
   }
  ]
 }
