@@ -4,7 +4,7 @@
   "project": "HubSpot CRM Build",
   "start": "2026-10-08",
   "golive": "2026-11-20",
-  "lastSaved": "2026-10-20"
+  "lastSaved": "2026-10-22"
  },
  "build": [
   {
@@ -731,9 +731,9 @@
    "start": "2026-10-22",
    "due": "2026-11-11",
    "status": "In progress",
-   "dep": "CD-34, CD-35, CD-37, CD-38, CD-39",
-   "notes": "WF-003 to WF-007 and WF-009 to WF-014 built (off). Remaining WF-015 to WF-024 planned; client dependencies listed on each workflow asset. Placeholders and pending steps tracked on B-074.",
-   "updated": "2026-10-20"
+   "dep": "CD-20, CD-22, CD-24, CD-25, CD-27, CD-29, CD-33, CD-34, CD-35, CD-37, CD-38, CD-39, CD-40, CD-41, CD-42",
+   "notes": "WF-003 to WF-007 and WF-009 to WF-018 built (off). Remaining WF-019 to WF-024 planned; client dependencies listed on each workflow asset. Placeholders and pending steps tracked on B-074.",
+   "updated": "2026-10-22"
   },
   {
    "id": "B-068",
@@ -3099,8 +3099,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5134867650/edit",
-   "notes": "Built in HubSpot, OFF. Pending: confirm trigger Contact Type condition; archive test contact 895361804500; shared enquiry inbox (CD-02). Interim owner Jennifer Ashby.",
-   "updated": "2026-10-19"
+   "notes": "Built in HubSpot, OFF. Pending: confirm trigger Contact Type condition; archive test contact 895361804500; shared enquiry inbox (CD-02). Interim owner Jennifer Ashby. Client dependencies marked 22 Oct: CD-16 (named users).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-002",
@@ -3116,8 +3116,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5138405610/edit",
-   "notes": "Built in HubSpot, OFF. Interim owner Jennifer Ashby until named users are confirmed (CD-16). Needs test enquiry before turning on.",
-   "updated": "2026-10-19"
+   "notes": "Built in HubSpot, OFF. Interim owner Jennifer Ashby until named users are confirmed (CD-16). Needs test enquiry before turning on. Client dependencies marked 22 Oct: CD-21 (trade sales manager).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-003",
@@ -3133,8 +3133,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5138740441/edit",
-   "notes": "Built in HubSpot, OFF. Pending: Event Attendance option list, LIST-011 naming per event, events owner.",
-   "updated": "2026-10-19"
+   "notes": "Built in HubSpot, OFF. Pending: Event Attendance option list, LIST-011 naming per event, events owner. Client dependencies marked 22 Oct: CD-34 (event owner and Event Attendance options); CD-31 (RSVP response options).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-004",
@@ -3150,8 +3150,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5138744546/edit",
-   "notes": "Built in HubSpot, OFF. Pending: event date property and 14-day delay, private event definition, events owner; FT-006 publication and sender settings.",
-   "updated": "2026-10-19"
+   "notes": "Built in HubSpot, OFF. Pending: event date property and 14-day delay, private event definition, events owner; FT-006 publication and sender settings. Client dependencies marked 22 Oct: CD-34 (event owner, private event, event date); CD-28 (event details and RSVP link); CD-27 (email copy FT-006/FT-009); CD-29 (sender and reply-to); CD-24 (marketing consent property).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-005",
@@ -3167,8 +3167,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5138751731/edit",
-   "notes": "Sets Client and Repeat Client lifecycle stages. Review HubSpot's automatic lifecycle settings (deal created / closed-won) first so they do not clash with this workflow. Built in HubSpot, OFF. Pending: order confirmation email (SLA-006); step 4 New vs Existing Client (deal vs contact property); FT-005 publication and sender. Review HubSpot automatic lifecycle settings so they do not clash.",
-   "updated": "2026-10-19"
+   "notes": "Sets Client and Repeat Client lifecycle stages. Review HubSpot's automatic lifecycle settings (deal created / closed-won) first so they do not clash with this workflow. Built in HubSpot, OFF. Pending: order confirmation email (SLA-006); step 4 New vs Existing Client (deal vs contact property); FT-005 publication and sender. Review HubSpot automatic lifecycle settings so they do not clash. Client dependencies marked 22 Oct: CD-27 (email copy FT-005); CD-29 (sender and reply-to); CD-08 (business hours for SLA-006).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-006",
@@ -3184,8 +3184,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5139430641/edit",
-   "notes": "Built in HubSpot, OFF. Pending: add Send email (FT-010 care guidance) after the delay once published; Do not contact not yet populated; Delivered stage moved manually until WF-013 exists; Service recovery flag populated by WF-017 (not built).",
-   "updated": "2026-10-19"
+   "notes": "Built in HubSpot, OFF. Pending: add Send email (FT-010 care guidance) after the delay once published; Do not contact not yet populated; Delivered stage moved manually until WF-013 exists; Service recovery flag populated by WF-017 (not built). Client dependencies marked 22 Oct: CD-27 (email copy FT-010); CD-28 (care guidance content); CD-29 (sender and reply-to).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-007",
@@ -3201,8 +3201,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5139436775/edit",
-   "notes": "Built in HubSpot, OFF. Placeholder: internal notification to Jennifer Ashby replaces the one abandoned-checkout reminder email; replace with published email. Pending: Shopify sync proof and test checkout (last sync 4 Jun 2026), real cart Status value, marketing consent source, Last Purchase Date check is an approximation.",
-   "updated": "2026-10-19"
+   "notes": "Built in HubSpot, OFF. Placeholder: internal notification to Jennifer Ashby replaces the one abandoned-checkout reminder email; replace with published email. Pending: Shopify sync proof and test checkout (last sync 4 Jun 2026), real cart Status value, marketing consent source, Last Purchase Date check is an approximation. Client dependencies marked 22 Oct: CD-37 (Shopify sync and test checkout); CD-24 (marketing consent source); CD-27 (abandoned checkout email copy); CD-29 (sender and reply-to).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-008",
@@ -3235,8 +3235,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5140362467/edit",
-   "notes": "Add a second branch: when a Dormant contact responds, clear the lifecycle stage, then set Client or Repeat Client by purchase count (HubSpot will not move a stage backwards). Built in HubSpot, OFF. Placeholder: internal notification replaces the re-engagement email. Pending: set Client Relationship deal to Lapsed manually or via a separate deal-based workflow; test clear-then-set lifecycle move on response; reset-on-new-order piece; optional new-deal condition in Responded branch; confirm Lapsed stage exists.",
-   "updated": "2026-10-19"
+   "notes": "Add a second branch: when a Dormant contact responds, clear the lifecycle stage, then set Client or Repeat Client by purchase count (HubSpot will not move a stage backwards). Built in HubSpot, OFF. Placeholder: internal notification replaces the re-engagement email. Pending: set Client Relationship deal to Lapsed manually or via a separate deal-based workflow; test clear-then-set lifecycle move on response; reset-on-new-order piece; optional new-deal condition in Responded branch; confirm Lapsed stage exists. Client dependencies marked 22 Oct: CD-25 (dormancy window); CD-27 (re-engagement email copy); CD-29 (sender and reply-to).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-010",
@@ -3252,8 +3252,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5140391139/edit",
-   "notes": "Built in HubSpot, OFF. Birthday/Anniversary within 35 days, every year; task to contact owner due in 28 days; reminder to Jennifer Ashby after 21 days if no activity. Pending: Occasion Date property for observed occasions; Service track property now exists (PROP-052), optional exclusion not yet added; Client Relationship deal at Occasion-Based Outreach not built; 'task still open' approximated by last activity; test yearly repeat; lower 28-day bound not applied (only matters at go-live backfill).",
-   "updated": "2026-10-19"
+   "notes": "Built in HubSpot, OFF. Birthday/Anniversary within 35 days, every year; task to contact owner due in 28 days; reminder to Jennifer Ashby after 21 days if no activity. Pending: Occasion Date property for observed occasions; Service track property now exists (PROP-052), optional exclusion not yet added; Client Relationship deal at Occasion-Based Outreach not built; 'task still open' approximated by last activity; test yearly repeat; lower 28-day bound not applied (only matters at go-live backfill). Client dependencies marked 22 Oct: CD-35 (observed occasion date and service track).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-011",
@@ -3269,8 +3269,8 @@
    "status": "QA",
    "qa": "Not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5140389091/edit",
-   "notes": "Built in HubSpot, OFF. Sets Service track (Service-led for VIP or Lifetime Value over 25,000, else Standard); task for VIP branch due in 5 business days; no email. Pending: depends on WF-008 (Client Tier and Lifetime Value not populated until scoring is built); owner rotation to client experience lead skipped until a lead is named; test with TEST contacts only.",
-   "updated": "2026-10-19"
+   "notes": "Built in HubSpot, OFF. Sets Service track (Service-led for VIP or Lifetime Value over 25,000, else Standard); task for VIP branch due in 5 business days; no email. Pending: depends on WF-008 (Client Tier and Lifetime Value not populated until scoring is built); owner rotation to client experience lead skipped until a lead is named; test with TEST contacts only. Client dependencies marked 22 Oct: CD-33 (scoring answers, needed by WF-008); CD-35 (service track).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-012",
@@ -3286,8 +3286,8 @@
    "status": "QA",
    "qa": "Built, not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5140390092/edit",
-   "notes": "Built, OFF. Pendings: (1) Jennifer Ashby is placeholder for logistics owner and client experience lead (CD-24/CD-27 style replacement under B-074). (2) Dispatch visibility needs Shopify/Monday.com status (WF-013, CD-37). (3) Outcome handling is manual: owner sets Cancelled and moves deal to Closed Lost with reason, or resets to Not cancelled. (4) Verify cancellation-status exclusion exists in WF-005 and WF-006. Uses Fulfilment Status option On hold. Order Confirmed (Trade) stage not excluded.",
-   "updated": "2026-10-19"
+   "notes": "Built, OFF. Pendings: (1) Jennifer Ashby is placeholder for logistics owner and client experience lead (CD-24/CD-27 style replacement under B-074). (2) Dispatch visibility needs Shopify/Monday.com status (WF-013, CD-37). (3) Outcome handling is manual: owner sets Cancelled and moves deal to Closed Lost with reason, or resets to Not cancelled. (4) Verify cancellation-status exclusion exists in WF-005 and WF-006. Uses Fulfilment Status option On hold. Order Confirmed (Trade) stage not excluded. Client dependencies marked 22 Oct: CD-38 (Monday.com status); CD-42 (logistics owner replaces Jennifer Ashby).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-013",
@@ -3303,8 +3303,8 @@
    "status": "QA",
    "qa": "Built, not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5146647769/edit",
-   "notes": "Built, OFF. Waiting on client: CD-38 (can the Monday.com integration write to the HubSpot Fulfilment Status property, or do we use Zapier?), CD-37 (Shopify sync and shipping test). Placeholder: Deal owner stands in for logistics. Design: Ready to Ship emails the deal owner; Shipped on B2C New Business creates a delivery-confirmation task (2 business days). No automatic move to Delivered (owner confirms, which triggers WF-006). Trigger excludes LondonDE Trade only. Deliberate deviation from manual step 3: the automatic move to In Production was removed, because that stage means \"production authorised, SKU assigned\" and moving it on shipping would record a false stage. Owners update the stage by hand.",
-   "updated": "2026-10-20"
+   "notes": "Built, OFF. Waiting on client: CD-38 (can the Monday.com integration write to the HubSpot Fulfilment Status property, or do we use Zapier?), CD-37 (Shopify sync and shipping test). Placeholder: Deal owner stands in for logistics. Design: Ready to Ship emails the deal owner; Shipped on B2C New Business creates a delivery-confirmation task (2 business days). No automatic move to Delivered (owner confirms, which triggers WF-006). Trigger excludes LondonDE Trade only. Deliberate deviation from manual step 3: the automatic move to In Production was removed, because that stage means \"production authorised, SKU assigned\" and moving it on shipping would record a false stage. Owners update the stage by hand. Client dependencies marked 22 Oct: CD-42 (logistics owner).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-014",
@@ -3320,8 +3320,8 @@
    "status": "QA",
    "qa": "Built, not tested",
    "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5146994932/edit",
-   "notes": "Built, OFF. Waiting on client: CD-22 (stage owners and Closed Lost reasons), CD-08 (business hours). Placeholder: Jennifer Ashby stands in for the client experience lead (6-week alert; also covers trade). Design: open B2C and Trade deals with no activity for 28 days get a notification and a call task for the deal owner; 10 business days later, if still quiet, Jennifer is alerted. Excludes closed stages, In Production, Delivered, Order Confirmed, Fulfilled, and Cancellation Requested. Not built on purpose: optional Closed Lost (Went cold) at 8 weeks, until the client agrees. SLA-008 is checked by WF-018. Delay is business days only, so 10 gives about 2 weeks.",
-   "updated": "2026-10-20"
+   "notes": "Built, OFF. Waiting on client: CD-22 (stage owners and Closed Lost reasons), CD-08 (business hours). Placeholder: Jennifer Ashby stands in for the client experience lead (6-week alert; also covers trade). Design: open B2C and Trade deals with no activity for 28 days get a notification and a call task for the deal owner; 10 business days later, if still quiet, Jennifer is alerted. Excludes closed stages, In Production, Delivered, Order Confirmed, Fulfilled, and Cancellation Requested. Not built on purpose: optional Closed Lost (Went cold) at 8 weeks, until the client agrees. SLA-008 is checked by WF-018. Delay is business days only, so 10 gives about 2 weeks. Client dependencies marked 22 Oct: CD-42 (client experience lead replaces Jennifer Ashby).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-015",
@@ -3334,11 +3334,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-35 (occasions and service track). Internal: WF-011, WF-017 (reads the service recovery flag). Properties ready: PROP-053 Last recommendation date (created), PROP-054 Service recovery flag (existing).",
-   "updated": "2026-10-20"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5154103484/edit",
+   "notes": "Built, OFF. Waiting on client: CD-24 (marketing consent exclusion not added yet), CD-35 (occasions and service track). Internal: WF-017 not built, so the Service recovery flag stays empty; Client Tier and Service track stay empty until WF-008 and WF-011 run, so the tier route will not fire yet. Design: three enrolment groups, all Service-led, flag not True, no open cancellation: (1) Client Tier is Tier 2 or VIP; (2) Last Purchase Date more than 330 days ago AND Last recommendation date more than 330 days ago; (3) same as 2 but Last recommendation date unknown (date filters cannot match empty, so this is a separate group). Re-enrol on. Steps: delay to next weekday 10:00, task 'Prepare curated recommendation' for the contact owner (3 business days, last purchase and tier in notes), delay 3 business days, branch 'Task still open' (Last recommendation date unknown) then internal email to the contact owner, then Last recommendation date set to today. Deviation: 'task still open' is approximated by the date being empty, as HubSpot has no direct task check. The date is stamped only on the reminder branch, so it is stamped when the owner has not set it. Account time zone shows UTC-4 (EDT), so the 10:00 slot is in that zone; confirm with CD-08. 22 Oct: the 'Task still open' branch now also requires Service recovery flag not True (or empty), so a client flagged during the 3-day wait gets no reminder email and no date stamp. Contacts already in the workflow are still not removed. Client dependencies marked 22 Oct: CD-32 (time zone; 10:00 slot is in US/Eastern); CD-42 (client experience lead).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-016",
@@ -3351,11 +3351,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-20 (referral incentive policy decision). Internal: advocacy, referred-by and referral-source properties.",
-   "updated": "2026-10-19"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5157763292/edit",
+   "notes": "Built, OFF. Waiting on client: CD-20 (referral incentive policy; no incentive step built, so nothing to switch on yet). Internal: PROP-055 Referral count created 22 Oct; Advocacy feeds the Fit Score through WF-008 (not built). Design: enrols when Last Purchase Date becomes known and Referred By is known, once per contact (re-enrol off). Sets Advocacy to Yes. Branch: Staff Referral known goes to a logged-only branch with no actions; otherwise two tasks for the contact owner, 'Link the referrer and add 1 to their Referral count' and 'Thank the referrer', each due in 3 business days with Referred By in the notes. Deviations from the manual: Referred By is plain text, so the referrer cannot be associated or counted automatically (manual task instead), and the thank-you task goes to the new client's owner, not the referrer's. Incentive step is a placeholder only, as HubSpot cannot disable a single action. Before go-live: turning it on would enrol existing contacts who already have both properties, so check the enrolment count first. Referral Source (PROP-016) still holds a placeholder list (client input). Client dependencies marked 22 Oct: CD-41 (referral source option list).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-017",
@@ -3368,11 +3368,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Internal: create the Service recovery flag property (Yes/No); WF-015 reads it as an exclusion.",
-   "updated": "2026-10-19"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5157763305/edit",
+   "notes": "Built, OFF. Waiting on client: a survey score property or complaint tag to trigger from (not yet defined; ask the client, new question to raise). Placeholder: Jennifer Ashby stands in for the client experience lead. Internal: PROP-054 Service recovery flag (internal name still to confirm); WF-015, WF-004 and WF-006 read it as an exclusion. Design: triggers when the flag is True or False, re-enrol on. Flag True: high-priority Call task 'Call the client within 1 business day' for the contact owner (due 1 business day, 10:00) and an internal email to Jennifer. Flag False (owner unticked it): wait 14 days, then task 'Check satisfaction' for the owner (3 business days). Nothing is sent to the client. Deviations from the manual: manual step 1 (set flag to Yes) skipped because the only trigger is the flag itself. Pausing marketing relies on the flag exclusions in other workflows, which stop new enrolment only. Suggested improvement not made: the email to Jennifer does not say which client; add the contact name token. Client dependencies marked 22 Oct: CD-40 (survey or complaint trigger); CD-42 (client experience lead replaces Jennifer Ashby).",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-018",
@@ -3385,11 +3385,11 @@
    "phase": 2,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-08 (business hours). Internal: B-004, create SLA breached (Yes/No) and SLA breach note properties.",
-   "updated": "2026-10-19"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5157764342/edit",
+   "notes": "Built 22 Oct (OFF). Trigger: Lead status New and Contact Type not Internal/Supplier. Branch on Client Tier: VIP (SLA-002) waits 1 hour, no VIP (SLA-001) waits 15 minutes. After each wait, branch Breach (Last contacted unknown OR more than 1 day ago) sets SLA breached to Yes, writes SLA breach note and emails the contact owner and Jennifer Ashby (placeholder, see CD-42). Delays are placeholders until CD-08 (business hours) and CD-32 (time zone). Last contacted check is approximate. Deferred: SLA-003 (CD-13 WhatsApp number), SLA-004/005 (CD-22 stage definitions), SLA-006 (CD-37 Shopify; confirmation email cannot be read), SLA-007/008 (a workflow cannot read another workflow's task completion), SLA-009 (CD-24 consent property). Must stay OFF until CD-08 and CD-32 are answered.",
+   "updated": "2026-10-22"
   },
   {
    "id": "WF-019",
@@ -3402,11 +3402,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
+   "status": "In progress",
    "qa": "Not tested",
    "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-13 (WhatsApp business number connected in HubSpot). Internal: SLA-003.",
-   "updated": "2026-10-19"
+   "notes": "Started 23 Oct (workflow named WF-019 WhatsApp conversation capture in HubSpot; id to be added when saved) as a conversation-based workflow (not contact-based), left OFF and unfinished. Trigger so far: Conversation status is Open. Blocked: the WhatsApp channel is not connected in HubSpot (only two support email inboxes appear under Originating channel account), so the channel filter cannot be set. Waiting on client: CD-13 (WhatsApp business number connected in HubSpot). Once connected: set the channel to the WhatsApp account, exclude Internal/Supplier contact types, then Last WhatsApp date (property not yet created) and the Reply on WhatsApp task (30 min placeholder, CD-08). Pending: logging exclusion for internal/supplier threads, creating unknown senders, enrolling them in WF-001. Internal: SLA-003.",
+   "updated": "2026-10-23"
   },
   {
    "id": "WF-020",
@@ -5103,6 +5103,72 @@
     "populated": "WF-017"
    },
    "notes": "Already existed in the portal; added to the tracker 20 Oct. Read as an exclusion by WF-015, WF-006 and WF-004; set by WF-017 (not built), so empty until then. Confirm the internal name and whether the sylv_ prefix was used."
+  },
+  {
+   "cat": "Properties",
+   "phase": 3,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-22",
+   "id": "PROP-055",
+   "name": "Referral count",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_referral_count",
+    "type": "Number",
+    "options": "",
+    "required": "No",
+    "group": "Attribution",
+    "populated": "Manual (WF-016 raises a task to add 1)"
+   },
+   "notes": "Created 22 Oct for WF-016. Counts how many clients a contact has referred. Updated by hand for now because Referred By is plain text, so the workflow cannot find the referrer; see WF-016 note."
+  },
+  {
+   "cat": "Properties",
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-22",
+   "id": "PROP-056",
+   "name": "SLA breached",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_sla_breached",
+    "type": "Single checkbox",
+    "options": "",
+    "required": "No",
+    "group": "Core operational",
+    "populated": "WF-018"
+   },
+   "notes": "Created 22 Oct for WF-018. Set when a response standard is missed; feeds the saved breach report. Empty until WF-018 runs."
+  },
+  {
+   "cat": "Properties",
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-22",
+   "id": "PROP-057",
+   "name": "SLA breach note",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_sla_breach_note",
+    "type": "Multi-line text",
+    "options": "",
+    "required": "No",
+    "group": "Core operational",
+    "populated": "WF-018"
+   },
+   "notes": "Created 22 Oct for WF-018. Records which standard was missed and when. Empty until WF-018 runs."
   }
  ],
  "actions": [
@@ -5233,7 +5299,7 @@
    "due": "2026-10-28",
    "status": "Open",
    "received": "",
-   "notes": "",
+   "notes": "23 Oct: confirmed the WhatsApp channel is not connected in HubSpot (Settings > Inbox > Channels). Holds up WF-019 (trigger cannot be finished) and SLA-003 in WF-018. Needs the business number and Meta/WhatsApp access from the client.",
    "who": "Jen"
   },
   {
@@ -5494,6 +5560,36 @@
    "status": "Open",
    "received": "",
    "notes": "Needed for WF-022. Added 19 Oct.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-40",
+   "item": "Service recovery: how a negative signal is captured (survey score property, complaint tag on a conversation, or manual flag only), so WF-017 can add those triggers",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 22 Oct while marking workflow dependencies.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-41",
+   "item": "Option lists still marked 'TO BE CONFIRMED BY CLIENT': PROP-004, PROP-007, PROP-010, PROP-016 (referral sources) and PROP-047",
+   "phase": 3,
+   "due": "2026-10-28",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 22 Oct while marking workflow dependencies.",
+   "who": "Sylvera London"
+  },
+  {
+   "id": "CD-42",
+   "item": "Name the client experience lead and the logistics owner, so Jennifer Ashby can be replaced as the placeholder recipient",
+   "phase": 3,
+   "due": "2026-11-04",
+   "status": "Open",
+   "received": "",
+   "notes": "Added 22 Oct while marking workflow dependencies.",
    "who": "Sylvera London"
   }
  ],
@@ -6077,6 +6173,58 @@
     "B-050 20 dashboards and reports: Not started → Done",
     "B-051 Executive email summary to CEO: Not started → Done"
    ]
+  },
+  {
+   "date": "2026-10-22",
+   "summary": [
+    "WF-015 Cross-sell and upsell built in HubSpot (OFF): 3 enrolment groups, task, 3-day check, reminder email, Last recommendation date stamp",
+    "WF-015 pendings logged: CD-24 consent exclusion, CD-35, WF-017 flag, WF-008 and WF-011 data",
+    "B-048 note updated (WF-015 built)"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "summary": [
+    "PROP-055 Referral count created (for WF-016)"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "summary": [
+    "WF-016 Referral tracking built in HubSpot (OFF), checked, set to QA with link and pendings",
+    "B-048 note updated (WF-016 built)"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "summary": [
+    "WF-017 Sentiment-led service recovery built in HubSpot (OFF), checked, set to QA with link and pendings",
+    "WF-015 changed: reminder branch now skips contacts with the Service recovery flag set",
+    "B-048 note updated (WF-017 built)"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "summary": [
+    "Client dependencies marked on WF-001 to WF-017 (34 references added)",
+    "Client actions CD-40, CD-41, CD-42 added (survey/complaint trigger, option lists, client experience lead and logistics owner)",
+    "B-048 dependencies extended"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "summary": [
+    "PROP-056 SLA breached and PROP-057 SLA breach note created (for WF-018)",
+    "WF-018 build plan and deferred standards noted",
+    "WF-018 Response standard monitoring built in HubSpot (SLA-001 and SLA-002 only), left OFF; logged as QA, Built not tested"
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "WF-019 started in HubSpot (conversation-based, off); trigger blocked until WhatsApp is connected (CD-13)",
+    "CD-13 note updated; WF-019 asset set to In progress"
+   ]
   }
  ],
  "register": [
@@ -6302,7 +6450,7 @@
    "raised": "2026-10-19",
    "status": "Open",
    "decided": "",
-   "ref": "B-021 to B-024, WF-008"
+   "ref": "B-029, B-066, WF-007"
   }
  ]
 }
