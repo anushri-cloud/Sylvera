@@ -1,4 +1,5 @@
-<!doctype html><html><head><meta name="robots" content="noindex,nofollow"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head>
+<meta name="robots" content="noindex,nofollow"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Sylvera London CRM Build Tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,6 +180,7 @@ a.lnk{color:var(--accent)}
     <div class="mode">
       <span class="badge" id="m-badge">Loading…</span>
       <button class="btn" id="m-export" hidden aria-expanded="false" aria-controls="xp">Export</button>
+      <button class="btn" id="m-push" hidden title="Sends the saved tracker to the client link">Update client link</button>
       <button class="btn" id="m-edit" hidden>Edit tracker</button>
       <button class="btn primary" id="m-save" hidden disabled>Save changes</button>
     </div>
@@ -233,7 +235,9 @@ const PHASES={1:"Foundations",2:"Pipelines, scoring, core automation",3:"Commerc
 const PH_DATES={1:["2026-10-08","2026-10-21"],2:["2026-10-15","2026-11-04"],3:["2026-10-22","2026-11-11"],4:["2026-11-05","2026-11-20"]};
 const START="2026-10-08", GOLIVE="2026-11-20";
 
-let S=null, editing=false, canWrite=false, artifactNs=null, dirty=0, saving=false;
+let S=null, editing=false, canWrite=false, artifactNs=null, mcpNs=null, dirty=0, saving=false, pushing=false;
+/* Client link: every save also writes the tracker into the Drive sync folder; the Vercel page shows the newest file. */
+const DRIVE="Google Drive", DRIVE_FOLDER="1dAuHVFZ2kx-7e8pMmnTzOrkcuewGR0sD";
 let tab="overview";
 const F={build:{phase:"",status:"",owner:"",q:""},assets:{cat:"",status:"",phase:"",q:""}};
 const $=id=>document.getElementById(id);
@@ -255,12 +259,25 @@ const DKEY=`<div class="dkey"><b>Key:</b> <span class="dchip dc">CD-00</span> wa
 const isLate=r=>r.due && r.status!=="Done" && r.due<todayISO();
 const actStatus=a=>a.status==="Open" && a.due<todayISO()?"Overdue":a.status;
 
-function toast(msg){const t=$("toast");t.textContent=msg;t.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>t.hidden=true,2600)}
+function toast(msg){const t=$("toast");t.textContent=msg;t.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>t.hidden=true,Math.max(2600,msg.length*60))}
+async function pushToClient(json,manual){
+  if(!mcpNs){toast("Saved here, but the client link didn't update: this view can't reach Google Drive. Open the tracker in claude.ai and press Update client link.");return false}
+  pushing=true;updateMode();
+  const stamp=new Date().toISOString().replace(/[:.]/g,"-");
+  try{
+    await mcpNs.callTool(DRIVE,"create_file",{title:"tracker-"+stamp+".json",parentId:DRIVE_FOLDER,textContent:json,contentMimeType:"application/json",disableConversionToGoogleType:true},{cache:false});
+    toast(manual?"Client link updated. It shows the change within a minute.":"Saved. The client link updates within a minute.");return true;
+  }catch(err){
+    const fix={server_not_connected:"Add Google Drive in claude.ai Settings, Connectors",needs_reauth:"Reconnect Google Drive in claude.ai Settings, Connectors",not_in_manifest:"Allow Google Drive for this page",selection_required:"Choose which Google Drive account this page uses",tool_error:"Check you can edit the Sylvera tracker sync folder in Drive"}[err&&err.code];
+    toast("Saved here, but the client link didn't update. "+(fix?fix+", then press Update client link.":"Press Update client link to try again."));return false;
+  }finally{pushing=false;updateMode()}
+}
 function markDirty(row){if(row)row.updated=todayISO();dirty++;updateMode()}
 function updateMode(){
-  const b=$("m-badge"),e=$("m-edit"),s=$("m-save");
+  const b=$("m-badge"),e=$("m-edit"),s=$("m-save"),pu=$("m-push");
   if(!S){b.textContent="Loading…";return}
-  if(!canWrite){b.textContent="View only";b.className="badge";e.hidden=true;s.hidden=true;return}
+  if(!canWrite){b.textContent="View only";b.className="badge";e.hidden=true;s.hidden=true;pu.hidden=true;return}
+  pu.hidden=!!dirty||editing;pu.disabled=pushing||saving;pu.textContent=pushing?"Updating client link…":"Update client link";
   e.hidden=false;e.textContent=editing?"Done editing":"Edit tracker";
   s.hidden=!editing&&!dirty;s.disabled=!dirty||saving;s.textContent=saving?"Saving…":"Save changes";
   if(dirty){b.textContent=dirty+" unsaved change"+(dirty>1?"s":"");b.className="badge dirty"}
@@ -590,14 +607,17 @@ $("view").addEventListener("click",e=>{
 });
 $("m-edit").addEventListener("click",()=>{editing=!editing;render()});
 $("m-save").addEventListener("click",save);
+$("m-push").addEventListener("click",()=>{if(S&&!dirty&&!pushing)pushToClient(JSON.stringify(S,null,1),true)});
 async function save(){
   if(!dirty||saving||!artifactNs)return;
   saving=true;S.meta.lastSaved=todayISO();updateMode();
   const summary=diffSummary();S.history=S.history||[];const prevHist=S.history.length;
   if(summary.length)S.history.push({date:todayISO(),summary});
   try{
-    await artifactNs.publish({"data/tracker.json":{content:JSON.stringify(S,null,1),contentType:"application/json"}});
-    dirty=0;saving=false;snap();toast("Saved. The client view now shows these changes.");render();
+    const json=JSON.stringify(S,null,1);
+    await artifactNs.publish({"data/tracker.json":{content:json,contentType:"application/json"}});
+    dirty=0;saving=false;snap();render();
+    pushToClient(json,false);
   }catch(err){
     saving=false;S.history.length=prevHist;const code=err&&err.code;
     if(code==="conflict"){toast("Someone saved a newer version. Reloading it.")}
@@ -721,6 +741,7 @@ window.addEventListener("beforeunload",e=>{if(dirty){e.preventDefault();e.return
       const [u,a,dl]=await Promise.all([window.claude.use("user"),window.claude.use("artifact"),window.claude.use("downloads")]);
       dlNs=dl;$("m-export").hidden=!dl;
       artifactNs=a;const ce=u?await u.canEdit():false;canWrite=!!(a&&ce);render();
+      window.claude.use("mcp").then(m=>{mcpNs=m;updateMode()}).catch(()=>{});
     }else{$("m-export").hidden=false;updateMode()}
   }catch(_){$("m-export").hidden=false;updateMode()}
 })();
