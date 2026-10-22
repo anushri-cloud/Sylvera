@@ -3405,7 +3405,7 @@
    "status": "In progress",
    "qa": "Not tested",
    "link": "",
-   "notes": "Started 23 Oct (workflow named WF-019 WhatsApp conversation capture in HubSpot; id to be added when saved) as a conversation-based workflow (not contact-based), left OFF and unfinished. Trigger so far: Conversation status is Open. Blocked: the WhatsApp channel is not connected in HubSpot (only two support email inboxes appear under Originating channel account), so the channel filter cannot be set. Waiting on client: CD-13 (WhatsApp business number connected in HubSpot). Once connected: set the channel to the WhatsApp account, exclude Internal/Supplier contact types, then Last WhatsApp date (property not yet created) and the Reply on WhatsApp task (30 min placeholder, CD-08). Pending: logging exclusion for internal/supplier threads, creating unknown senders, enrolling them in WF-001. Internal: SLA-003.",
+   "notes": "Started 23 Oct (workflow named WF-019 WhatsApp conversation capture in HubSpot; id to be added when saved) as a conversation-based workflow (not contact-based), left OFF and unfinished. Trigger so far: Conversation status is Open. Blocked: the WhatsApp channel is not connected in HubSpot (only two support email inboxes appear under Originating channel account), so the channel filter cannot be set. Waiting on client: CD-13 (WhatsApp business number connected in HubSpot). Once connected: set the channel to the WhatsApp account, exclude Internal/Supplier contact types, then Last WhatsApp date (property not yet created) and the Reply on WhatsApp task (30 min placeholder, CD-08). Pending: logging exclusion for internal/supplier threads, creating unknown senders, enrolling them in WF-001. Internal: SLA-003. 23 Oct: Last WhatsApp date property created (PROP-058).",
    "updated": "2026-10-23"
   },
   {
@@ -3436,11 +3436,11 @@
    "phase": 3,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-24 (consent property name), CD-27 (approve email copy), CD-26 (audience). Internal: SLA-009. Build with placeholders; do not send.",
-   "updated": "2026-10-19"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5162140888/edit",
+   "notes": "Built 23 Oct (OFF), skeleton only. Manual enrolment, re-enrol off. Sets Marketing consent status to Re-permission requested and Consent request date, then sends a PLACEHOLDER internal email to Jennifer Ashby (not to the contact). After 14 days: Consent granted (status Opted in) stamps Consent date and Consent source, otherwise a placeholder reminder, then after 16 more days (30 total, SLA-009) the same check; no response sets status to Suppressed and the contact to non-marketing. Not built: real re-permission email and reminder sent to the contact (client approval of wording and landing page), the opt-in link that sets Opted in, suppression of fundraising lists LIST-010/011 (lists not confirmed), batch size and spacing. Properties are provisional (PROP-059 to PROP-062, CD-24). Must stay OFF. Earlier note: Not built yet, planned 20 Oct. Waiting on client: CD-24 (consent property name), CD-27 (approve email copy), CD-26 (audience). Internal: SLA-009. Build with placeholders; do not send. 23 Oct: consent properties now exist (PROP-059 to PROP-062), provisional until CD-24.",
+   "updated": "2026-10-23"
   },
   {
    "id": "WF-022",
@@ -5169,6 +5169,138 @@
     "populated": "WF-018"
    },
    "notes": "Created 22 Oct for WF-018. Records which standard was missed and when. Empty until WF-018 runs."
+  },
+  {
+   "cat": "Properties",
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-23",
+   "id": "PROP-058",
+   "name": "Last WhatsApp date",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_last_whatsapp_date",
+    "type": "Date picker",
+    "options": "",
+    "required": "No",
+    "group": "Clienteling",
+    "populated": "WF-019, WF-018 (SLA-003)"
+   },
+   "notes": "Created 23 Oct. Needed for the SLA-003 timer. Empty until WF-019 runs (blocked by CD-13)."
+  },
+  {
+   "cat": "Properties",
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-23",
+   "id": "PROP-059",
+   "name": "Marketing consent status",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_marketing_consent_status",
+    "type": "Dropdown select",
+    "options": "Not asked; Re-permission requested; Opted in; Suppressed",
+    "required": "No",
+    "group": "Core operational",
+    "populated": "WF-020, WF-021"
+   },
+   "notes": "Created 23 Oct as PROVISIONAL. The client has not confirmed the consent property name or options (CD-24). Rename or adjust once confirmed."
+  },
+  {
+   "cat": "Properties",
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-23",
+   "id": "PROP-060",
+   "name": "Consent request date",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_consent_request_date",
+    "type": "Date picker",
+    "options": "",
+    "required": "No",
+    "group": "Core operational",
+    "populated": "WF-021"
+   },
+   "notes": "Created 23 Oct. Provisional until CD-24 is answered."
+  },
+  {
+   "cat": "Properties",
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-23",
+   "id": "PROP-061",
+   "name": "Consent date",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_consent_date",
+    "type": "Date picker",
+    "options": "",
+    "required": "No",
+    "group": "Core operational",
+    "populated": "WF-021"
+   },
+   "notes": "Created 23 Oct. Stamped when a contact opts in. Provisional until CD-24 is answered."
+  },
+  {
+   "cat": "Properties",
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-23",
+   "id": "PROP-062",
+   "name": "Consent source",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_consent_source",
+    "type": "Single-line text",
+    "options": "",
+    "required": "No",
+    "group": "Core operational",
+    "populated": "WF-021"
+   },
+   "notes": "Created 23 Oct. Records how consent was given. Provisional until CD-24 is answered."
+  },
+  {
+   "cat": "Properties",
+   "phase": 2,
+   "spec": "§12",
+   "owner": "NEXA CRM Specialist",
+   "status": "QA",
+   "qa": "Not tested",
+   "link": "https://app-eu1.hubspot.com/property-settings/148164516/properties?type=0-1",
+   "updated": "2026-10-23",
+   "id": "PROP-063",
+   "name": "Fundraising consent status",
+   "f": {
+    "object": "Contact",
+    "internal": "sylv_fundraising_consent_status",
+    "type": "Dropdown select",
+    "options": "Not asked; Opted in; Not opted in",
+    "required": "No",
+    "group": "Core operational",
+    "populated": "Fundraising workflows (WF-022)"
+   },
+   "notes": "Created 23 Oct as PROVISIONAL. Options are our proposal, to confirm with the client (CD-24)."
   }
  ],
  "actions": [
@@ -5410,7 +5542,7 @@
    "due": "2026-10-28",
    "status": "Open",
    "received": "",
-   "notes": "Raised 19 Oct. Tied to the open consent property decision."
+   "notes": "Raised 19 Oct. Tied to the open consent property decision. 23 Oct: provisional consent properties created (PROP-059 to PROP-063) so WF-020/021 can be built. Confirm names and options with the client, then adjust."
   },
   {
    "id": "CD-25",
@@ -6237,6 +6369,18 @@
    "summary": [
     "Checked FT-001 to FT-003: no consent checkbox on any; noted on WF-020 and CD-30"
    ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "Created PROP-058 Last WhatsApp date, PROP-059 Marketing consent status, PROP-060 Consent request date, PROP-061 Consent date, PROP-062 Consent source, PROP-063 Fundraising consent status (consent ones provisional, CD-24)"
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "WF-021 Consent re-permission built in HubSpot (off), checked and fixed: No response branches, empty Consent granted branch, non-marketing action; logged as QA, Built not tested"
+   ]
   }
  ],
  "register": [
@@ -6462,7 +6606,7 @@
    "raised": "2026-10-19",
    "status": "Open",
    "decided": "",
-   "ref": "B-021 to B-024, WF-008"
+   "ref": "B-029, B-066, WF-007"
   }
  ]
 }
