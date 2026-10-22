@@ -732,7 +732,7 @@
    "due": "2026-11-11",
    "status": "In progress",
    "dep": "CD-20, CD-22, CD-24, CD-25, CD-27, CD-29, CD-33, CD-34, CD-35, CD-37, CD-38, CD-39, CD-40, CD-41, CD-42",
-   "notes": "WF-003 to WF-007 and WF-009 to WF-018 built (off). Remaining WF-019 to WF-024 planned; client dependencies listed on each workflow asset. Placeholders and pending steps tracked on B-074.",
+   "notes": "WF-003 to WF-007 and WF-009 to WF-018 built (off). Remaining WF-019 to WF-024 planned; client dependencies listed on each workflow asset. Placeholders and pending steps tracked on B-074. WF-020 built 23 Oct (off), consent steps pending CD-24.",
    "updated": "2026-10-22"
   },
   {
@@ -3419,11 +3419,11 @@
    "phase": 2,
    "spec": "§12",
    "owner": "NEXA CRM Specialist",
-   "status": "Not started",
-   "qa": "Not tested",
-   "link": "",
-   "notes": "Not built yet, planned 20 Oct. Waiting on client: CD-30 (form fields, consent wording, recipients), CD-14, CD-31. Internal: FT-001 to FT-003, lifecycle stages.",
-   "updated": "2026-10-19"
+   "status": "QA",
+   "qa": "Built, not tested",
+   "link": "https://app-eu1.hubspot.com/workflows/148164516/platform/flow/5161768178/edit",
+   "notes": "Built 23 Oct (OFF), partly complete. Trigger: three groups, one per form (FT-001, FT-002, FT-003), each requiring Contact Type none of Internal/Supplier or empty; re-enrol on. Branch Newsletter (FT-002) and Enquiry or advertising (FT-001, FT-003); each sets Lifecycle Stage to Subscriber only when it is unknown (so Client or later is never changed). FT-003 branch sets Internal Lead Source to Other (placeholder until the client confirms the ad source list). Not built: marketing consent recording on both paths (waiting on CD-24 consent property, and the forms need a consent checkbox). Confirm the forms carry a consent checkbox. Test with a new email address on each form before turning on. Waiting on client: CD-30 (form fields, consent wording, recipients), CD-14, CD-31, CD-24. Internal: FT-001 to FT-003 forms (now exist in HubSpot), lifecycle stages. 23 Oct form check: none of FT-001 to FT-003 has a consent checkbox, so the consent steps cannot be built until CD-30 (wording) and CD-24 (property) are answered and a checkbox is added to each form. Forms show unpublished changes.",
+   "updated": "2026-10-23"
   },
   {
    "id": "WF-021",
@@ -5470,7 +5470,7 @@
    "due": "2026-10-28",
    "status": "Open",
    "received": "",
-   "notes": "Raised 19 Oct. Forms are published but on no page; fields and consent wording need sign-off."
+   "notes": "23 Oct check: FT-001, FT-002 and FT-003 have no marketing consent checkbox (FT-001: name, email, phone, contact method, message; FT-002: first name and email; FT-003: name, email, phone, what are you hoping to find). A consent checkbox must be added to each once the wording (this item) and the consent property (CD-24) are confirmed. All three forms show saved with unpublished changes. Raised 19 Oct. Forms are published but on no page; fields and consent wording need sign-off."
   },
   {
    "id": "CD-31",
@@ -6225,6 +6225,18 @@
     "WF-019 started in HubSpot (conversation-based, off); trigger blocked until WhatsApp is connected (CD-13)",
     "CD-13 note updated; WF-019 asset set to In progress"
    ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "WF-020 Form routing built in HubSpot (off): trigger, form branches, Subscriber stage, FT-003 Lead Source Other; consent steps pending CD-24"
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "summary": [
+    "Checked FT-001 to FT-003: no consent checkbox on any; noted on WF-020 and CD-30"
+   ]
   }
  ],
  "register": [
@@ -6450,7 +6462,7 @@
    "raised": "2026-10-19",
    "status": "Open",
    "decided": "",
-   "ref": "B-021 to B-024, WF-008"
+   "ref": "B-029, B-066, WF-007"
   }
  ]
 }
